@@ -1,0 +1,71 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'HotelionMain' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # ---- General
+
+  # Rx
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  # Rest
+  pod 'RestApiManager'
+  # UI
+  pod 'NotificationBannerSwift'
+
+  # ---- HotelionServices
+  target 'HotelionServices' do
+    project '../HotelionServices/HotelionServices.xcodeproj'
+    workspace '../Hotelion.xcworkspace'
+
+    # Rx
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    # Rest
+    pod 'RestApiManager'
+    # UI
+    pod 'NotificationBannerSwift'
+  end
+
+  # ---- HotelionAuth
+  target 'HotelionAuth' do
+    project '../HotelionAuth/HotelionAuth.xcodeproj'
+    workspace '../Hotelion.xcworkspace'
+
+    # Rx
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    # Rest
+    pod 'RestApiManager'
+    # UI
+    pod 'NotificationBannerSwift'
+  end
+
+  # ---- HotelionCommon
+  target 'HotelionCommon' do
+    project '../HotelionCommon/HotelionCommon.xcodeproj'
+    workspace '../Hotelion.xcworkspace'
+
+    # Rx
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    # Rest
+    pod 'RestApiManager'
+    # UI
+    pod 'NotificationBannerSwift'
+  end
+
+  # ---- HotelionMainTests
+  target 'HotelionMainTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  # ---- HotelionMainUITests
+  target 'HotelionMainUITests' do
+    # Pods for testing
+  end
+
+end

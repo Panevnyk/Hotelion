@@ -1,0 +1,947 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		91127C7D23A3A01A0098CAFE /* HotelionIOSUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91127C7323A3A01A0098CAFE /* HotelionIOSUI.framework */; };
+		91127C8423A3A01A0098CAFE /* iOSUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 91127C7623A3A01A0098CAFE /* iOSUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		911C8E0F251B4122000E4160 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C8E0E251B4122000E4160 /* BadgeView.swift */; };
+		911C8E1A251B444C000E4160 /* View+Hidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C8E19251B444C000E4160 /* View+Hidden.swift */; };
+		911D0C2B25260A6200AF5A84 /* MultipleServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D0C2A25260A6200AF5A84 /* MultipleServicesViewModel.swift */; };
+		911D0C2F25273A2300AF5A84 /* HotelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D0C2E25273A2300AF5A84 /* HotelInfoView.swift */; };
+		911D0C372527429C00AF5A84 /* HotelInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D0C362527429C00AF5A84 /* HotelInfoViewModel.swift */; };
+		911D0C442527452300AF5A84 /* BaseCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D0C432527452300AF5A84 /* BaseCoordinatorDelegate.swift */; };
+		911D0C4925274D9A00AF5A84 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 911D0C4825274D9A00AF5A84 /* CalendarView.xib */; };
+		912850E02520FA6300954F9A /* AlertViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912850DF2520FA6300954F9A /* AlertViewAction.swift */; };
+		913757EF24FE8C6C0082E6FB /* QRCodeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913757EE24FE8C6C0082E6FB /* QRCodeMainView.swift */; };
+		914558FC251C932C0012B51F /* CalendarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914558FB251C932C0012B51F /* CalendarItemView.swift */; };
+		91455905251C93FF0012B51F /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91455903251C93FF0012B51F /* NibLoadableView.swift */; };
+		91455906251C93FF0012B51F /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91455904251C93FF0012B51F /* UIView+Nib.swift */; };
+		9145590D251C9C1B0012B51F /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9145590C251C9C1B0012B51F /* CalendarViewModel.swift */; };
+		91455912251CA08A0012B51F /* DateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91455911251CA08A0012B51F /* DateFactory.swift */; };
+		91455916251CA2320012B51F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91455915251CA2320012B51F /* Date+Extensions.swift */; };
+		91455919251CAC5F0012B51F /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91455918251CAC5F0012B51F /* Calendar+Extensions.swift */; };
+		9145591C251CB13A0012B51F /* CalendarItemsRangeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9145591B251CB13A0012B51F /* CalendarItemsRangeBuilder.swift */; };
+		91455922251CB1A30012B51F /* CalendarItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91455921251CB1A30012B51F /* CalendarItemViewModel.swift */; };
+		91455929251CB4BA0012B51F /* CalendarItemViewModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91455928251CB4BA0012B51F /* CalendarItemViewModelAdapter.swift */; };
+		9145592D251DDC280012B51F /* DisplayCalendarItemsRangeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9145592C251DDC280012B51F /* DisplayCalendarItemsRangeBuilder.swift */; };
+		91455930251DDE580012B51F /* CalendarItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9145592F251DDE580012B51F /* CalendarItemView.xib */; };
+		91455934251DE5090012B51F /* DateFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91455933251DE5090012B51F /* DateFormatterHelper.swift */; };
+		91455937251E02AC0012B51F /* SelectedEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91455936251E02AC0012B51F /* SelectedEventViewModel.swift */; };
+		91455976252083D60012B51F /* BaseCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91455975252083D60012B51F /* BaseCustomView.swift */; };
+		91474B34251B57B800604BAC /* View+DismissTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91474B33251B57B800604BAC /* View+DismissTapGesture.swift */; };
+		91474B46251C907C00604BAC /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91474B45251C907C00604BAC /* CalendarView.swift */; };
+		91474B4C251C90C200604BAC /* CalendarDragableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91474B4A251C90C200604BAC /* CalendarDragableViewModel.swift */; };
+		91474B4D251C90C200604BAC /* CalendarDragableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91474B4B251C90C200604BAC /* CalendarDragableView.swift */; };
+		915D926F24E690B2005351B6 /* HotelionDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915D926E24E690B2005351B6 /* HotelionDomain.framework */; };
+		915D927024E690B2005351B6 /* HotelionDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 915D926E24E690B2005351B6 /* HotelionDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		915D927A24E69BF3005351B6 /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D927924E69BF3005351B6 /* ServicesView.swift */; };
+		915D927C24E69C1E005351B6 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D927B24E69C1E005351B6 /* ServicesViewModel.swift */; };
+		915D927E24E69CB6005351B6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D927D24E69CB6005351B6 /* LoadingView.swift */; };
+		915D928024E69CD4005351B6 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D927F24E69CD4005351B6 /* ActivityIndicator.swift */; };
+		915D928324E6A104005351B6 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D928224E6A104005351B6 /* ServiceView.swift */; };
+		915D928524E6AD4A005351B6 /* ServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D928424E6AD4A005351B6 /* ServiceViewModel.swift */; };
+		9165A8232513A70500AF856F /* SetupTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9165A8222513A70500AF856F /* SetupTimeView.swift */; };
+		9168903D2523B58F001D3002 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9168903C2523B58F001D3002 /* BookingViewController.swift */; };
+		916890432523BB6A001D3002 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916890422523BB6A001D3002 /* BookingViewModel.swift */; };
+		9168906E2523C276001D3002 /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9168906D2523C276001D3002 /* Booking.storyboard */; };
+		916890732523C37B001D3002 /* Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916890722523C37B001D3002 /* Instantiable.swift */; };
+		916890782523C3E2001D3002 /* Bundle+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916890772523C3E2001D3002 /* Bundle+Current.swift */; };
+		916B9C8D2508B42F00B07631 /* QuestionnaireForSettlingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B9C8C2508B42F00B07631 /* QuestionnaireForSettlingView.swift */; };
+		916B9C8F2508B49900B07631 /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B9C8E2508B49900B07631 /* MaterialTextField.swift */; };
+		916B9C912508B50900B07631 /* QuestionnaireForSettlingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B9C902508B50900B07631 /* QuestionnaireForSettlingViewModel.swift */; };
+		917867B023FED74C009E53CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917867AF23FED74C009E53CB /* Constants.swift */; };
+		9185BE6123F44647001EFEB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9185BE6023F44647001EFEB0 /* Assets.xcassets */; };
+		9185BE6323F44A69001EFEB0 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185BE6223F44A69001EFEB0 /* CloseButton.swift */; };
+		9185BE6523F44C16001EFEB0 /* KeyValueDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185BE6423F44C16001EFEB0 /* KeyValueDatePickerView.swift */; };
+		9185BE6723F453F3001EFEB0 /* KeyValueActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185BE6623F453F3001EFEB0 /* KeyValueActionSheetView.swift */; };
+		918E902623B4CAE300A3BD61 /* Color+AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918E902523B4CAE300A3BD61 /* Color+AppStyle.swift */; };
+		9191DCD72403CF5A00802806 /* DateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191DCD62403CF5A00802806 /* DateFactory.swift */; };
+		919A086A2519DF5D00100C77 /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919A08692519DF5D00100C77 /* GeometryGetter.swift */; };
+		919A086C2519FD9700100C77 /* DragableContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919A086B2519FD9700100C77 /* DragableContainerView.swift */; };
+		919A086E251A005200100C77 /* SetupTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919A086D251A005200100C77 /* SetupTimeViewModel.swift */; };
+		91A4643D23F54C63009F2D28 /* EdgeInsets+Zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A4643C23F54C63009F2D28 /* EdgeInsets+Zero.swift */; };
+		91AA66E824EFCF410005EEBD /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA66E724EFCF410005EEBD /* CollectionView.swift */; };
+		91AA66EA24EFD7780005EEBD /* ServicesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA66E924EFD7780005EEBD /* ServicesViewModelTests.swift */; };
+		91BD0F712403FCF9009A75DB /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD0F702403FCF9009A75DB /* RadioButton.swift */; };
+		91BD282423F2D3EA002D4A6F /* CreateHabitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD282323F2D3EA002D4A6F /* CreateHabitButton.swift */; };
+		91FAE0DA23B4E859005DBEA7 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FAE0D923B4E859005DBEA7 /* MainButton.swift */; };
+		91FD4E182524825C006DEFD2 /* AlertAnimable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FD4E172524825C006DEFD2 /* AlertAnimable.swift */; };
+		91FD4E1B25248EDC006DEFD2 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FD4E1A25248EDC006DEFD2 /* ReusableCell.swift */; };
+		91FD4E202524A229006DEFD2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FD4E1F2524A229006DEFD2 /* AlertViewController.swift */; };
+		91FD4E232524A28B006DEFD2 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FD4E222524A28B006DEFD2 /* AlertViewController.xib */; };
+		91FD4E292524D02B006DEFD2 /* MultipleServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FD4E282524D02B006DEFD2 /* MultipleServicesView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91127C7E23A3A01A0098CAFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91127C6A23A3A01A0098CAFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91127C7223A3A01A0098CAFE;
+			remoteInfo = iOSUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		915D927124E690B2005351B6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				915D927024E690B2005351B6 /* HotelionDomain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		91127C7323A3A01A0098CAFE /* HotelionIOSUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HotelionIOSUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91127C7623A3A01A0098CAFE /* iOSUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSUI.h; sourceTree = "<group>"; };
+		91127C7723A3A01A0098CAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91127C7C23A3A01A0098CAFE /* HotelionIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelionIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91127C8323A3A01A0098CAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		911C8E0E251B4122000E4160 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		911C8E19251B444C000E4160 /* View+Hidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Hidden.swift"; sourceTree = "<group>"; };
+		911D0C2A25260A6200AF5A84 /* MultipleServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleServicesViewModel.swift; sourceTree = "<group>"; };
+		911D0C2E25273A2300AF5A84 /* HotelInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelInfoView.swift; sourceTree = "<group>"; };
+		911D0C362527429C00AF5A84 /* HotelInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelInfoViewModel.swift; sourceTree = "<group>"; };
+		911D0C432527452300AF5A84 /* BaseCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		911D0C4825274D9A00AF5A84 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
+		912850DF2520FA6300954F9A /* AlertViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewAction.swift; sourceTree = "<group>"; };
+		913757EE24FE8C6C0082E6FB /* QRCodeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMainView.swift; sourceTree = "<group>"; };
+		914558FB251C932C0012B51F /* CalendarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemView.swift; sourceTree = "<group>"; };
+		91455903251C93FF0012B51F /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		91455904251C93FF0012B51F /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		9145590C251C9C1B0012B51F /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		91455911251CA08A0012B51F /* DateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFactory.swift; sourceTree = "<group>"; };
+		91455915251CA2320012B51F /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		91455918251CAC5F0012B51F /* Calendar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
+		9145591B251CB13A0012B51F /* CalendarItemsRangeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemsRangeBuilder.swift; sourceTree = "<group>"; };
+		91455921251CB1A30012B51F /* CalendarItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemViewModel.swift; sourceTree = "<group>"; };
+		91455928251CB4BA0012B51F /* CalendarItemViewModelAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemViewModelAdapter.swift; sourceTree = "<group>"; };
+		9145592C251DDC280012B51F /* DisplayCalendarItemsRangeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCalendarItemsRangeBuilder.swift; sourceTree = "<group>"; };
+		9145592F251DDE580012B51F /* CalendarItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarItemView.xib; sourceTree = "<group>"; };
+		91455933251DE5090012B51F /* DateFormatterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterHelper.swift; sourceTree = "<group>"; };
+		91455936251E02AC0012B51F /* SelectedEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedEventViewModel.swift; sourceTree = "<group>"; };
+		91455975252083D60012B51F /* BaseCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomView.swift; sourceTree = "<group>"; };
+		91474B33251B57B800604BAC /* View+DismissTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DismissTapGesture.swift"; sourceTree = "<group>"; };
+		91474B45251C907C00604BAC /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		91474B4A251C90C200604BAC /* CalendarDragableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDragableViewModel.swift; sourceTree = "<group>"; };
+		91474B4B251C90C200604BAC /* CalendarDragableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDragableView.swift; sourceTree = "<group>"; };
+		915D926E24E690B2005351B6 /* HotelionDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HotelionDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		915D927924E69BF3005351B6 /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
+		915D927B24E69C1E005351B6 /* ServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
+		915D927D24E69CB6005351B6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		915D927F24E69CD4005351B6 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		915D928224E6A104005351B6 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		915D928424E6AD4A005351B6 /* ServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
+		9165A8222513A70500AF856F /* SetupTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTimeView.swift; sourceTree = "<group>"; };
+		9168903C2523B58F001D3002 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		916890422523BB6A001D3002 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
+		9168906D2523C276001D3002 /* Booking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
+		916890722523C37B001D3002 /* Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiable.swift; sourceTree = "<group>"; };
+		916890772523C3E2001D3002 /* Bundle+Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Current.swift"; sourceTree = "<group>"; };
+		916B9C8C2508B42F00B07631 /* QuestionnaireForSettlingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireForSettlingView.swift; sourceTree = "<group>"; };
+		916B9C8E2508B49900B07631 /* MaterialTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		916B9C902508B50900B07631 /* QuestionnaireForSettlingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireForSettlingViewModel.swift; sourceTree = "<group>"; };
+		917867AF23FED74C009E53CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9185BE6023F44647001EFEB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9185BE6223F44A69001EFEB0 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		9185BE6423F44C16001EFEB0 /* KeyValueDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueDatePickerView.swift; sourceTree = "<group>"; };
+		9185BE6623F453F3001EFEB0 /* KeyValueActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueActionSheetView.swift; sourceTree = "<group>"; };
+		918E902523B4CAE300A3BD61 /* Color+AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppStyle.swift"; sourceTree = "<group>"; };
+		9191DCD62403CF5A00802806 /* DateFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFactory.swift; sourceTree = "<group>"; };
+		919A08692519DF5D00100C77 /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
+		919A086B2519FD9700100C77 /* DragableContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragableContainerView.swift; sourceTree = "<group>"; };
+		919A086D251A005200100C77 /* SetupTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTimeViewModel.swift; sourceTree = "<group>"; };
+		91A4643C23F54C63009F2D28 /* EdgeInsets+Zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Zero.swift"; sourceTree = "<group>"; };
+		91AA66E724EFCF410005EEBD /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		91AA66E924EFD7780005EEBD /* ServicesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewModelTests.swift; sourceTree = "<group>"; };
+		91BD0F702403FCF9009A75DB /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		91BD282323F2D3EA002D4A6F /* CreateHabitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHabitButton.swift; sourceTree = "<group>"; };
+		91FAE0D923B4E859005DBEA7 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		91FD4E172524825C006DEFD2 /* AlertAnimable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAnimable.swift; sourceTree = "<group>"; };
+		91FD4E1A25248EDC006DEFD2 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		91FD4E1F2524A229006DEFD2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		91FD4E222524A28B006DEFD2 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
+		91FD4E282524D02B006DEFD2 /* MultipleServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleServicesView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91127C7023A3A01A0098CAFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				915D926F24E690B2005351B6 /* HotelionDomain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91127C7923A3A01A0098CAFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91127C7D23A3A01A0098CAFE /* HotelionIOSUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91127C6923A3A01A0098CAFE = {
+			isa = PBXGroup;
+			children = (
+				91127C7523A3A01A0098CAFE /* HotelionIOSUI */,
+				91127C8023A3A01A0098CAFE /* HotelionIOSUITests */,
+				91127C7423A3A01A0098CAFE /* Products */,
+				91D6C19A23A7B1DE00730E2D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		91127C7423A3A01A0098CAFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91127C7323A3A01A0098CAFE /* HotelionIOSUI.framework */,
+				91127C7C23A3A01A0098CAFE /* HotelionIOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91127C7523A3A01A0098CAFE /* HotelionIOSUI */ = {
+			isa = PBXGroup;
+			children = (
+				91455932251DE4F30012B51F /* Helpers */,
+				91FAE0D823B4E840005DBEA7 /* ReusableUI */,
+				918E902423B4CACC00A3BD61 /* Extensions */,
+				916B9C922509155400B07631 /* Features */,
+				9185BE6023F44647001EFEB0 /* Assets.xcassets */,
+				91127C7623A3A01A0098CAFE /* iOSUI.h */,
+				91127C7723A3A01A0098CAFE /* Info.plist */,
+			);
+			path = HotelionIOSUI;
+			sourceTree = "<group>";
+		};
+		91127C8023A3A01A0098CAFE /* HotelionIOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9191366523FEE9F30041E68A /* Helpers */,
+				9185BE6823F45810001EFEB0 /* ServiceList */,
+				91127C8323A3A01A0098CAFE /* Info.plist */,
+			);
+			path = HotelionIOSUITests;
+			sourceTree = "<group>";
+		};
+		911D0C2D25273A1100AF5A84 /* HotelInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				911D0C2E25273A2300AF5A84 /* HotelInfoView.swift */,
+				911D0C362527429C00AF5A84 /* HotelInfoViewModel.swift */,
+			);
+			path = HotelInfoView;
+			sourceTree = "<group>";
+		};
+		913757ED24FE8C2B0082E6FB /* QRCodeMain */ = {
+			isa = PBXGroup;
+			children = (
+				913757EE24FE8C6C0082E6FB /* QRCodeMainView.swift */,
+			);
+			path = QRCodeMain;
+			sourceTree = "<group>";
+		};
+		914558FE251C93320012B51F /* CalendarItemView */ = {
+			isa = PBXGroup;
+			children = (
+				914558FB251C932C0012B51F /* CalendarItemView.swift */,
+				9145592F251DDE580012B51F /* CalendarItemView.xib */,
+				91455921251CB1A30012B51F /* CalendarItemViewModel.swift */,
+				91455936251E02AC0012B51F /* SelectedEventViewModel.swift */,
+			);
+			path = CalendarItemView;
+			sourceTree = "<group>";
+		};
+		91455902251C93FF0012B51F /* NibLoadableView */ = {
+			isa = PBXGroup;
+			children = (
+				91455975252083D60012B51F /* BaseCustomView.swift */,
+				91455903251C93FF0012B51F /* NibLoadableView.swift */,
+				91455904251C93FF0012B51F /* UIView+Nib.swift */,
+			);
+			path = NibLoadableView;
+			sourceTree = "<group>";
+		};
+		91455908251C94380012B51F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				91455902251C93FF0012B51F /* NibLoadableView */,
+				914559592520803E0012B51F /* AlertView */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		91455910251CA0790012B51F /* DateHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				91455911251CA08A0012B51F /* DateFactory.swift */,
+				91455915251CA2320012B51F /* Date+Extensions.swift */,
+				91455918251CAC5F0012B51F /* Calendar+Extensions.swift */,
+			);
+			path = DateHelpers;
+			sourceTree = "<group>";
+		};
+		9145591E251CB1470012B51F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				91455928251CB4BA0012B51F /* CalendarItemViewModelAdapter.swift */,
+				9145591B251CB13A0012B51F /* CalendarItemsRangeBuilder.swift */,
+				9145592C251DDC280012B51F /* DisplayCalendarItemsRangeBuilder.swift */,
+				91455910251CA0790012B51F /* DateHelpers */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		91455932251DE4F30012B51F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				911D0C432527452300AF5A84 /* BaseCoordinatorDelegate.swift */,
+				91455933251DE5090012B51F /* DateFormatterHelper.swift */,
+				916890722523C37B001D3002 /* Instantiable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		914559592520803E0012B51F /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				91FD4E1F2524A229006DEFD2 /* AlertViewController.swift */,
+				91FD4E222524A28B006DEFD2 /* AlertViewController.xib */,
+				912850DF2520FA6300954F9A /* AlertViewAction.swift */,
+				91FD4E172524825C006DEFD2 /* AlertAnimable.swift */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
+		91474B36251B57CE00604BAC /* ViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				911C8E19251B444C000E4160 /* View+Hidden.swift */,
+				91474B33251B57B800604BAC /* View+DismissTapGesture.swift */,
+			);
+			path = ViewExtensions;
+			sourceTree = "<group>";
+		};
+		91474B38251B999A00604BAC /* CalendarDragableView */ = {
+			isa = PBXGroup;
+			children = (
+				91474B4B251C90C200604BAC /* CalendarDragableView.swift */,
+				91474B4A251C90C200604BAC /* CalendarDragableViewModel.swift */,
+			);
+			path = CalendarDragableView;
+			sourceTree = "<group>";
+		};
+		91474B44251C903300604BAC /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				91474B45251C907C00604BAC /* CalendarView.swift */,
+				911D0C4825274D9A00AF5A84 /* CalendarView.xib */,
+				9145590C251C9C1B0012B51F /* CalendarViewModel.swift */,
+				914558FE251C93320012B51F /* CalendarItemView */,
+				9145591E251CB1470012B51F /* Helpers */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		915D927824E69BD7005351B6 /* ServiceList */ = {
+			isa = PBXGroup;
+			children = (
+				915D927924E69BF3005351B6 /* ServicesView.swift */,
+				915D927B24E69C1E005351B6 /* ServicesViewModel.swift */,
+				91FD4E272524CEFA006DEFD2 /* MultipleServicesView */,
+				915D928124E6A0F4005351B6 /* ServiceView */,
+			);
+			path = ServiceList;
+			sourceTree = "<group>";
+		};
+		915D928124E6A0F4005351B6 /* ServiceView */ = {
+			isa = PBXGroup;
+			children = (
+				915D928224E6A104005351B6 /* ServiceView.swift */,
+				915D928424E6AD4A005351B6 /* ServiceViewModel.swift */,
+			);
+			path = ServiceView;
+			sourceTree = "<group>";
+		};
+		9165A8212513A6BE00AF856F /* SetupTimeView */ = {
+			isa = PBXGroup;
+			children = (
+				9165A8222513A70500AF856F /* SetupTimeView.swift */,
+				919A086D251A005200100C77 /* SetupTimeViewModel.swift */,
+			);
+			path = SetupTimeView;
+			sourceTree = "<group>";
+		};
+		9168903B2523B557001D3002 /* BookingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9168903C2523B58F001D3002 /* BookingViewController.swift */,
+				916890422523BB6A001D3002 /* BookingViewModel.swift */,
+				9168906D2523C276001D3002 /* Booking.storyboard */,
+				91474B44251C903300604BAC /* CalendarView */,
+			);
+			path = BookingViewController;
+			sourceTree = "<group>";
+		};
+		916B9C8B2508B3EC00B07631 /* QuestionnaireForSettling */ = {
+			isa = PBXGroup;
+			children = (
+				916B9C8C2508B42F00B07631 /* QuestionnaireForSettlingView.swift */,
+				916B9C902508B50900B07631 /* QuestionnaireForSettlingViewModel.swift */,
+			);
+			path = QuestionnaireForSettling;
+			sourceTree = "<group>";
+		};
+		916B9C922509155400B07631 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				916B9C8B2508B3EC00B07631 /* QuestionnaireForSettling */,
+				913757ED24FE8C2B0082E6FB /* QRCodeMain */,
+				91D6C19323A7ACBF00730E2D /* ServicesModule */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9185BE6823F45810001EFEB0 /* ServiceList */ = {
+			isa = PBXGroup;
+			children = (
+				91AA66E924EFD7780005EEBD /* ServicesViewModelTests.swift */,
+			);
+			path = ServiceList;
+			sourceTree = "<group>";
+		};
+		918E902423B4CACC00A3BD61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				918E902523B4CAE300A3BD61 /* Color+AppStyle.swift */,
+				91A4643C23F54C63009F2D28 /* EdgeInsets+Zero.swift */,
+				917867AF23FED74C009E53CB /* Constants.swift */,
+				916890772523C3E2001D3002 /* Bundle+Current.swift */,
+				91FD4E1A25248EDC006DEFD2 /* ReusableCell.swift */,
+				91474B36251B57CE00604BAC /* ViewExtensions */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9191366523FEE9F30041E68A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9191DCD62403CF5A00802806 /* DateFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		91D6C19323A7ACBF00730E2D /* ServicesModule */ = {
+			isa = PBXGroup;
+			children = (
+				911D0C2D25273A1100AF5A84 /* HotelInfoView */,
+				9168903B2523B557001D3002 /* BookingViewController */,
+				915D927824E69BD7005351B6 /* ServiceList */,
+			);
+			path = ServicesModule;
+			sourceTree = "<group>";
+		};
+		91D6C19A23A7B1DE00730E2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				915D926E24E690B2005351B6 /* HotelionDomain.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91FAE0D823B4E840005DBEA7 /* ReusableUI */ = {
+			isa = PBXGroup;
+			children = (
+				91455908251C94380012B51F /* UIKit */,
+				91FAE0D923B4E859005DBEA7 /* MainButton.swift */,
+				91BD0F702403FCF9009A75DB /* RadioButton.swift */,
+				9185BE6223F44A69001EFEB0 /* CloseButton.swift */,
+				91BD282323F2D3EA002D4A6F /* CreateHabitButton.swift */,
+				9185BE6423F44C16001EFEB0 /* KeyValueDatePickerView.swift */,
+				9185BE6623F453F3001EFEB0 /* KeyValueActionSheetView.swift */,
+				915D927D24E69CB6005351B6 /* LoadingView.swift */,
+				915D927F24E69CD4005351B6 /* ActivityIndicator.swift */,
+				91AA66E724EFCF410005EEBD /* CollectionView.swift */,
+				916B9C8E2508B49900B07631 /* MaterialTextField.swift */,
+				919A086B2519FD9700100C77 /* DragableContainerView.swift */,
+				919A08692519DF5D00100C77 /* GeometryGetter.swift */,
+				911C8E0E251B4122000E4160 /* BadgeView.swift */,
+				91474B38251B999A00604BAC /* CalendarDragableView */,
+				9165A8212513A6BE00AF856F /* SetupTimeView */,
+			);
+			path = ReusableUI;
+			sourceTree = "<group>";
+		};
+		91FD4E272524CEFA006DEFD2 /* MultipleServicesView */ = {
+			isa = PBXGroup;
+			children = (
+				91FD4E282524D02B006DEFD2 /* MultipleServicesView.swift */,
+				911D0C2A25260A6200AF5A84 /* MultipleServicesViewModel.swift */,
+			);
+			path = MultipleServicesView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		91127C6E23A3A01A0098CAFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91127C8423A3A01A0098CAFE /* iOSUI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		91127C7223A3A01A0098CAFE /* HotelionIOSUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91127C8723A3A01A0098CAFE /* Build configuration list for PBXNativeTarget "HotelionIOSUI" */;
+			buildPhases = (
+				91127C6E23A3A01A0098CAFE /* Headers */,
+				91127C6F23A3A01A0098CAFE /* Sources */,
+				91127C7023A3A01A0098CAFE /* Frameworks */,
+				91127C7123A3A01A0098CAFE /* Resources */,
+				915D927124E690B2005351B6 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotelionIOSUI;
+			productName = iOSUI;
+			productReference = 91127C7323A3A01A0098CAFE /* HotelionIOSUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		91127C7B23A3A01A0098CAFE /* HotelionIOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91127C8A23A3A01A0098CAFE /* Build configuration list for PBXNativeTarget "HotelionIOSUITests" */;
+			buildPhases = (
+				91127C7823A3A01A0098CAFE /* Sources */,
+				91127C7923A3A01A0098CAFE /* Frameworks */,
+				91127C7A23A3A01A0098CAFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91127C7F23A3A01A0098CAFE /* PBXTargetDependency */,
+			);
+			name = HotelionIOSUITests;
+			productName = iOSUITests;
+			productReference = 91127C7C23A3A01A0098CAFE /* HotelionIOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91127C6A23A3A01A0098CAFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = "Vladyslav Panevnyk";
+				TargetAttributes = {
+					91127C7223A3A01A0098CAFE = {
+						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
+					};
+					91127C7B23A3A01A0098CAFE = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 91127C6D23A3A01A0098CAFE /* Build configuration list for PBXProject "HotelionIOSUI" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91127C6923A3A01A0098CAFE;
+			productRefGroup = 91127C7423A3A01A0098CAFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91127C7223A3A01A0098CAFE /* HotelionIOSUI */,
+				91127C7B23A3A01A0098CAFE /* HotelionIOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91127C7123A3A01A0098CAFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9185BE6123F44647001EFEB0 /* Assets.xcassets in Resources */,
+				9168906E2523C276001D3002 /* Booking.storyboard in Resources */,
+				911D0C4925274D9A00AF5A84 /* CalendarView.xib in Resources */,
+				91455930251DDE580012B51F /* CalendarItemView.xib in Resources */,
+				91FD4E232524A28B006DEFD2 /* AlertViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91127C7A23A3A01A0098CAFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91127C6F23A3A01A0098CAFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9168903D2523B58F001D3002 /* BookingViewController.swift in Sources */,
+				918E902623B4CAE300A3BD61 /* Color+AppStyle.swift in Sources */,
+				915D927C24E69C1E005351B6 /* ServicesViewModel.swift in Sources */,
+				917867B023FED74C009E53CB /* Constants.swift in Sources */,
+				915D928024E69CD4005351B6 /* ActivityIndicator.swift in Sources */,
+				911D0C2F25273A2300AF5A84 /* HotelInfoView.swift in Sources */,
+				91BD282423F2D3EA002D4A6F /* CreateHabitButton.swift in Sources */,
+				9185BE6723F453F3001EFEB0 /* KeyValueActionSheetView.swift in Sources */,
+				911D0C442527452300AF5A84 /* BaseCoordinatorDelegate.swift in Sources */,
+				91FD4E1B25248EDC006DEFD2 /* ReusableCell.swift in Sources */,
+				916B9C912508B50900B07631 /* QuestionnaireForSettlingViewModel.swift in Sources */,
+				91FD4E202524A229006DEFD2 /* AlertViewController.swift in Sources */,
+				91BD0F712403FCF9009A75DB /* RadioButton.swift in Sources */,
+				91455906251C93FF0012B51F /* UIView+Nib.swift in Sources */,
+				91474B4D251C90C200604BAC /* CalendarDragableView.swift in Sources */,
+				91455937251E02AC0012B51F /* SelectedEventViewModel.swift in Sources */,
+				915D928524E6AD4A005351B6 /* ServiceViewModel.swift in Sources */,
+				916890432523BB6A001D3002 /* BookingViewModel.swift in Sources */,
+				91455922251CB1A30012B51F /* CalendarItemViewModel.swift in Sources */,
+				9165A8232513A70500AF856F /* SetupTimeView.swift in Sources */,
+				912850E02520FA6300954F9A /* AlertViewAction.swift in Sources */,
+				915D928324E6A104005351B6 /* ServiceView.swift in Sources */,
+				91A4643D23F54C63009F2D28 /* EdgeInsets+Zero.swift in Sources */,
+				91FD4E182524825C006DEFD2 /* AlertAnimable.swift in Sources */,
+				911D0C372527429C00AF5A84 /* HotelInfoViewModel.swift in Sources */,
+				91474B4C251C90C200604BAC /* CalendarDragableViewModel.swift in Sources */,
+				91455934251DE5090012B51F /* DateFormatterHelper.swift in Sources */,
+				911C8E1A251B444C000E4160 /* View+Hidden.swift in Sources */,
+				9185BE6323F44A69001EFEB0 /* CloseButton.swift in Sources */,
+				916B9C8F2508B49900B07631 /* MaterialTextField.swift in Sources */,
+				91455912251CA08A0012B51F /* DateFactory.swift in Sources */,
+				91FAE0DA23B4E859005DBEA7 /* MainButton.swift in Sources */,
+				91455916251CA2320012B51F /* Date+Extensions.swift in Sources */,
+				91AA66E824EFCF410005EEBD /* CollectionView.swift in Sources */,
+				919A086E251A005200100C77 /* SetupTimeViewModel.swift in Sources */,
+				913757EF24FE8C6C0082E6FB /* QRCodeMainView.swift in Sources */,
+				914558FC251C932C0012B51F /* CalendarItemView.swift in Sources */,
+				91455976252083D60012B51F /* BaseCustomView.swift in Sources */,
+				91474B34251B57B800604BAC /* View+DismissTapGesture.swift in Sources */,
+				91474B46251C907C00604BAC /* CalendarView.swift in Sources */,
+				91455929251CB4BA0012B51F /* CalendarItemViewModelAdapter.swift in Sources */,
+				9185BE6523F44C16001EFEB0 /* KeyValueDatePickerView.swift in Sources */,
+				915D927A24E69BF3005351B6 /* ServicesView.swift in Sources */,
+				916B9C8D2508B42F00B07631 /* QuestionnaireForSettlingView.swift in Sources */,
+				9145591C251CB13A0012B51F /* CalendarItemsRangeBuilder.swift in Sources */,
+				911D0C2B25260A6200AF5A84 /* MultipleServicesViewModel.swift in Sources */,
+				9145592D251DDC280012B51F /* DisplayCalendarItemsRangeBuilder.swift in Sources */,
+				91455905251C93FF0012B51F /* NibLoadableView.swift in Sources */,
+				915D927E24E69CB6005351B6 /* LoadingView.swift in Sources */,
+				916890782523C3E2001D3002 /* Bundle+Current.swift in Sources */,
+				919A086C2519FD9700100C77 /* DragableContainerView.swift in Sources */,
+				91455919251CAC5F0012B51F /* Calendar+Extensions.swift in Sources */,
+				91FD4E292524D02B006DEFD2 /* MultipleServicesView.swift in Sources */,
+				911C8E0F251B4122000E4160 /* BadgeView.swift in Sources */,
+				919A086A2519DF5D00100C77 /* GeometryGetter.swift in Sources */,
+				916890732523C37B001D3002 /* Instantiable.swift in Sources */,
+				9145590D251C9C1B0012B51F /* CalendarViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91127C7823A3A01A0098CAFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91AA66EA24EFD7780005EEBD /* ServicesViewModelTests.swift in Sources */,
+				9191DCD72403CF5A00802806 /* DateFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91127C7F23A3A01A0098CAFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91127C7223A3A01A0098CAFE /* HotelionIOSUI */;
+			targetProxy = 91127C7E23A3A01A0098CAFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		91127C8523A3A01A0098CAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		91127C8623A3A01A0098CAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		91127C8823A3A01A0098CAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = G6KD9UARPF;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HotelionIOSUI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vp.HotelionIOSUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91127C8923A3A01A0098CAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = G6KD9UARPF;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HotelionIOSUI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vp.HotelionIOSUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		91127C8B23A3A01A0098CAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HotelionIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vp.HotelionIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91127C8C23A3A01A0098CAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HotelionIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vp.HotelionIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91127C6D23A3A01A0098CAFE /* Build configuration list for PBXProject "HotelionIOSUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91127C8523A3A01A0098CAFE /* Debug */,
+				91127C8623A3A01A0098CAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91127C8723A3A01A0098CAFE /* Build configuration list for PBXNativeTarget "HotelionIOSUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91127C8823A3A01A0098CAFE /* Debug */,
+				91127C8923A3A01A0098CAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91127C8A23A3A01A0098CAFE /* Build configuration list for PBXNativeTarget "HotelionIOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91127C8B23A3A01A0098CAFE /* Debug */,
+				91127C8C23A3A01A0098CAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91127C6A23A3A01A0098CAFE /* Project object */;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:HotelionDomain/HotelionDomain.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HotelionIOSUI/HotelionIOSUI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HotelionCommon/HotelionCommon.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HotelionServices/HotelionServices.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HotelionAuth/HotelionAuth.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "container:HotelionMain/HotelionMain.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HotelionMain/Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HotelionMain/HotelionMain.xcodeproj">
+   </FileRef>
+</Workspace>

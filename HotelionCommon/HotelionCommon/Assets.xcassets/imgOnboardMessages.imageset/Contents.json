@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "imgOnboardMessages.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
