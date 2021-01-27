@@ -2,27 +2,24 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:HotelionDomain/HotelionDomain.xcodeproj">
+      location = "group:HotelionFastCheckIn/HotelionFastCheckIn.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:HotelionIOSUI/HotelionIOSUI.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:HotelionCommon/HotelionCommon.xcodeproj">
+      location = "group:HotelionAuth/HotelionAuth.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:HotelionServices/HotelionServices.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:HotelionAuth/HotelionAuth.xcodeproj">
+      location = "group:HotelionOrders/HotelionOrders.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HotelionCommon/HotelionCommon.xcodeproj">
    </FileRef>
    <FileRef
       location = "container:HotelionMain/HotelionMain.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:HotelionMain/Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:HotelionMain/HotelionMain.xcodeproj">
    </FileRef>
 </Workspace>

@@ -19,7 +19,7 @@ public final class ServicesListHeaderReusableView: UICollectionReusableView {
 
     private func setupUI() {
         titleLabel.textColor = .black
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        titleLabel.font = UIFont.kSectionHeaderText
     }
 
     // MARK: - Fill

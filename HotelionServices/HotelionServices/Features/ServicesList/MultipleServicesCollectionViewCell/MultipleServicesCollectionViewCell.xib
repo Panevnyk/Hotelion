@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MultipleServicesCollectionViewCell" id="gTV-IL-0wX" customClass="MultipleServicesCollectionViewCell" customModule="HotelionServices" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-7F-Vus" customClass="BaseTapableView" customModule="HotelionCommon">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="142"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icDoNotDisturb" translatesAutoresizingMaskIntoConstraints="NO" id="chN-I4-OZk">
+                                <rect key="frame" x="65" y="56.5" width="12" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="DMR-bi-HWX"/>
+                                    <constraint firstAttribute="width" constant="12" id="Vli-Xl-2Ui"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qm8-KD-8GD">
+                                <rect key="frame" x="93" y="6" width="191" height="130"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qm8-KD-8GD" secondAttribute="trailing" constant="16" id="GQ9-V2-1CH"/>
+                            <constraint firstItem="qm8-KD-8GD" firstAttribute="top" secondItem="2ge-7F-Vus" secondAttribute="top" constant="6" id="Uyo-V9-MaZ"/>
+                            <constraint firstAttribute="bottom" secondItem="qm8-KD-8GD" secondAttribute="bottom" constant="6" id="Zz5-e5-dVx"/>
+                            <constraint firstItem="qm8-KD-8GD" firstAttribute="leading" secondItem="chN-I4-OZk" secondAttribute="trailing" constant="16" id="gVx-UE-Reu"/>
+                            <constraint firstItem="chN-I4-OZk" firstAttribute="centerY" secondItem="2ge-7F-Vus" secondAttribute="centerY" id="h8E-2e-JFl"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wc-Lw-dqZ" customClass="BaseTapableView" customModule="HotelionCommon">
+                        <rect key="frame" x="0.0" y="158" width="142" height="142"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCalling" translatesAutoresizingMaskIntoConstraints="NO" id="qum-2t-aQ0">
+                                <rect key="frame" x="56" y="56" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Crh-Ym-anv"/>
+                                    <constraint firstAttribute="height" constant="30" id="Iak-X5-CRP"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qum-2t-aQ0" firstAttribute="centerY" secondItem="1wc-Lw-dqZ" secondAttribute="centerY" id="8WQ-g7-Bn1"/>
+                            <constraint firstAttribute="width" secondItem="1wc-Lw-dqZ" secondAttribute="height" multiplier="1:1" id="VDH-e3-xdd"/>
+                            <constraint firstItem="qum-2t-aQ0" firstAttribute="centerX" secondItem="1wc-Lw-dqZ" secondAttribute="centerX" id="ZBR-sd-7tB"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFR-Nn-avg" customClass="BaseTapableView" customModule="HotelionCommon">
+                        <rect key="frame" x="158" y="158" width="142" height="142"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMessage" translatesAutoresizingMaskIntoConstraints="NO" id="Mbi-Bc-uor">
+                                <rect key="frame" x="57.5" y="63" width="27" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="rPF-3O-jo3"/>
+                                    <constraint firstAttribute="height" constant="16" id="tei-OV-XGz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mbi-Bc-uor" firstAttribute="centerX" secondItem="KFR-Nn-avg" secondAttribute="centerX" id="deZ-c5-HE7"/>
+                            <constraint firstItem="Mbi-Bc-uor" firstAttribute="centerY" secondItem="KFR-Nn-avg" secondAttribute="centerY" id="tL0-rR-gev"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="1wc-Lw-dqZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3mm-H7-oBE"/>
+                <constraint firstItem="chN-I4-OZk" firstAttribute="centerX" secondItem="qum-2t-aQ0" secondAttribute="centerX" id="4mn-QK-87U"/>
+                <constraint firstItem="KFR-Nn-avg" firstAttribute="height" secondItem="1wc-Lw-dqZ" secondAttribute="height" id="6Xi-XW-sGr"/>
+                <constraint firstAttribute="trailing" secondItem="2ge-7F-Vus" secondAttribute="trailing" id="982-ex-qin"/>
+                <constraint firstAttribute="bottom" secondItem="1wc-Lw-dqZ" secondAttribute="bottom" id="Meh-Xd-SLU"/>
+                <constraint firstAttribute="trailing" secondItem="KFR-Nn-avg" secondAttribute="trailing" id="RIg-jH-fg3"/>
+                <constraint firstItem="2ge-7F-Vus" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.5" constant="-8" id="Y0H-JJ-WBn"/>
+                <constraint firstAttribute="bottom" secondItem="KFR-Nn-avg" secondAttribute="bottom" id="ZlK-su-7cM"/>
+                <constraint firstItem="KFR-Nn-avg" firstAttribute="width" secondItem="1wc-Lw-dqZ" secondAttribute="width" id="bZ3-tN-h3b"/>
+                <constraint firstItem="2ge-7F-Vus" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kF8-zZ-DI7"/>
+                <constraint firstItem="1wc-Lw-dqZ" firstAttribute="height" secondItem="2ge-7F-Vus" secondAttribute="height" id="qcF-Qi-xky"/>
+                <constraint firstItem="2ge-7F-Vus" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vpy-Vi-fZU"/>
+            </constraints>
+            <size key="customSize" width="308" height="292"/>
+            <connections>
+                <outlet property="callingContainerView" destination="1wc-Lw-dqZ" id="6Xb-rc-Ksf"/>
+                <outlet property="callingImageView" destination="qum-2t-aQ0" id="RPh-Cu-ayc"/>
+                <outlet property="doNotDisturbContainerView" destination="2ge-7F-Vus" id="CoA-ap-BSg"/>
+                <outlet property="doNotDisturbImageView" destination="chN-I4-OZk" id="WND-r5-eyR"/>
+                <outlet property="doNotDisturbLabel" destination="qm8-KD-8GD" id="wPT-E2-upL"/>
+                <outlet property="messageContainerView" destination="KFR-Nn-avg" id="SRh-5R-gkD"/>
+                <outlet property="messageImageView" destination="Mbi-Bc-uor" id="TwP-Mk-zZS"/>
+            </connections>
+            <point key="canvasLocation" x="273.91304347826087" y="188.83928571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icCalling" width="30" height="30"/>
+        <image name="icDoNotDisturb" width="13" height="29"/>
+        <image name="icMessage" width="27" height="16"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

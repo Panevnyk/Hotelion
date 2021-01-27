@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftUI
-import HotelionIOSUI
+import HotelionCommon
 
 final class AppCoordinator {
     // MARK: - Properties
@@ -18,7 +18,7 @@ final class AppCoordinator {
 
     // Coordinators
     private var authCoordinator: AuthCoordinator?
-    private var servicesListCoordinator: ServicesListCoordinator?
+    private var mainTabBarCoordinator: MainTabBarCoordinator?
 
     // MARK: - Inits
     init?(window: UIWindow?, serviceFactory: ServiceFactoryProtocol = ServiceFactory()) {
@@ -35,7 +35,7 @@ final class AppCoordinator {
         window.makeKeyAndVisible()
 
 //        startAuthCoordinator()
-        successLogin()
+        startMainTabBarCoordinator()
     }
 
     func startAuthCoordinator() {
@@ -47,38 +47,48 @@ final class AppCoordinator {
         authCoordinator.delegate = self
 
         self.authCoordinator = authCoordinator
-        self.servicesListCoordinator = nil
+        self.mainTabBarCoordinator = nil
+    }
+
+    func startMainTabBarCoordinator(currentBooking: Booking) {
+        let mainTabBarCoordinator = MainTabBarCoordinator(
+            navigationController: navigationController,
+            serviceFactory: serviceFactory)
+        mainTabBarCoordinator.start(currentBooking: currentBooking)
+
+        self.mainTabBarCoordinator = mainTabBarCoordinator
+        self.authCoordinator = nil
+    }
+
+    func startMainTabBarCoordinator() {
+        let mainTabBarCoordinator = MainTabBarCoordinator(
+            navigationController: navigationController,
+            serviceFactory: serviceFactory)
+        mainTabBarCoordinator.start()
+
+        self.mainTabBarCoordinator = mainTabBarCoordinator
+        self.authCoordinator = nil
     }
 }
 
 // MARK: - AuthCoordinatorDelegate
 extension AppCoordinator: AuthCoordinatorDelegate {
     func successLogin() {
-        let servicesListCoordinator = ServicesListCoordinator(
-            navigationController: navigationController,
-            serviceFactory: serviceFactory)
-        servicesListCoordinator.start()
+        serviceFactory.makeBookingsLoader().loadBookings { [weak self] (result) in
+            guard let self = self else { return }
 
-        self.servicesListCoordinator = servicesListCoordinator
-        self.authCoordinator = nil
-//        let servicesCoordinator = ServicesCoordinator(
-//            navigationController: navigationController,
-//            serviceFactory: serviceFactory)
-//        servicesCoordinator.start()
-//
-//        self.servicesCoordinator = servicesCoordinator
-//        self.authCoordinator = nil
+            switch result {
+            case .success(let bookings):
+                if let currentBooking = bookings.first {
+                    self.startMainTabBarCoordinator(currentBooking: currentBooking)
+                } else {
+                    self.startMainTabBarCoordinator()
+                }
+            case .failure(let error):
+                NotificationBannerHelper.showBanner(error)
+            }
+        }
     }
 
     func logOut() {}
-}
-
-// MARK: - QuestionnaireForSettlingCoordinatorDelegate
-extension AppCoordinator: QuestionnaireForSettlingCoordinatorDelegate {
-    func questionnaireSendedSuccessfully() {
-//        servicesCoordinator = ServicesCoordinator(
-//            navigationController: navigationController,
-//            serviceFactory: serviceFactory)
-//        servicesCoordinator?.start()
-    }
 }

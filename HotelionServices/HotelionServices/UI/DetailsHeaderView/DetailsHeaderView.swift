@@ -195,10 +195,10 @@ private extension DetailsHeaderView {
         btnBack.setImage(backImage, for: .normal)
         btnBack.tintColor = .black
 
-        lbTitle.font = UIFont(name: "AvenirNextW1G-Heavy", size: 20)
+        lbTitle.font = UIFont.kSectionHeaderText
         lbTitle.textColor = UIColor.black
 
-        bigTitleLabel.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        bigTitleLabel.font = UIFont.kBigTitleText
         bigTitleLabel.textColor = .white
 
         pageIndicator.translatesAutoresizingMaskIntoConstraints = false

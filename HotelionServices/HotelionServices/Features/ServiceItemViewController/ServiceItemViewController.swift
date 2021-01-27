@@ -7,6 +7,8 @@
 
 import UIKit
 import HotelionCommon
+import RxSwift
+import RxCocoa
 
 public protocol ServiceItemCoordinatorDelegate: BaseCoordinatorDelegate {}
 
@@ -18,6 +20,7 @@ public final class ServiceItemViewController: UIViewController {
     @IBOutlet private var detailsHeaderView: DetailsHeaderView!
     @IBOutlet private var serviceOptionsViewWithContainer: OptionsViewWithContainer!
     @IBOutlet private var deliveryOptionsWithContainer: OptionsViewWithContainer!
+    @IBOutlet private var commentTextFieldWithContainer: SUTextFieldWithContainer!
     @IBOutlet private var expandableDescriptionWithContainer: ExpandableDescriptionWithContainer!
     @IBOutlet private var priceView: PriceView!
 
@@ -27,12 +30,16 @@ public final class ServiceItemViewController: UIViewController {
     private var deliveryOptionsView: OptionsView {
         deliveryOptionsWithContainer.wrappedView
     }
+    private var commentTextField: SUTextField {
+        commentTextFieldWithContainer.wrappedView
+    }
     private var expandableDescriptionView: ExpandableDescriptionView {
         expandableDescriptionWithContainer.wrappedView
     }
 
     // ViewModel
     public var viewModel: ServiceItemViewModelProtocol!
+    private let disposeBag = DisposeBag()
 
     // Delegates
     public weak var coordinatorDelegate: ServiceItemCoordinatorDelegate?
@@ -41,15 +48,30 @@ public final class ServiceItemViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        bindViewModel()
+        setupBinding()
     }
 }
 
 // MARK: - ViewModels
 private extension ServiceItemViewController {
+    func setupBinding() {
+        bindViewModel()
+        bindUI()
+    }
+
     func bindViewModel() {
         expandableDescriptionView.bind(textObservable: viewModel.descriptionTextObservable)
         priceView.bind(priceObservable: viewModel.totalPriceObservable)
+
+        commentTextField.textField.rx.text
+            .bind(to: viewModel.commentText)
+            .disposed(by: disposeBag)
+    }
+
+    func bindUI() {
+        viewModel.isDescriptionBlockHiddenObservable
+            .bind(to: expandableDescriptionWithContainer.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -62,7 +84,11 @@ private extension ServiceItemViewController {
 
         serviceOptionsViewWithContainer.setText("Options")
         deliveryOptionsWithContainer.setText("Delivery")
+        commentTextFieldWithContainer.setText("Write a comment")
         expandableDescriptionWithContainer.setText("Description")
+
+        commentTextField.placeholder = "Comment (optional)"
+        commentTextField.config = .name
 
         serviceOptionsView.options = viewModel.getServiceOptions()
         serviceOptionsView.delegate = self
@@ -71,6 +97,8 @@ private extension ServiceItemViewController {
         deliveryOptionsView.delegate = self
 
         expandableDescriptionView.delegate = self
+
+        priceView.delegate = self
     }
 }
 
@@ -102,6 +130,19 @@ extension ServiceItemViewController: OptionsViewDelegate, ExpandableDescriptionV
 
     func getScreenRootView() -> UIView {
         return view
+    }
+}
+
+// MARK: - PriceViewDelegate
+extension ServiceItemViewController: PriceViewDelegate {
+    func didTapOrder(in view: PriceView) {
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let orderAction = UIAlertAction(title: "Order", style: .default) { [weak self] _ in
+            self?.viewModel.didTapOrder()
+        }
+        AlertHelper.show(title: "Order confirmation",
+                         message: viewModel.getService().name,
+                         alertActions: [cancelAction, orderAction])
     }
 }
 

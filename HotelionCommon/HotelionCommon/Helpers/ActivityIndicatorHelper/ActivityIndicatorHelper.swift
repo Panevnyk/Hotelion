@@ -12,26 +12,25 @@ public final class ActivityIndicatorHelper {
     public static let shared = ActivityIndicatorHelper()
     
     private weak var activityIndicatorView: ActivityIndicatorView?
+    private var isShow = false
     
     public func show() {
-        hide()
-        createActivityIndicatorView()
+        if let vc = UIApplication.presentationViewController {
+            show(onView: vc.view)
+        }
     }
 
     public func show(onView view: UIView) {
-        hide()
+        guard !isShow else { return }
+
+        isShow = true
         createActivityIndicatorView(onView: view)
     }
     
     public func hide() {
+        isShow = false
         if let activityIndicatorView = activityIndicatorView {
             activityIndicatorView.hide()
-        }
-    }
-    
-    private func createActivityIndicatorView() {
-        if let vc = UIApplication.presentationViewController {
-            createActivityIndicatorView(onView: vc.view)
         }
     }
     

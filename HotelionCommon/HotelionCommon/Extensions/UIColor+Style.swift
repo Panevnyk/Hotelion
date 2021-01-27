@@ -10,23 +10,47 @@ import UIKit
 public extension UIColor {
 
     @nonobjc class var kViolet: UIColor {
-        return UIColor(red: 120.0 / 255.0, green: 81.0 / 255.0, blue: 176.0 / 255.0, alpha: 1.0)
+        return UIColor(red: 145.0 / 255.0, green: 137.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
     }
 
     @nonobjc class var kNotActiveViolet: UIColor {
-        return UIColor(red: 221.0 / 255.0, green: 211.0 / 255.0, blue: 235.0 / 255.0, alpha: 1.0)
+        return UIColor(red: 210.0 / 255.0, green: 207.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
     }
 
     @nonobjc class var kBackground: UIColor {
         return UIColor(red: 246.0 / 255.0, green: 246.0 / 255.0, blue: 246.0 / 255.0, alpha: 1.0)
     }
 
-    @nonobjc class var kCloudyBlue: UIColor {
-        return UIColor(red: 188.0 / 255.0, green: 203.0 / 255.0, blue: 214.0 / 255.0, alpha: 1.0)
+    @nonobjc class var kGrayText: UIColor {
+        return UIColor(red: 127.0 / 255.0, green: 127.0 / 255.0, blue: 127.0 / 255.0, alpha: 1.0)
     }
 
-    @nonobjc class var kFrogGreen: UIColor {
-        return UIColor(red: 58.0 / 255.0, green: 206.0 / 255.0, blue: 1.0 / 255.0, alpha: 1.0)
+    @nonobjc class var kSeparatorGray: UIColor {
+        return UIColor(red: 218.0 / 255.0, green: 220.0 / 255.0, blue: 221.0 / 255.0, alpha: 1.0)
+    }
+
+    @nonobjc class var kGreen: UIColor {
+        return UIColor(red: 161.0 / 255.0, green: 202.0 / 255.0, blue: 45.0 / 255.0, alpha: 1.0)
+    }
+
+    @nonobjc class var kOrange: UIColor {
+        return UIColor(red: 255.0 / 255.0, green: 171.0 / 255.0, blue: 35.0 / 255.0, alpha: 1.0)
+    }
+
+    @nonobjc class var kRed: UIColor {
+        return UIColor(red: 248.0 / 255.0, green: 126.0 / 255.0, blue: 126.0 / 255.0, alpha: 1.0)
+    }
+
+    @nonobjc class var kFacebook: UIColor {
+        return UIColor(red: 56.0 / 255.0, green: 124.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
+    }
+
+
+    // -------------
+
+
+    @nonobjc class var kCloudyBlue: UIColor {
+        return UIColor(red: 188.0 / 255.0, green: 203.0 / 255.0, blue: 214.0 / 255.0, alpha: 1.0)
     }
 
     @nonobjc class var kDarkPeach: UIColor {
@@ -123,10 +147,6 @@ public extension UIColor {
 
     @nonobjc class var kDeclinedStatusRed: UIColor {
         return UIColor(red: 253.0 / 255.0, green: 91.0 / 255.0, blue: 46.0 / 255.0, alpha: 1.0)
-    }
-
-    @nonobjc class var kSeparatorGray: UIColor {
-        return UIColor(red: 218.0 / 255.0, green: 220.0 / 255.0, blue: 221.0 / 255.0, alpha: 1.0)
     }
 
     @nonobjc class var kTextDarkGray: UIColor {

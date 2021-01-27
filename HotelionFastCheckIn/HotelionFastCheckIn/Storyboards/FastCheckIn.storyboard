@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Check In Main View Controller-->
+        <scene sceneID="EVZ-T1-XgR">
+            <objects>
+                <viewController storyboardIdentifier="CheckInMainViewController" id="6t1-Sc-ArQ" customClass="CheckInMainViewController" customModule="HotelionFastCheckIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tMf-ef-vtO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-H1-5DI" customClass="HeaderView" customModule="HotelionCommon">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
+                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="JV5-JA-2kV"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vG2-uE-14b">
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsQ-Ho-Ag9">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="264"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="wYK-aW-Qpz">
+                                                <rect key="frame" x="16" y="32" width="382" height="200"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13O-Df-ceB" customClass="MessageView" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="124"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOP-LJ-bvP" customClass="VioletButton" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="156" width="382" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="CXZ-nB-OCX"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="goToFastCheckInAction:" destination="6t1-Sc-ArQ" eventType="touchUpInside" id="uHF-DY-UZc"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="wYK-aW-Qpz" firstAttribute="leading" secondItem="OsQ-Ho-Ag9" secondAttribute="leading" constant="16" id="9QS-Kb-DXu"/>
+                                            <constraint firstAttribute="trailing" secondItem="wYK-aW-Qpz" secondAttribute="trailing" constant="16" id="RRy-zx-gCa"/>
+                                            <constraint firstAttribute="bottom" secondItem="wYK-aW-Qpz" secondAttribute="bottom" constant="32" id="b4X-Az-Fq7"/>
+                                            <constraint firstItem="wYK-aW-Qpz" firstAttribute="top" secondItem="OsQ-Ho-Ag9" secondAttribute="top" constant="32" id="vyn-67-SCd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OsQ-Ho-Ag9" secondAttribute="trailing" id="85I-OD-ZYk"/>
+                                    <constraint firstAttribute="bottom" secondItem="OsQ-Ho-Ag9" secondAttribute="bottom" id="9aN-2F-BDz"/>
+                                    <constraint firstItem="OsQ-Ho-Ag9" firstAttribute="leading" secondItem="vG2-uE-14b" secondAttribute="leading" id="UtD-he-JbX"/>
+                                    <constraint firstItem="OsQ-Ho-Ag9" firstAttribute="top" secondItem="vG2-uE-14b" secondAttribute="top" id="pcM-eZ-bsK"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c7O-Va-jIL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vG2-uE-14b" secondAttribute="trailing" id="2e9-iw-Hdu"/>
+                            <constraint firstAttribute="trailing" secondItem="bAf-H1-5DI" secondAttribute="trailing" id="IiG-zK-PJ4"/>
+                            <constraint firstItem="c7O-Va-jIL" firstAttribute="bottom" secondItem="vG2-uE-14b" secondAttribute="bottom" id="VXJ-Xy-foA"/>
+                            <constraint firstItem="OsQ-Ho-Ag9" firstAttribute="height" secondItem="tMf-ef-vtO" secondAttribute="height" priority="250" constant="-124" id="aQ9-iX-uBs"/>
+                            <constraint firstItem="bAf-H1-5DI" firstAttribute="leading" secondItem="tMf-ef-vtO" secondAttribute="leading" id="fEr-PF-pAe"/>
+                            <constraint firstItem="vG2-uE-14b" firstAttribute="top" secondItem="bAf-H1-5DI" secondAttribute="bottom" id="g4v-LL-iTc"/>
+                            <constraint firstItem="bAf-H1-5DI" firstAttribute="top" secondItem="tMf-ef-vtO" secondAttribute="top" id="jud-Ok-dKz"/>
+                            <constraint firstItem="vG2-uE-14b" firstAttribute="leading" secondItem="tMf-ef-vtO" secondAttribute="leading" id="tCT-zG-n7X"/>
+                            <constraint firstItem="OsQ-Ho-Ag9" firstAttribute="width" secondItem="tMf-ef-vtO" secondAttribute="width" id="vws-8d-gSk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="SOP-LJ-bvP" id="fTU-Ca-c7s"/>
+                        <outlet property="headerView" destination="bAf-H1-5DI" id="18X-3a-uiA"/>
+                        <outlet property="messageView" destination="13O-Df-ceB" id="coO-dy-abl"/>
+                        <outlet property="scrollContainerView" destination="OsQ-Ho-Ag9" id="wRy-5V-qDh"/>
+                        <outlet property="scrollView" destination="vG2-uE-14b" id="ClJ-3f-H9O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Tg-jy-r76" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2033.3333333333335" y="-244.41964285714283"/>
+        </scene>
+        <!--Fast Check In View Controller-->
+        <scene sceneID="epF-Ur-AYW">
+            <objects>
+                <viewController storyboardIdentifier="FastCheckInViewController" id="QWi-nA-znJ" customClass="FastCheckInViewController" customModule="HotelionFastCheckIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0J8-G0-wtE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="766"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAx-p1-823" customClass="HeaderView" customModule="HotelionCommon">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="1fh-dM-Ik1"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDx-RE-1lS">
+                                <rect key="frame" x="0.0" y="124" width="320" height="642"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-F6-ofg">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="584.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="8x6-2i-T0n">
+                                                <rect key="frame" x="16" y="28" width="288" height="104"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgx-ny-1tX" customClass="StepView" customModule="HotelionFastCheckIn" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="26"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="26" id="BoT-vw-CDE"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYR-OJ-m9U">
+                                                        <rect key="frame" x="0.0" y="54" width="288" height="50"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myX-gK-IiP" customClass="QRCodeView" customModule="HotelionFastCheckIn" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="132" width="320" height="266.5"/>
+                                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="myX-gK-IiP" secondAttribute="height" multiplier="12:10" id="rdu-yE-s6R"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRz-EG-rHw">
+                                                <rect key="frame" x="16" y="398.5" width="128" height="1"/>
+                                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="nsm-B4-Z6q"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-bV-d5T">
+                                                <rect key="frame" x="176" y="398.5" width="128" height="1"/>
+                                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="gfU-aZ-bai"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWu-FZ-wcf">
+                                                <rect key="frame" x="152" y="389" width="16" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDO-p5-XeG" customClass="SUTextField" customModule="HotelionCommon">
+                                                <rect key="frame" x="16" y="441.5" width="288" height="67"/>
+                                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="67" id="OQR-Zj-zL7"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N3-8R-8wi" customClass="VioletButton" customModule="HotelionCommon">
+                                                <rect key="frame" x="16" y="516.5" width="288" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="b5z-1Z-6AN"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="nextStepAction" destination="QWi-nA-znJ" eventType="touchUpInside" id="xdL-WI-V0X"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="XRz-EG-rHw" firstAttribute="top" secondItem="myX-gK-IiP" secondAttribute="bottom" id="1nL-1x-8A9"/>
+                                            <constraint firstItem="PDO-p5-XeG" firstAttribute="leading" secondItem="PWe-F6-ofg" secondAttribute="leading" constant="16" id="2jf-vs-tji"/>
+                                            <constraint firstAttribute="trailing" secondItem="8x6-2i-T0n" secondAttribute="trailing" constant="16" id="Ddp-ZE-f96"/>
+                                            <constraint firstItem="jWu-FZ-wcf" firstAttribute="centerY" secondItem="XRz-EG-rHw" secondAttribute="centerY" id="Hrt-yW-8bG"/>
+                                            <constraint firstItem="PDO-p5-XeG" firstAttribute="top" secondItem="jWu-FZ-wcf" secondAttribute="bottom" constant="32" id="L1h-pa-QAo"/>
+                                            <constraint firstItem="jWu-FZ-wcf" firstAttribute="centerX" secondItem="PWe-F6-ofg" secondAttribute="centerX" id="MbN-Im-kD2"/>
+                                            <constraint firstAttribute="trailing" secondItem="Veg-bV-d5T" secondAttribute="trailing" constant="16" id="Pxv-eh-LFo"/>
+                                            <constraint firstAttribute="bottom" secondItem="4N3-8R-8wi" secondAttribute="bottom" constant="24" id="T22-DH-yIs"/>
+                                            <constraint firstAttribute="trailing" secondItem="4N3-8R-8wi" secondAttribute="trailing" constant="16" id="UIH-Bh-wD9"/>
+                                            <constraint firstItem="8x6-2i-T0n" firstAttribute="top" secondItem="PWe-F6-ofg" secondAttribute="top" constant="28" id="YFt-Ni-7ho"/>
+                                            <constraint firstItem="8x6-2i-T0n" firstAttribute="leading" secondItem="PWe-F6-ofg" secondAttribute="leading" constant="16" id="Zhl-DM-ZrE"/>
+                                            <constraint firstItem="4N3-8R-8wi" firstAttribute="leading" secondItem="PWe-F6-ofg" secondAttribute="leading" constant="16" id="dcB-XD-5MJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="myX-gK-IiP" secondAttribute="trailing" id="gol-3j-2YL"/>
+                                            <constraint firstAttribute="trailing" secondItem="PDO-p5-XeG" secondAttribute="trailing" constant="16" id="hKr-xl-sCj"/>
+                                            <constraint firstItem="Veg-bV-d5T" firstAttribute="centerY" secondItem="XRz-EG-rHw" secondAttribute="centerY" id="hVp-Rx-yrU"/>
+                                            <constraint firstItem="Veg-bV-d5T" firstAttribute="width" secondItem="PWe-F6-ofg" secondAttribute="width" multiplier="0.4" id="hZz-Go-Ip9"/>
+                                            <constraint firstItem="myX-gK-IiP" firstAttribute="top" secondItem="8x6-2i-T0n" secondAttribute="bottom" id="hwz-F0-02l"/>
+                                            <constraint firstItem="XRz-EG-rHw" firstAttribute="width" secondItem="PWe-F6-ofg" secondAttribute="width" multiplier="0.4" id="k5i-1e-Qsa"/>
+                                            <constraint firstItem="XRz-EG-rHw" firstAttribute="leading" secondItem="PWe-F6-ofg" secondAttribute="leading" constant="16" id="n2z-HZ-30I"/>
+                                            <constraint firstItem="myX-gK-IiP" firstAttribute="leading" secondItem="PWe-F6-ofg" secondAttribute="leading" id="v1M-rj-ca0"/>
+                                            <constraint firstItem="4N3-8R-8wi" firstAttribute="top" secondItem="PDO-p5-XeG" secondAttribute="bottom" constant="8" id="zrj-6Y-62d"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PWe-F6-ofg" secondAttribute="bottom" id="9BG-wr-8Wy"/>
+                                    <constraint firstItem="PWe-F6-ofg" firstAttribute="top" secondItem="zDx-RE-1lS" secondAttribute="top" id="HIJ-Dp-l3t"/>
+                                    <constraint firstAttribute="trailing" secondItem="PWe-F6-ofg" secondAttribute="trailing" id="JXv-PT-gxP"/>
+                                    <constraint firstItem="PWe-F6-ofg" firstAttribute="leading" secondItem="zDx-RE-1lS" secondAttribute="leading" id="gwj-bD-B40"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8q5-DA-PDg"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WAx-p1-823" firstAttribute="leading" secondItem="8q5-DA-PDg" secondAttribute="leading" id="0eh-xs-RbA"/>
+                            <constraint firstAttribute="bottom" secondItem="zDx-RE-1lS" secondAttribute="bottom" id="6mN-YG-nxQ"/>
+                            <constraint firstItem="WAx-p1-823" firstAttribute="trailing" secondItem="8q5-DA-PDg" secondAttribute="trailing" id="EhP-re-PSq"/>
+                            <constraint firstItem="PWe-F6-ofg" firstAttribute="height" secondItem="0J8-G0-wtE" secondAttribute="height" priority="250" constant="-124" id="MYh-zm-ujj"/>
+                            <constraint firstItem="zDx-RE-1lS" firstAttribute="leading" secondItem="8q5-DA-PDg" secondAttribute="leading" id="SYJ-h9-lRc"/>
+                            <constraint firstItem="WAx-p1-823" firstAttribute="top" secondItem="0J8-G0-wtE" secondAttribute="top" id="eos-ik-eNu"/>
+                            <constraint firstItem="8q5-DA-PDg" firstAttribute="trailing" secondItem="zDx-RE-1lS" secondAttribute="trailing" id="hne-qb-b3Y"/>
+                            <constraint firstItem="zDx-RE-1lS" firstAttribute="top" secondItem="WAx-p1-823" secondAttribute="bottom" id="p1c-qD-uNl"/>
+                            <constraint firstItem="PWe-F6-ofg" firstAttribute="width" secondItem="0J8-G0-wtE" secondAttribute="width" id="tZp-78-EOU"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="320" height="766"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="qYR-OJ-m9U" id="H9N-D8-chG"/>
+                        <outlet property="headerView" destination="WAx-p1-823" id="51g-en-kvl"/>
+                        <outlet property="hotelCodeTextField" destination="PDO-p5-XeG" id="C6c-6l-ZWs"/>
+                        <outlet property="nextStepButton" destination="4N3-8R-8wi" id="EPO-tR-i0W"/>
+                        <outlet property="orLabel" destination="jWu-FZ-wcf" id="iIz-Rc-FJ1"/>
+                        <outlet property="qrCodeView" destination="myX-gK-IiP" id="8Cb-PA-SoJ"/>
+                        <outlet property="scrollView" destination="zDx-RE-1lS" id="LfV-71-kbA"/>
+                        <outlet property="separatorOneView" destination="XRz-EG-rHw" id="N3l-Lk-2oy"/>
+                        <outlet property="separatorSecondView" destination="Veg-bV-d5T" id="2f5-6N-ajX"/>
+                        <outlet property="stepView" destination="pgx-ny-1tX" id="Czh-k4-gA3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eug-xv-Gxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1255.072463768116" y="-288.61607142857139"/>
+        </scene>
+        <!--Digital Signature View Controller-->
+        <scene sceneID="YWc-KU-bxk">
+            <objects>
+                <viewController storyboardIdentifier="DigitalSignatureViewController" id="K1D-do-8lN" customClass="DigitalSignatureViewController" customModule="HotelionFastCheckIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P5b-BP-hr2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnc-t0-IS3" customClass="SwiftSignatureView" customModule="SwiftSignatureView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDF-Tg-weB">
+                                <rect key="frame" x="16" y="68" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6QZ-bE-BNc"/>
+                                    <constraint firstAttribute="width" constant="40" id="bXr-3K-aqP"/>
+                                </constraints>
+                                <state key="normal" image="icClean"/>
+                                <connections>
+                                    <action selector="cleanAction:" destination="K1D-do-8lN" eventType="touchUpInside" id="CG5-Qh-T5I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjM-Xm-MiO">
+                                <rect key="frame" x="358" y="68" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="t2a-zj-6Je"/>
+                                    <constraint firstAttribute="height" constant="40" id="wJn-lO-4Eh"/>
+                                </constraints>
+                                <state key="normal" image="icCancel"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="K1D-do-8lN" eventType="touchUpInside" id="vEI-de-NjT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUP-27-kkI" customClass="VioletButton" customModule="HotelionCommon">
+                                <rect key="frame" x="16" y="794" width="382" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ThQ-us-om1"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addSignatureAction:" destination="K1D-do-8lN" eventType="touchUpInside" id="K7Q-BZ-f38"/>
+                                    <action selector="checkInAction" destination="r74-AT-PSb" eventType="touchUpInside" id="XT7-Nx-cQ3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rhf-z5-Od1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vnc-t0-IS3" secondAttribute="trailing" id="Jpg-73-4ZA"/>
+                            <constraint firstItem="Rhf-z5-Od1" firstAttribute="bottom" secondItem="XUP-27-kkI" secondAttribute="bottom" constant="24" id="JxG-oG-X5I"/>
+                            <constraint firstItem="kjM-Xm-MiO" firstAttribute="top" secondItem="Rhf-z5-Od1" secondAttribute="top" constant="24" id="cem-QT-B45"/>
+                            <constraint firstItem="XUP-27-kkI" firstAttribute="leading" secondItem="Rhf-z5-Od1" secondAttribute="leading" constant="16" id="h5q-1P-GQc"/>
+                            <constraint firstItem="vnc-t0-IS3" firstAttribute="leading" secondItem="P5b-BP-hr2" secondAttribute="leading" id="iMk-Bb-Fb8"/>
+                            <constraint firstItem="Rhf-z5-Od1" firstAttribute="trailing" secondItem="kjM-Xm-MiO" secondAttribute="trailing" constant="16" id="jm0-Bf-5MY"/>
+                            <constraint firstAttribute="bottom" secondItem="vnc-t0-IS3" secondAttribute="bottom" id="jzO-j5-PIs"/>
+                            <constraint firstItem="vnc-t0-IS3" firstAttribute="top" secondItem="P5b-BP-hr2" secondAttribute="top" id="l8L-id-WgY"/>
+                            <constraint firstItem="iDF-Tg-weB" firstAttribute="leading" secondItem="Rhf-z5-Od1" secondAttribute="leading" constant="16" id="lLJ-av-FED"/>
+                            <constraint firstItem="iDF-Tg-weB" firstAttribute="top" secondItem="Rhf-z5-Od1" secondAttribute="top" constant="24" id="xUy-26-cfV"/>
+                            <constraint firstItem="Rhf-z5-Od1" firstAttribute="trailing" secondItem="XUP-27-kkI" secondAttribute="trailing" constant="16" id="zH1-3b-24a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addSignatureButton" destination="XUP-27-kkI" id="X9t-dB-f5W"/>
+                        <outlet property="cleanButton" destination="iDF-Tg-weB" id="dBp-6b-iAD"/>
+                        <outlet property="closeButton" destination="kjM-Xm-MiO" id="khb-eW-Xjn"/>
+                        <outlet property="signatureView" destination="vnc-t0-IS3" id="Hbk-9M-Uxn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLc-ow-br6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61" y="-244"/>
+        </scene>
+        <!--Add Personal Info View Controller-->
+        <scene sceneID="Atq-sb-P7x">
+            <objects>
+                <viewController storyboardIdentifier="AddPersonalInfoViewController" id="r74-AT-PSb" customClass="AddPersonalInfoViewController" customModule="HotelionFastCheckIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lYk-6Q-Km1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1347"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCu-7g-rXJ" customClass="HeaderView" customModule="HotelionCommon">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="ERS-2V-AdF"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgN-hm-vED">
+                                <rect key="frame" x="0.0" y="124" width="320" height="1223"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnT-d4-qb8">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1214"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="1r5-93-Qzp">
+                                                <rect key="frame" x="16" y="32" width="288" height="109"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2u-cv-bAl" customClass="StepView" customModule="HotelionFastCheckIn" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="26"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="26" id="5SC-aB-Wts"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9K-MT-QYR">
+                                                        <rect key="frame" x="0.0" y="59" width="288" height="50"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jS-kc-AJQ" customClass="TitleWithValidCheckerView" customModule="HotelionFastCheckIn" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="173" width="288" height="22"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="mRU-nn-48e"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QHV-Cg-Gcw">
+                                                <rect key="frame" x="16" y="203" width="288" height="292"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="So6-NF-mS5" customClass="SUTextField" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="67"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="67" id="eHe-qk-SJr"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oni-V7-fAN" customClass="SUTextField" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="75" width="288" height="67"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="67" id="k3B-ZY-eJh"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwt-iY-af7" customClass="SUTextField" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="150" width="288" height="67"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="67" id="fDq-j4-R8h"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ca-fo-20T" customClass="SUTextField" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="225" width="288" height="67"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="67" id="j35-Dj-cfA"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q43-g0-Odq">
+                                                <rect key="frame" x="16" y="533" width="288" height="367"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOj-5K-uh5" customClass="SUTextField" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="67"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="67" id="olF-Go-tZ6"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pd6-Ye-2Xp" customClass="SUTextField" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="75" width="288" height="67"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="67" id="bTZ-4p-YVS"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mb2-mv-NVc" customClass="SUTextField" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="150" width="288" height="67"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="67" id="APL-Qo-oVF"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opb-Aq-hdB" customClass="SUTextField" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="225" width="288" height="67"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="67" id="a2Y-Fq-pZz"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b81-bG-7vA" customClass="SUDateTextField" customModule="HotelionCommon">
+                                                        <rect key="frame" x="0.0" y="300" width="288" height="67"/>
+                                                        <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="67" id="fPb-ID-8jT"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usb-yv-NgN" customClass="VioletButton" customModule="HotelionCommon">
+                                                <rect key="frame" x="16" y="1146" width="288" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="wge-Xu-j1t"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="checkInAction" destination="r74-AT-PSb" eventType="touchUpInside" id="bdR-v6-lpB"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHD-C8-nJX" customClass="DigitalSignatureView" customModule="HotelionFastCheckIn" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="938" width="288" height="124"/>
+                                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="124" id="Zxq-in-ygx"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NxW-7D-VUG">
+                                                <rect key="frame" x="16" y="1070" width="273.5" height="44"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By check-in you agree to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdB-PO-Ey0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="170.5" height="44"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzL-Gj-bHD">
+                                                        <rect key="frame" x="178.5" y="0.0" width="95" height="44"/>
+                                                        <state key="normal" title="privacy policy"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="CDz-a2-xak"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWS-Pw-qVC" customClass="TitleWithValidCheckerView" customModule="HotelionFastCheckIn" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="503" width="288" height="22"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="Btg-PM-0jz"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afq-0I-jow" customClass="TitleWithValidCheckerView" customModule="HotelionFastCheckIn" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="908" width="288" height="22"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="bKd-80-q8z"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Q43-g0-Odq" firstAttribute="top" secondItem="vWS-Pw-qVC" secondAttribute="bottom" constant="8" id="5qf-vT-28U"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q43-g0-Odq" secondAttribute="trailing" constant="16" id="6gr-NZ-Say"/>
+                                            <constraint firstItem="usb-yv-NgN" firstAttribute="leading" secondItem="AnT-d4-qb8" secondAttribute="leading" constant="16" id="8VU-Nd-OxI"/>
+                                            <constraint firstItem="QHV-Cg-Gcw" firstAttribute="top" secondItem="6jS-kc-AJQ" secondAttribute="bottom" constant="8" id="8Z0-g2-NQF"/>
+                                            <constraint firstItem="6jS-kc-AJQ" firstAttribute="leading" secondItem="AnT-d4-qb8" secondAttribute="leading" constant="16" id="8fR-4R-YmT"/>
+                                            <constraint firstItem="1r5-93-Qzp" firstAttribute="leading" secondItem="AnT-d4-qb8" secondAttribute="leading" constant="16" id="BM6-A1-cWy"/>
+                                            <constraint firstAttribute="trailing" secondItem="afq-0I-jow" secondAttribute="trailing" constant="16" id="GdY-gt-Uyn"/>
+                                            <constraint firstAttribute="trailing" secondItem="usb-yv-NgN" secondAttribute="trailing" constant="16" id="IwZ-Ca-HHl"/>
+                                            <constraint firstItem="xHD-C8-nJX" firstAttribute="top" secondItem="afq-0I-jow" secondAttribute="bottom" constant="8" id="Kdi-oV-XFM"/>
+                                            <constraint firstItem="NxW-7D-VUG" firstAttribute="leading" secondItem="AnT-d4-qb8" secondAttribute="leading" constant="16" id="M9S-Hy-Qbw"/>
+                                            <constraint firstAttribute="trailing" secondItem="xHD-C8-nJX" secondAttribute="trailing" constant="16" id="Pn1-E6-LFI"/>
+                                            <constraint firstItem="6jS-kc-AJQ" firstAttribute="top" secondItem="1r5-93-Qzp" secondAttribute="bottom" constant="32" id="Pp1-EN-eRE"/>
+                                            <constraint firstAttribute="trailing" secondItem="1r5-93-Qzp" secondAttribute="trailing" constant="16" id="QK9-pE-NKB"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NxW-7D-VUG" secondAttribute="trailing" constant="16" id="Qdw-CB-kjg"/>
+                                            <constraint firstItem="xHD-C8-nJX" firstAttribute="leading" secondItem="AnT-d4-qb8" secondAttribute="leading" constant="16" id="SaN-9m-XFY"/>
+                                            <constraint firstItem="1r5-93-Qzp" firstAttribute="top" secondItem="AnT-d4-qb8" secondAttribute="top" constant="32" id="TRL-61-qK0"/>
+                                            <constraint firstItem="NxW-7D-VUG" firstAttribute="top" secondItem="xHD-C8-nJX" secondAttribute="bottom" constant="8" id="TS9-rH-eV9"/>
+                                            <constraint firstItem="afq-0I-jow" firstAttribute="leading" secondItem="AnT-d4-qb8" secondAttribute="leading" constant="16" id="Ttz-mz-JyA"/>
+                                            <constraint firstAttribute="trailing" secondItem="6jS-kc-AJQ" secondAttribute="trailing" constant="16" id="WUp-8U-Ugh"/>
+                                            <constraint firstItem="Q43-g0-Odq" firstAttribute="leading" secondItem="AnT-d4-qb8" secondAttribute="leading" constant="16" id="diK-IY-WeJ"/>
+                                            <constraint firstItem="afq-0I-jow" firstAttribute="top" secondItem="Q43-g0-Odq" secondAttribute="bottom" constant="8" id="jce-UG-h9m"/>
+                                            <constraint firstAttribute="trailing" secondItem="vWS-Pw-qVC" secondAttribute="trailing" constant="16" id="mr3-la-WHg"/>
+                                            <constraint firstItem="QHV-Cg-Gcw" firstAttribute="leading" secondItem="AnT-d4-qb8" secondAttribute="leading" constant="16" id="nHI-1S-Gb5"/>
+                                            <constraint firstAttribute="bottom" secondItem="usb-yv-NgN" secondAttribute="bottom" constant="24" id="ogv-gx-YRI"/>
+                                            <constraint firstItem="usb-yv-NgN" firstAttribute="top" secondItem="NxW-7D-VUG" secondAttribute="bottom" constant="32" id="pSp-fw-KoW"/>
+                                            <constraint firstAttribute="trailing" secondItem="QHV-Cg-Gcw" secondAttribute="trailing" constant="16" id="rFo-ZB-cnA"/>
+                                            <constraint firstItem="vWS-Pw-qVC" firstAttribute="leading" secondItem="AnT-d4-qb8" secondAttribute="leading" constant="16" id="vKE-4q-JgU"/>
+                                            <constraint firstItem="vWS-Pw-qVC" firstAttribute="top" secondItem="QHV-Cg-Gcw" secondAttribute="bottom" constant="8" id="y1L-BX-ccp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="AnT-d4-qb8" secondAttribute="trailing" id="5uw-KE-Y0E"/>
+                                    <constraint firstItem="AnT-d4-qb8" firstAttribute="leading" secondItem="QgN-hm-vED" secondAttribute="leading" id="7gm-m0-BBc"/>
+                                    <constraint firstAttribute="bottom" secondItem="AnT-d4-qb8" secondAttribute="bottom" id="oGp-v0-3uO"/>
+                                    <constraint firstItem="AnT-d4-qb8" firstAttribute="top" secondItem="QgN-hm-vED" secondAttribute="top" id="zZw-4a-hu8"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PkD-Kz-Z0U"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PkD-Kz-Z0U" firstAttribute="trailing" secondItem="QgN-hm-vED" secondAttribute="trailing" id="1Ag-wu-B8w"/>
+                            <constraint firstItem="NCu-7g-rXJ" firstAttribute="leading" secondItem="PkD-Kz-Z0U" secondAttribute="leading" id="7wP-sk-Mdd"/>
+                            <constraint firstItem="AnT-d4-qb8" firstAttribute="height" secondItem="lYk-6Q-Km1" secondAttribute="height" priority="250" constant="-124" id="9O3-Q0-8kJ"/>
+                            <constraint firstAttribute="bottom" secondItem="QgN-hm-vED" secondAttribute="bottom" id="9qY-Z5-big"/>
+                            <constraint firstItem="QgN-hm-vED" firstAttribute="leading" secondItem="PkD-Kz-Z0U" secondAttribute="leading" id="Nze-Ot-Rx3"/>
+                            <constraint firstItem="QgN-hm-vED" firstAttribute="top" secondItem="NCu-7g-rXJ" secondAttribute="bottom" id="akk-r5-Xnu"/>
+                            <constraint firstItem="AnT-d4-qb8" firstAttribute="width" secondItem="lYk-6Q-Km1" secondAttribute="width" id="fPm-29-mZC"/>
+                            <constraint firstItem="NCu-7g-rXJ" firstAttribute="trailing" secondItem="PkD-Kz-Z0U" secondAttribute="trailing" id="pcN-c9-SWb"/>
+                            <constraint firstItem="NCu-7g-rXJ" firstAttribute="top" secondItem="lYk-6Q-Km1" secondAttribute="top" id="vNz-gj-OHQ"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="320" height="1347"/>
+                    <connections>
+                        <outlet property="checkInButton" destination="usb-yv-NgN" id="2X8-XY-wuZ"/>
+                        <outlet property="dateOfBirthTextField" destination="b81-bG-7vA" id="yjY-Wc-edG"/>
+                        <outlet property="descriptionLabel" destination="Y9K-MT-QYR" id="vob-2H-Kfg"/>
+                        <outlet property="digitalSignatureTitleWithValidCheckerView" destination="afq-0I-jow" id="kWi-2N-3m2"/>
+                        <outlet property="digitalSignatureView" destination="xHD-C8-nJX" id="RvP-7A-ugh"/>
+                        <outlet property="emailTextField" destination="kwt-iY-af7" id="yly-PS-C1d"/>
+                        <outlet property="firstnameTextField" destination="So6-NF-mS5" id="4id-J1-LFX"/>
+                        <outlet property="headerView" destination="NCu-7g-rXJ" id="mty-KP-QFK"/>
+                        <outlet property="lastnameTextField" destination="Oni-V7-fAN" id="9Jj-W9-tHu"/>
+                        <outlet property="nationalityTextField" destination="Mb2-mv-NVc" id="t6U-yd-dtj"/>
+                        <outlet property="passportFromTextField" destination="Pd6-Ye-2Xp" id="Pct-ad-BsM"/>
+                        <outlet property="passportNumberTextField" destination="zOj-5K-uh5" id="dZY-8A-qva"/>
+                        <outlet property="passportTitleWithValidCheckerView" destination="vWS-Pw-qVC" id="uXp-6e-i0a"/>
+                        <outlet property="personalTitleWithValidCheckerView" destination="6jS-kc-AJQ" id="QUm-FE-P7b"/>
+                        <outlet property="phoneNumberTextField" destination="2Ca-fo-20T" id="SW3-cH-JvT"/>
+                        <outlet property="placeOfResidenceTextField" destination="Opb-Aq-hdB" id="8HO-Yf-hnm"/>
+                        <outlet property="privacyPolicyButton" destination="qzL-Gj-bHD" id="L2e-jS-0jK"/>
+                        <outlet property="privacyPolicyLabel" destination="LdB-PO-Ey0" id="2oM-Im-tde"/>
+                        <outlet property="scrollView" destination="QgN-hm-vED" id="OPq-WT-8ig"/>
+                        <outlet property="stepView" destination="P2u-cv-bAl" id="3FY-HA-kys"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PrQ-0u-dDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-617.39130434782612" y="-94.084821428571431"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="ekt-kg-tSc">
+            <objects>
+                <viewController storyboardIdentifier="ScannerViewController" id="Xr5-wo-cwd" customClass="ScannerViewController" customModule="HotelionFastCheckIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aRW-ic-wIq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03t-ub-DMB">
+                                <rect key="frame" x="358" y="68" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1VF-8A-Tuc"/>
+                                    <constraint firstAttribute="width" constant="40" id="DrF-CF-30K"/>
+                                </constraints>
+                                <state key="normal" image="icCancel"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="Xr5-wo-cwd" eventType="touchUpInside" id="Ywl-Xd-RIW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sf4-dI-IKH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="03t-ub-DMB" firstAttribute="top" secondItem="sf4-dI-IKH" secondAttribute="top" constant="24" id="ss9-5y-8zJ"/>
+                            <constraint firstItem="sf4-dI-IKH" firstAttribute="trailing" secondItem="03t-ub-DMB" secondAttribute="trailing" constant="16" id="w2B-A1-tsG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="03t-ub-DMB" id="Yi3-R8-8pK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xcg-bv-dt1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819" y="-244"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icCancel" width="18" height="18"/>
+        <image name="icClean" width="24" height="24"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

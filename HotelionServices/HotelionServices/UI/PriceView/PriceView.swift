@@ -10,6 +10,10 @@ import HotelionCommon
 import RxSwift
 import RxCocoa
 
+protocol PriceViewDelegate: class {
+    func didTapOrder(in view: PriceView)
+}
+
 final class PriceView: BaseCustomView {
     // MARK: - Properties
     @IBOutlet private var xibView: UIView!
@@ -20,6 +24,9 @@ final class PriceView: BaseCustomView {
     @IBOutlet private var orderButton: UIButton!
 
     private var priceObservable: Observable<String>?
+
+    // Delegate
+    weak var delegate: PriceViewDelegate?
 
     // DisposeBag
     let disposeBag = DisposeBag()
@@ -45,11 +52,11 @@ extension PriceView {
 // MARK: - UI
 private extension PriceView {
     func setupUI() {
-        totalPriceTitleLabel.font = UIFont.systemFont(ofSize: 12)
+        totalPriceTitleLabel.font = UIFont.kDescriptionText
         totalPriceTitleLabel.textColor = .black
         totalPriceTitleLabel.text = "Total price:"
 
-        totalPriceLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        totalPriceLabel.font = UIFont.kBigTitleText
         totalPriceLabel.textColor = .kViolet
 
         orderButton.backgroundColor = .kViolet
@@ -65,6 +72,6 @@ private extension PriceView {
 // MARK: - Actions
 private extension PriceView {
     @IBAction func orderAction(_ sender: Any) {
-
+        delegate?.didTapOrder(in: self)
     }
 }

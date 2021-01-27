@@ -27,6 +27,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5Z-EE-Ifx">
                                 <rect key="frame" x="0.0" y="134" width="348" height="44"/>
                                 <subviews>
+                                    <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRv-mQ-6aW">
+                                        <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nmg-uI-IeO">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csJ-5G-HWZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="120-0o-xb5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="0.0"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <vibrancyEffect>
+                                                        <blurEffect style="regular"/>
+                                                    </vibrancyEffect>
+                                                </visualEffectView>
+                                            </subviews>
+                                        </view>
+                                        <blurEffect style="dark"/>
+                                    </visualEffectView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCJ-QC-DCU">
                                         <rect key="frame" x="16" y="0.0" width="41.5" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -36,9 +57,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FRv-mQ-6aW" secondAttribute="trailing" id="4gl-LU-D9p"/>
                                     <constraint firstItem="PCJ-QC-DCU" firstAttribute="top" secondItem="E5Z-EE-Ifx" secondAttribute="top" id="7bA-e9-W0b"/>
+                                    <constraint firstAttribute="bottom" secondItem="FRv-mQ-6aW" secondAttribute="bottom" id="F74-Gc-TkE"/>
                                     <constraint firstAttribute="height" constant="44" id="FqQ-pE-o35"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PCJ-QC-DCU" secondAttribute="trailing" constant="16" id="GSb-S4-jVr"/>
+                                    <constraint firstItem="FRv-mQ-6aW" firstAttribute="top" secondItem="E5Z-EE-Ifx" secondAttribute="top" id="Gd0-7I-wPP"/>
+                                    <constraint firstItem="FRv-mQ-6aW" firstAttribute="leading" secondItem="E5Z-EE-Ifx" secondAttribute="leading" id="Ien-tK-8us"/>
                                     <constraint firstItem="PCJ-QC-DCU" firstAttribute="leading" secondItem="E5Z-EE-Ifx" secondAttribute="leading" constant="16" id="ksI-en-RTK"/>
                                     <constraint firstAttribute="bottom" secondItem="PCJ-QC-DCU" secondAttribute="bottom" id="mXH-pK-jhj"/>
                                 </constraints>

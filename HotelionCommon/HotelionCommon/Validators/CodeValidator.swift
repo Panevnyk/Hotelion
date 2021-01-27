@@ -16,7 +16,7 @@ public struct CodeValidator: ValidatorProtocol {
             return .noResult
         }
         
-        if string.count < 9 {
+        if string.count < 6 {
             return .error("Code is not valid")
         }
         

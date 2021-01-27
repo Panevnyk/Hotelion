@@ -20,6 +20,20 @@
                ReferencedContainer = "container:HotelionMain.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "91F0085025AF08A3001C9295"
+               BuildableName = "HotelionFastCheckInTests.xctest"
+               BlueprintName = "HotelionFastCheckInTests"
+               ReferencedContainer = "container:../HotelionFastCheckIn/HotelionFastCheckIn.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,30 +56,40 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "91127C0D23A395610098CAFE"
-               BuildableName = "HotelionDomainTests.xctest"
-               BlueprintName = "HotelionDomain_iOSTests"
-               ReferencedContainer = "container:../HotelionDomain/HotelionDomain.xcodeproj">
+               BlueprintIdentifier = "91DBCAF7255AA12D00B59668"
+               BuildableName = "HotelionAuthTests.xctest"
+               BlueprintName = "HotelionAuthTests"
+               ReferencedContainer = "container:../HotelionAuth/HotelionAuth.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "91127C7B23A3A01A0098CAFE"
-               BuildableName = "HotelionIOSUITests.xctest"
-               BlueprintName = "HotelionIOSUITests"
-               ReferencedContainer = "container:../HotelionIOSUI/HotelionIOSUI.xcodeproj">
+               BlueprintIdentifier = "91DBCB69255AA1FD00B59668"
+               BuildableName = "HotelionCommonTests.xctest"
+               BlueprintName = "HotelionCommonTests"
+               ReferencedContainer = "container:../HotelionCommon/HotelionCommon.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "916B9C6A2507A05C00B07631"
-               BuildableName = "HotelionFireStoreTests.xctest"
-               BlueprintName = "HotelionFireStoreTests"
-               ReferencedContainer = "container:../HotelionFireStore/HotelionFireStore.xcodeproj">
+               BlueprintIdentifier = "91043466256E943B0035A9BF"
+               BuildableName = "HotelionOrdersTests.xctest"
+               BlueprintName = "HotelionOrdersTests"
+               ReferencedContainer = "container:../HotelionOrders/HotelionOrders.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "91614C47255EBB320021417D"
+               BuildableName = "HotelionServicesTests.xctest"
+               BlueprintName = "HotelionServicesTests"
+               ReferencedContainer = "container:../HotelionServices/HotelionServices.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

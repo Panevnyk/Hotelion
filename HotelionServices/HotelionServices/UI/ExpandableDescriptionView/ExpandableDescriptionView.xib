@@ -63,7 +63,7 @@
                         <constraint firstAttribute="height" constant="45" id="zbN-3a-F5H"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ih-yQ-LYt" customClass="BaseSelectableView" customModule="HotelionServices" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ih-yQ-LYt" customClass="BaseSelectableView" customModule="HotelionCommon">
                     <rect key="frame" x="0.0" y="91" width="375" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PI-82-stF">

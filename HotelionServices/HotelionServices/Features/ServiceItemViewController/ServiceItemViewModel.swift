@@ -8,12 +8,16 @@
 import RxSwift
 import RxCocoa
 import RestApiManager
+import HotelionCommon
 
 public protocol ServiceItemViewModelProtocol {
     var service: BehaviorRelay<Service> { get }
 
+    var isDescriptionBlockHiddenObservable: Observable<Bool> { get }
     var descriptionTextObservable: Observable<String> { get }
     var totalPriceObservable: Observable<String> { get }
+
+    var commentText: BehaviorRelay<String?> {  get set }
 
     func getTitle() -> String
     func getHeaderImages() -> [String]
@@ -23,21 +27,29 @@ public protocol ServiceItemViewModelProtocol {
 
     func didSelectServiceOption(by item: Int)
     func didSelectDeliveryOption(by item: Int)
+    func didTapOrder()
 }
 
 public final class ServiceItemViewModel: ServiceItemViewModelProtocol {
     // MARK: - Properties
     // Boundaries
     private let restApiManager: RestApiManager
+    private let bookingsLoader: BookingsLoaderProtocol
+    private let currentBooking: Booking
 
     // Rx
     public let service: BehaviorRelay<Service>
 
     private let descriptionText: BehaviorRelay<String>
-    lazy public var descriptionTextObservable = descriptionText.asObservable()
+    lazy public var descriptionTextObservable =
+        descriptionText.asObservable()
+    lazy public var isDescriptionBlockHiddenObservable =
+        descriptionText.map{ $0.isEmpty }.asObservable()
 
     private let totalPrice: BehaviorRelay<String>
     lazy public var totalPriceObservable = totalPrice.asObservable()
+
+    public var commentText = BehaviorRelay<String?>(value: nil)
 
     // Selected
     private var selectedServiceItem: Int = 0 {
@@ -52,9 +64,13 @@ public final class ServiceItemViewModel: ServiceItemViewModelProtocol {
 
     // MARK: - Init
     public init(service: Service,
-                restApiManager: RestApiManager) {
+                restApiManager: RestApiManager,
+                bookingsLoader: BookingsLoaderProtocol,
+                currentBooking: Booking) {
         self.service = BehaviorRelay<Service>(value: service)
         self.restApiManager = restApiManager
+        self.bookingsLoader = bookingsLoader
+        self.currentBooking = currentBooking
 
         descriptionText = BehaviorRelay<String>(value: service.description)
         totalPrice = BehaviorRelay<String>(value: "")
@@ -71,7 +87,7 @@ public extension ServiceItemViewModel {
     }
 
     func getHeaderImages() -> [String] {
-        return ["icSPAResort", "icSPAResort", "icSPAResort"]
+        return ["icHotelPlaceholderBig", "icHotelPlaceholderBig", "icHotelPlaceholderBig"]
     }
 
     func getService() -> Service {
@@ -96,6 +112,52 @@ public extension ServiceItemViewModel {
 
     func didSelectDeliveryOption(by item: Int) {
         selectedDeliveryItem = item
+    }
+
+    func didTapOrder() {
+//        let dates = getStartAndEndDates()
+//        let parameters = CreateBookingParameters(
+//            hotelId: currentBooking.hotelId,
+//            serviceId: service.value.id,
+//            serviceType: "service",
+//            optionId: service.value.serviceOptions[selectedServiceItem].id,
+//            comment: commentText.value,
+//            startDate: dates.startDate,
+//            endDate: dates.endDate)
+//        let method = BookingRestApiMethods.create(parameters)
+//
+//        ActivityIndicatorHelper.shared.show()
+//        restApiManager.call(method: method) { [weak self] (result: Result<Booking>) in
+//            guard let self = self else { return }
+//            DispatchQueue.main.async {
+//                ActivityIndicatorHelper.shared.hide()
+//
+//                switch result {
+//                case .success(let booking):
+//                    var newBookings = self.bookingsLoader.resultPublisher.value
+//                    newBookings.insert(booking, at: 0)
+//                    self.bookingsLoader.resultPublisher.accept(newBookings)
+//
+//                    AlertHelper.show(title: "Ordered successfully",
+//                                     message: self.getService().name)
+//
+//                case .failure(let error):
+//                    NotificationBannerHelper.showBanner(error)
+//                }
+//            }
+//        }
+    }
+
+    func getStartAndEndDates() -> (startDate: Double?, endDate: Double?) {
+        let serviceDelivery = service.value.serviceDeliveries[selectedDeliveryItem]
+        switch serviceDelivery {
+        case .bringItNow:
+            return (startDate: nil, endDate: nil)
+        case .arrangeTime:
+            return (startDate: Date().timeIntervalSince1970, endDate: nil)
+        case .arrangeTimeRange:
+            return (startDate: Date().timeIntervalSince1970, endDate: Date().timeIntervalSince1970)
+        }
     }
 }
 

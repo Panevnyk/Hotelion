@@ -30,8 +30,8 @@ final class HotelCollectionViewCell: UICollectionViewCell {
         imageContentView.backgroundColor = .kViolet
 
         hotelTitle.textColor = .white
-        hotelTitle.font = UIFont.systemFont(ofSize: 32, weight: .bold)
-        hotelTitle.text = "SPA resort"
+        hotelTitle.font = UIFont.kTitleText
+        hotelTitle.text = "Room number: 113"
         
         hotelImageView.image = UIImage(named: "icSPAResort", in: Bundle.services, compatibleWith: nil)
     }

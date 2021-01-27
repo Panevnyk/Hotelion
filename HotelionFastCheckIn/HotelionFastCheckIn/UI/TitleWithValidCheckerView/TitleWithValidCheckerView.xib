@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TitleWithValidCheckerView" customModule="HotelionFastCheckIn" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="off-QR-5xV" id="jwN-le-E1K"/>
+                <outlet property="validationImageContainerView" destination="XiN-EE-J4u" id="Eza-kz-51K"/>
+                <outlet property="validationImageView" destination="2JH-JE-F2Q" id="4AT-lp-N0j"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="off-QR-5xV">
+                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="80"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiN-EE-J4u">
+                    <rect key="frame" x="49.5" y="29" width="22" height="22"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icDoneWhite" translatesAutoresizingMaskIntoConstraints="NO" id="2JH-JE-F2Q">
+                            <rect key="frame" x="4.5" y="4.5" width="13" height="13"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="13" id="2kS-Dd-lrs"/>
+                                <constraint firstAttribute="height" constant="13" id="ut3-hh-6Hd"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="1Md-ee-HMZ"/>
+                        <constraint firstItem="2JH-JE-F2Q" firstAttribute="centerY" secondItem="XiN-EE-J4u" secondAttribute="centerY" id="9sf-kU-1wz"/>
+                        <constraint firstItem="2JH-JE-F2Q" firstAttribute="centerX" secondItem="XiN-EE-J4u" secondAttribute="centerX" id="hTI-no-wqu"/>
+                        <constraint firstAttribute="width" constant="22" id="yNx-Vh-I5X"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="XiN-EE-J4u" firstAttribute="centerY" secondItem="off-QR-5xV" secondAttribute="centerY" id="6ZD-39-VOG"/>
+                <constraint firstItem="off-QR-5xV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Rzl-hQ-348"/>
+                <constraint firstItem="off-QR-5xV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XOw-xy-FJS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XiN-EE-J4u" secondAttribute="trailing" constant="8" id="Xv1-ti-mjQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="off-QR-5xV" secondAttribute="bottom" id="ZKY-hs-mYY"/>
+                <constraint firstItem="XiN-EE-J4u" firstAttribute="leading" secondItem="off-QR-5xV" secondAttribute="trailing" constant="8" id="bT2-xu-wHF"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="-161.38392857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icDoneWhite" width="24" height="24"/>
+    </resources>
+</document>

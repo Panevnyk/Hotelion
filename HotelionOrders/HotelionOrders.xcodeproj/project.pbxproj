@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B02B4B4A588D8584B0A2BF0 /* Pods_HotelionMain_HotelionOrders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83528CC4D54F0932001076FB /* Pods_HotelionMain_HotelionOrders.framework */; };
+		91043468256E943B0035A9BF /* HotelionOrders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9104345E256E943B0035A9BF /* HotelionOrders.framework */; };
+		9104346D256E943B0035A9BF /* HotelionOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104346C256E943B0035A9BF /* HotelionOrdersTests.swift */; };
+		9104346F256E943B0035A9BF /* HotelionOrders.h in Headers */ = {isa = PBXBuildFile; fileRef = 91043461256E943B0035A9BF /* HotelionOrders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		910434A6256E956E0035A9BF /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910434A5256E956E0035A9BF /* OrdersViewController.swift */; };
+		910434AB256E959B0035A9BF /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910434AA256E959B0035A9BF /* OrdersViewModel.swift */; };
+		910434B3256E96780035A9BF /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 910434B2256E96780035A9BF /* Orders.storyboard */; };
+		9195BEE82574F083003A462D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9195BEE72574F083003A462D /* Assets.xcassets */; };
+		9195BEFE257640EF003A462D /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195BEFC257640EF003A462D /* OrderTableViewCell.swift */; };
+		9195BEFF257640EF003A462D /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9195BEFD257640EF003A462D /* OrderTableViewCell.xib */; };
+		9195BF0325764171003A462D /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195BF0225764171003A462D /* OrderViewModel.swift */; };
+		9195BF0725764240003A462D /* HotelionCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9195BF0625764240003A462D /* HotelionCommon.framework */; };
+		9195BF0825764240003A462D /* HotelionCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9195BF0625764240003A462D /* HotelionCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9195BF0D25778254003A462D /* OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195BF0C25778254003A462D /* OrderStatusView.swift */; };
+		9195BF112577825A003A462D /* OrderStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9195BF102577825A003A462D /* OrderStatusView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91043469256E943B0035A9BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91043455256E943A0035A9BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9104345D256E943B0035A9BF;
+			remoteInfo = HotelionOrders;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9195BF0925764240003A462D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9195BF0825764240003A462D /* HotelionCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		553902B0801108E741BED9CF /* Pods-HotelionMain-HotelionOrders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelionMain-HotelionOrders.debug.xcconfig"; path = "Target Support Files/Pods-HotelionMain-HotelionOrders/Pods-HotelionMain-HotelionOrders.debug.xcconfig"; sourceTree = "<group>"; };
+		828F482CE6448336C1DBC2A3 /* Pods-HotelionMain-HotelionOrders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelionMain-HotelionOrders.release.xcconfig"; path = "Target Support Files/Pods-HotelionMain-HotelionOrders/Pods-HotelionMain-HotelionOrders.release.xcconfig"; sourceTree = "<group>"; };
+		83528CC4D54F0932001076FB /* Pods_HotelionMain_HotelionOrders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelionMain_HotelionOrders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9104345E256E943B0035A9BF /* HotelionOrders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HotelionOrders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91043461256E943B0035A9BF /* HotelionOrders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelionOrders.h; sourceTree = "<group>"; };
+		91043462256E943B0035A9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91043467256E943B0035A9BF /* HotelionOrdersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelionOrdersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9104346C256E943B0035A9BF /* HotelionOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelionOrdersTests.swift; sourceTree = "<group>"; };
+		9104346E256E943B0035A9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		910434A5256E956E0035A9BF /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		910434AA256E959B0035A9BF /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
+		910434B2256E96780035A9BF /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
+		9195BEE72574F083003A462D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9195BEFC257640EF003A462D /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		9195BEFD257640EF003A462D /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
+		9195BF0225764171003A462D /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		9195BF0625764240003A462D /* HotelionCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HotelionCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9195BF0C25778254003A462D /* OrderStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusView.swift; sourceTree = "<group>"; };
+		9195BF102577825A003A462D /* OrderStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderStatusView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9104345B256E943B0035A9BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B02B4B4A588D8584B0A2BF0 /* Pods_HotelionMain_HotelionOrders.framework in Frameworks */,
+				9195BF0725764240003A462D /* HotelionCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91043464256E943B0035A9BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91043468256E943B0035A9BF /* HotelionOrders.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91043454256E943A0035A9BF = {
+			isa = PBXGroup;
+			children = (
+				91043460256E943B0035A9BF /* HotelionOrders */,
+				9104346B256E943B0035A9BF /* HotelionOrdersTests */,
+				9104345F256E943B0035A9BF /* Products */,
+				F0E84E66A5E015F7F768E9AB /* Pods */,
+				B00B9209E0B14F02318BEF22 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9104345F256E943B0035A9BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9104345E256E943B0035A9BF /* HotelionOrders.framework */,
+				91043467256E943B0035A9BF /* HotelionOrdersTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91043460256E943B0035A9BF /* HotelionOrders */ = {
+			isa = PBXGroup;
+			children = (
+				91043461256E943B0035A9BF /* HotelionOrders.h */,
+				910434A3256E954B0035A9BF /* Storyboards */,
+				9195BF0B2577822F003A462D /* UI */,
+				910434A2256E953F0035A9BF /* Features */,
+				91043462256E943B0035A9BF /* Info.plist */,
+				9195BEE72574F083003A462D /* Assets.xcassets */,
+			);
+			path = HotelionOrders;
+			sourceTree = "<group>";
+		};
+		9104346B256E943B0035A9BF /* HotelionOrdersTests */ = {
+			isa = PBXGroup;
+			children = (
+				9104346C256E943B0035A9BF /* HotelionOrdersTests.swift */,
+				9104346E256E943B0035A9BF /* Info.plist */,
+			);
+			path = HotelionOrdersTests;
+			sourceTree = "<group>";
+		};
+		910434A2256E953F0035A9BF /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				910434A4256E955E0035A9BF /* Orders */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		910434A3256E954B0035A9BF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				910434B2256E96780035A9BF /* Orders.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		910434A4256E955E0035A9BF /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				910434A5256E956E0035A9BF /* OrdersViewController.swift */,
+				910434AA256E959B0035A9BF /* OrdersViewModel.swift */,
+				9195BEFB257640D3003A462D /* OrderTableViewCell */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		9195BEFB257640D3003A462D /* OrderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9195BEFC257640EF003A462D /* OrderTableViewCell.swift */,
+				9195BEFD257640EF003A462D /* OrderTableViewCell.xib */,
+				9195BF0225764171003A462D /* OrderViewModel.swift */,
+			);
+			path = OrderTableViewCell;
+			sourceTree = "<group>";
+		};
+		9195BF0B2577822F003A462D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9195BF132577825F003A462D /* OrderStatusView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9195BF132577825F003A462D /* OrderStatusView */ = {
+			isa = PBXGroup;
+			children = (
+				9195BF0C25778254003A462D /* OrderStatusView.swift */,
+				9195BF102577825A003A462D /* OrderStatusView.xib */,
+			);
+			path = OrderStatusView;
+			sourceTree = "<group>";
+		};
+		B00B9209E0B14F02318BEF22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9195BF0625764240003A462D /* HotelionCommon.framework */,
+				83528CC4D54F0932001076FB /* Pods_HotelionMain_HotelionOrders.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0E84E66A5E015F7F768E9AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				553902B0801108E741BED9CF /* Pods-HotelionMain-HotelionOrders.debug.xcconfig */,
+				828F482CE6448336C1DBC2A3 /* Pods-HotelionMain-HotelionOrders.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../HotelionMain/Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		91043459256E943B0035A9BF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9104346F256E943B0035A9BF /* HotelionOrders.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9104345D256E943B0035A9BF /* HotelionOrders */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91043472256E943B0035A9BF /* Build configuration list for PBXNativeTarget "HotelionOrders" */;
+			buildPhases = (
+				687568B31CE2DA17352BDE65 /* [CP] Check Pods Manifest.lock */,
+				91043459256E943B0035A9BF /* Headers */,
+				9104345A256E943B0035A9BF /* Sources */,
+				9104345B256E943B0035A9BF /* Frameworks */,
+				9104345C256E943B0035A9BF /* Resources */,
+				9195BF0925764240003A462D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HotelionOrders;
+			productName = HotelionOrders;
+			productReference = 9104345E256E943B0035A9BF /* HotelionOrders.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		91043466256E943B0035A9BF /* HotelionOrdersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91043475256E943B0035A9BF /* Build configuration list for PBXNativeTarget "HotelionOrdersTests" */;
+			buildPhases = (
+				91043463256E943B0035A9BF /* Sources */,
+				91043464256E943B0035A9BF /* Frameworks */,
+				91043465256E943B0035A9BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9104346A256E943B0035A9BF /* PBXTargetDependency */,
+			);
+			name = HotelionOrdersTests;
+			productName = HotelionOrdersTests;
+			productReference = 91043467256E943B0035A9BF /* HotelionOrdersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91043455256E943A0035A9BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					9104345D256E943B0035A9BF = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
+					};
+					91043466256E943B0035A9BF = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 91043458256E943A0035A9BF /* Build configuration list for PBXProject "HotelionOrders" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91043454256E943A0035A9BF;
+			productRefGroup = 9104345F256E943B0035A9BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9104345D256E943B0035A9BF /* HotelionOrders */,
+				91043466256E943B0035A9BF /* HotelionOrdersTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9104345C256E943B0035A9BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9195BEFF257640EF003A462D /* OrderTableViewCell.xib in Resources */,
+				9195BEE82574F083003A462D /* Assets.xcassets in Resources */,
+				910434B3256E96780035A9BF /* Orders.storyboard in Resources */,
+				9195BF112577825A003A462D /* OrderStatusView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91043465256E943B0035A9BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		687568B31CE2DA17352BDE65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HotelionMain-HotelionOrders-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9104345A256E943B0035A9BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9195BEFE257640EF003A462D /* OrderTableViewCell.swift in Sources */,
+				910434A6256E956E0035A9BF /* OrdersViewController.swift in Sources */,
+				910434AB256E959B0035A9BF /* OrdersViewModel.swift in Sources */,
+				9195BF0325764171003A462D /* OrderViewModel.swift in Sources */,
+				9195BF0D25778254003A462D /* OrderStatusView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91043463256E943B0035A9BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9104346D256E943B0035A9BF /* HotelionOrdersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9104346A256E943B0035A9BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9104345D256E943B0035A9BF /* HotelionOrders */;
+			targetProxy = 91043469256E943B0035A9BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		91043470256E943B0035A9BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		91043471256E943B0035A9BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		91043473256E943B0035A9BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 553902B0801108E741BED9CF /* Pods-HotelionMain-HotelionOrders.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HotelionOrders/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vp.HotelionOrders;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91043474256E943B0035A9BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 828F482CE6448336C1DBC2A3 /* Pods-HotelionMain-HotelionOrders.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HotelionOrders/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vp.HotelionOrders;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		91043476256E943B0035A9BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HotelionOrdersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vp.HotelionOrdersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91043477256E943B0035A9BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HotelionOrdersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vp.HotelionOrdersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91043458256E943A0035A9BF /* Build configuration list for PBXProject "HotelionOrders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91043470256E943B0035A9BF /* Debug */,
+				91043471256E943B0035A9BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91043472256E943B0035A9BF /* Build configuration list for PBXNativeTarget "HotelionOrders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91043473256E943B0035A9BF /* Debug */,
+				91043474256E943B0035A9BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91043475256E943B0035A9BF /* Build configuration list for PBXNativeTarget "HotelionOrdersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91043476256E943B0035A9BF /* Debug */,
+				91043477256E943B0035A9BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91043455256E943A0035A9BF /* Project object */;
+}

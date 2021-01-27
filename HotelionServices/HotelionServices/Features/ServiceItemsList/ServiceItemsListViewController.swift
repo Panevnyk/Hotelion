@@ -40,7 +40,7 @@ private extension ServiceItemsListViewController {
     func setupUI() {
         view.backgroundColor = .kBackground
 
-        collectionView.register(cell: ServicesListCollectionViewCell.self, bundle: Bundle.services)
+        collectionView.register(cell: ServicesCustomImageListCollectionViewCell.self, bundle: Bundle.services)
         collectionView.backgroundColor = .kBackground
 
         navigationTitle.textColor = .black
@@ -52,7 +52,6 @@ private extension ServiceItemsListViewController {
         backButton.setImage(backImage, for: .normal)
         backButton.tintColor = .black
 
-//        navigationSeparator.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
         navigationSeparator.backgroundColor = .kSeparatorGray
     }
 }
@@ -66,7 +65,7 @@ extension ServiceItemsListViewController: UICollectionViewDataSource {
 
     public func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: ServicesListCollectionViewCell = collectionView.dequeueReusableCellWithIndexPath(indexPath)
+        let cell: ServicesCustomImageListCollectionViewCell = collectionView.dequeueReusableCellWithIndexPath(indexPath)
         let itemViewModel = viewModel.servicesGroupViewModel(for: indexPath.item)
         cell.fill(viewModel: itemViewModel)
 
@@ -134,6 +133,13 @@ private extension ServiceItemsListViewController {
         let side = (view.frame.size.width - generalSpacing) / CGFloat(ServiceItemsListViewController.Constants.columnsCount)
 
         return CGSize(width: side, height: side)
+    }
+}
+
+// MARK: - ServiceItemsViewModelDelegate
+extension ServiceItemsListViewController: ServiceItemsViewModelDelegate {
+    public func reloadData() {
+        collectionView.reloadData()
     }
 }
 

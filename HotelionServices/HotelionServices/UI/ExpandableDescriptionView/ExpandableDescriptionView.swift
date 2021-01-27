@@ -18,7 +18,7 @@ protocol ExpandableDescriptionViewDelegate: class {
 final class ExpandableDescriptionView: BaseCustomView {
     // MARK: - Properties
     // Constants
-    private static let minHeightForExpanding: CGFloat = 50
+    private static let minHeightForExpanding: CGFloat = 44
     
     // UI
     @IBOutlet private var xibView: UIView!
@@ -62,13 +62,13 @@ private extension ExpandableDescriptionView {
 
         backgroundColor = .white
 
-        descriptionLabel.font = UIFont.systemFont(ofSize: 15)
+        descriptionLabel.font = UIFont.kDescriptionText
         descriptionLabel.textColor = UIColor.black
 
-        descriptionAlpha0Label.font = UIFont.systemFont(ofSize: 15)
+        descriptionAlpha0Label.font = UIFont.kDescriptionText
         descriptionAlpha0Label.textColor = UIColor.white
 
-        expandLabel.font = UIFont.systemFont(ofSize: 10)
+        expandLabel.font = UIFont.kDescriptionText
         expandLabel.textColor = UIColor.kTextDarkGray
     }
 }
@@ -121,7 +121,7 @@ private extension ExpandableDescriptionView {
         let imgNamed = isOpen ? "icShowLess" : "icShowMore"
         let img = UIImage(named: imgNamed, in: Bundle.services, compatibleWith: nil)
         expandImageView.image = img
-        expandLabel.text = isOpen ? "SHOW LESS" : "SHOW MORE"
+        expandLabel.text = isOpen ? "Show less" : "Show more"
     }
 }
 

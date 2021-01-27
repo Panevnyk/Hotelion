@@ -20,6 +20,8 @@ public protocol ForgotPasswordCoordinatorDelegate: class {
 public final class ForgotPasswordViewController: BaseScrollViewController {
     // MARK: - Properties
     // UI
+    @IBOutlet private var headerView: HeaderView!
+
     @IBOutlet private var hintLabel: UILabel!
     @IBOutlet private var emailTextField: SUTextField!
     @IBOutlet private var sendButton: VioletButton!
@@ -37,45 +39,27 @@ public final class ForgotPasswordViewController: BaseScrollViewController {
 
         setupUI()
         setupViewModels()
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
-    }
-
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-
-    /// change status bar
-    public override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
-}
-
-// MARK: - UIGestureRecognizerDelegate
-extension ForgotPasswordViewController: UIGestureRecognizerDelegate {
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
-                                  shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return false
     }
 }
 
 // MARK: - UI
 private extension ForgotPasswordViewController {
     func setupUI() {
-        title = "Forgot password"
-        hintLabel.text = "Reset password text"
+        headerView.setTitle("Forgot password")
+        headerView.isBackButtonHidden = false
+        headerView.delegate = self
+
+        hintLabel.text = "We will send password to your email"
+        hintLabel.textColor = UIColor.kTextMiddleGray
+        hintLabel.font = UIFont.kPlainText
+
         emailTextField.placeholder = "Email"
         emailTextField.config = .email
+
         sendButton.setTitle("Send", for: .normal)
 
-        navigationItem.leftBarButtonItem = NavigationItemFactory.createBackItem(viewController: self,
-                                                                                selector: #selector(backAction))
-
         hintLabel.textColor = UIColor.kTextDarkGray
-        hintLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-
-//        navigationController?.navigationBar.customizeWhite()
+        hintLabel.font = UIFont.kPlainText
     }
 }
 
@@ -95,25 +79,28 @@ private extension ForgotPasswordViewController {
     }
 
     func bindViewModel() {
-        viewModel.isSuccessSendObservable.subscribe(onNext: { [unowned self] (value) in
-            guard value else {
-                return
-            }
+//        viewModel.isSuccessSendObservable.subscribe(onNext: { [unowned self] (value) in
+//            guard value else {
+//                return
+//            }
 
-            let email = self.viewModel.emailText.value
+//            let email = self.viewModel.emailText.value
 //            AlertHelper.show(message: Localize("temporary_password_was_sent"), okAction: { (_) in
 //                self.forgotPasswordCoordinatorDelegate?.didSelectLoginWith(email: email)
 //            })
-        }).disposed(by: disposeBag)
+//        }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: - HeaderViewDelegate
+extension ForgotPasswordViewController: HeaderViewDelegate {
+    public func backAction(from view: HeaderView) {
+        coordinatorDelegate?.dissmiss()
     }
 }
 
 // MARK: - Actions
 private extension ForgotPasswordViewController {
-    @objc func backAction() {
-        coordinatorDelegate?.dissmiss()
-    }
-
     @IBAction func sendAction() {
         viewModel.sendActions()
     }

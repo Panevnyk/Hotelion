@@ -54,6 +54,8 @@ final class OptionCollectionViewCell: UICollectionViewCell {
 
         let removeImg = UIImage(named: "icRemoveWhite", in: Bundle.services, compatibleWith: nil)
         removeButton.setImage(removeImg, for: .normal)
+
+        titleLabel.font = UIFont.kPlainText
     }
 
     // MARK: - Public methods
@@ -71,7 +73,7 @@ final class OptionCollectionViewCell: UICollectionViewCell {
     func updateColors() {
         bgView.backgroundColor = isSelectedItem ? option?.color : .white
         bgView.layer.borderColor = isSelectedItem ? UIColor.clear.cgColor : UIColor.kSeparatorGray.cgColor
-        titleLabel.textColor = isSelectedItem ? .white  : .black
+        titleLabel.textColor = isSelectedItem ? .white : .black
     }
 
     func addRemoveButtonTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {

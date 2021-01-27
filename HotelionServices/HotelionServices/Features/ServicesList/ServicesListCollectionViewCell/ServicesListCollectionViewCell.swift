@@ -28,7 +28,7 @@ final class ServicesListCollectionViewCell: UICollectionViewCell {
         backgroundColor = .white
 
         titleLabel.textColor = .black
-        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        titleLabel.font = UIFont.kTitleText
     }
 
     // MARK: - Fill

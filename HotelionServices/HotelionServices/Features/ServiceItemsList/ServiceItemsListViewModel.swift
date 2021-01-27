@@ -10,26 +10,32 @@ import RestApiManager
 import HotelionCommon
 
 public protocol ServiceItemsListViewModelProtocol {
+    var delegate: ServiceItemsViewModelDelegate? { get set }
+
     func itemsCount(in section: Int) -> Int
     func servicesGroupViewModel(for item: Int) -> ServicesGroupItemViewModelProtocol
     func getServiceGroupName() -> String
     func getService(by item: Int) -> Service
 }
 
+public protocol ServiceItemsViewModelDelegate: class {
+    func reloadData()
+}
+
 public final class ServiceItemsListViewModel: ServiceItemsListViewModelProtocol {
     // MARK: - Properties
     // Boundaries
-    private let restApiManager: RestApiManager
     private let serviceGroup: ServicesGroup
+    private let services: [Service]
 
-    // Models
-    private var services: [Service] = []
+    // Delegate
+    public weak var delegate: ServiceItemsViewModelDelegate?
 
     // MARK: - Inits
-    public init(restApiManager: RestApiManager, serviceGroup: ServicesGroup) {
-        self.restApiManager = restApiManager
+    public init(serviceGroup: ServicesGroup,
+                services: [Service]) {
         self.serviceGroup = serviceGroup
-        loadServiceItemsList()
+        self.services = services
     }
 }
 
@@ -43,7 +49,7 @@ extension ServiceItemsListViewModel {
         let service = getService(by: item)
 
         return ServicesGroupItemViewModel(
-            name: service.name.uppercased(),
+            name: service.name,
             img: service.img
         )
     }
@@ -60,36 +66,19 @@ extension ServiceItemsListViewModel {
 // MARK: - RestApiable
 extension ServiceItemsListViewModel {
     public func loadServiceItemsList() {
-        let descr = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!!!"
-        let serviceOptions = [
-            ServiceOption(name: "First item", price: 10.5),
-            ServiceOption(name: "Second item", price: 32.1),
-            ServiceOption(name: "Third item", price: 6.0)
-        ]
-
-        services = [
-            Service(id: "1", hotelId: "1", serviceGroupId: "1", name: "Burger", description: descr, img: "icWakeUpCall", serviceOptions: serviceOptions, serviceDeliveries: [.bringItNow, .arrangeTime]),
-            Service(id: "2", hotelId: "2", serviceGroupId: "1", name: "Pizza", description: descr, img: "icTaxi", serviceOptions: serviceOptions, serviceDeliveries: [.bringItNow, .arrangeTime]),
-            Service(id: "3", hotelId: "3", serviceGroupId: "1", name: "Spagetti", description: descr, img: "icTowelReplacement", serviceOptions: serviceOptions, serviceDeliveries: [.bringItNow, .arrangeTime]),
-            Service(id: "4", hotelId: "4", serviceGroupId: "1", name: "Soup", description: descr, img: "icCleaning", serviceOptions: serviceOptions, serviceDeliveries: [.bringItNow, .arrangeTime]),
-            Service(id: "5", hotelId: "5", serviceGroupId: "1", name: "Hotdog", description: descr, img: "icWashing", serviceOptions: serviceOptions, serviceDeliveries: [.bringItNow, .arrangeTime])
-        ]
-
-//        let parameters = ServiceGroupParameters(hotelId: "5faa610205968d002042402e")
-//        let method = ServiceGroupRestApiMethods.getList(parameters)
+//        let descr = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!!!"
+//        let serviceOptions = [
+//            ServiceOption(id: "1", name: "First item", price: 10.5),
+//            ServiceOption(id: "2", name: "Second item", price: 32.1),
+//            ServiceOption(id: "3", name: "Third item", price: 6.0)
+//        ]
 //
-//        ActivityIndicatorHelper.shared.show()
-//        restApiManager.call(method: method) { [weak self] (result: Result<[ServicesGroup]>) in
-//            DispatchQueue.main.async {
-//                ActivityIndicatorHelper.shared.hide()
-//
-//                switch result {
-//                case .success(let servicesGroups):
-//                    self?.servicesGroups = servicesGroups
-//                case .failure(let error):
-//                    NotificationBannerHelper.showBanner(error)
-//                }
-//            }
-//        }
+//        services = [
+//            Service(id: "1", hotelId: "1", serviceGroupId: "1", name: "Hot stone massage", description: descr, img: "img1", serviceOptions: serviceOptions, serviceDeliveries: [.bringItNow, .arrangeTime]),
+//            Service(id: "2", hotelId: "2", serviceGroupId: "1", name: "Mannicure", description: descr, img: "img2", serviceOptions: serviceOptions, serviceDeliveries: [.bringItNow, .arrangeTime]),
+//            Service(id: "3", hotelId: "3", serviceGroupId: "1", name: "SPA center", description: descr, img: "img3", serviceOptions: serviceOptions, serviceDeliveries: [.bringItNow, .arrangeTime]),
+//            Service(id: "4", hotelId: "4", serviceGroupId: "1", name: "Aroma oil massege", description: descr, img: "img4", serviceOptions: serviceOptions, serviceDeliveries: [.bringItNow, .arrangeTime]),
+//            Service(id: "5", hotelId: "5", serviceGroupId: "1", name: "Basic salt bath", description: descr, img: "img5", serviceOptions: serviceOptions, serviceDeliveries: [.bringItNow, .arrangeTime])
+//        ]
     }
 }

@@ -14,6 +14,22 @@ target 'HotelionMain' do
   pod 'RestApiManager'
   # UI
   pod 'NotificationBannerSwift'
+  # Signature
+  pod 'SwiftSignatureView'
+
+  # ---- HotelionOrders
+  target 'HotelionOrders' do
+    project '../HotelionOrders/HotelionOrders.xcodeproj'
+    workspace '../Hotelion.xcworkspace'
+
+    # Rx
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    # Rest
+    pod 'RestApiManager'
+    # UI
+    pod 'NotificationBannerSwift'
+  end
 
   # ---- HotelionServices
   target 'HotelionServices' do
@@ -41,6 +57,22 @@ target 'HotelionMain' do
     pod 'RestApiManager'
     # UI
     pod 'NotificationBannerSwift'
+  end
+
+  # ---- HotelionFastCheckIn
+  target 'HotelionFastCheckIn' do
+    project '../HotelionFastCheckIn/HotelionFastCheckIn.xcodeproj'
+    workspace '../Hotelion.xcworkspace'
+
+    # Rx
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    # Rest
+    pod 'RestApiManager'
+    # UI
+    pod 'NotificationBannerSwift'
+    # Signature
+    pod 'SwiftSignatureView'
   end
 
   # ---- HotelionCommon

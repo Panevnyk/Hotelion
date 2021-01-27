@@ -22,9 +22,23 @@ public extension Bundle {
         return bundle
     }
 
+    static var fastCheckIn: Bundle {
+        guard let bundle = Bundle(identifier: "vp.HotelionFastCheckIn") else {
+            fatalError("!!! Problem with Bundle.fastCheckIn identifier !!!")
+        }
+        return bundle
+    }
+
     static var services: Bundle {
         guard let bundle = Bundle(identifier: "vp.HotelionServices") else {
             fatalError("!!! Problem with Bundle.services identifier !!!")
+        }
+        return bundle
+    }
+
+    static var orders: Bundle {
+        guard let bundle = Bundle(identifier: "vp.HotelionOrders") else {
+            fatalError("!!! Problem with Bundle.orders identifier !!!")
         }
         return bundle
     }

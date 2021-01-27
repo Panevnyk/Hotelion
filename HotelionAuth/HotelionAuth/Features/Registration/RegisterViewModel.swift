@@ -16,22 +16,21 @@ public protocol RegisterViewModelProtocol {
     // To View
     var isSuccessRegisterObservable: Observable<Bool> { get }
     var successLoginedObservable: Observable<Bool> { get }
-//    var successLoginedWithShowAddAccountsObservable: Observable<Bool> { get }
 
     // From View
+    var firstnameText: BehaviorRelay<String> { get }
+    var lastnameText: BehaviorRelay<String> { get }
     var emailText: BehaviorRelay<String> { get }
-    var passwordText: BehaviorRelay<String> { get }
-    var confirmPasswordText: BehaviorRelay<String> { get }
-    var nameText: BehaviorRelay<String> { get }
     var phoneNumberText: BehaviorRelay<String> { get }
-    var isReceiveNews: BehaviorRelay<Bool> { get }
+    var passwordText: BehaviorRelay<String> { get }
 
     // Observables
+    var firstnameValidationResult: Observable<ValidationResult> { get }
+    var lastnameValidationResult: Observable<ValidationResult> { get }
     var emailValidationResult: Observable<ValidationResult> { get }
-    var passwordValidationResult: Observable<ValidationResult> { get }
-    var confirmPasswordValidationResult: Observable<ValidationResult> { get }
-    var nameValidationResult: Observable<ValidationResult> { get }
     var phoneNumberValidationResult: Observable<ValidationResult> { get }
+    var passwordValidationResult: Observable<ValidationResult> { get }
+
     var isValid: Observable<Bool> { get }
 
     // Actions
@@ -48,47 +47,37 @@ public final class RegisterViewModel: LoginUsingSocialNetwork, RegisterViewModel
     private var isSuccessRegister = BehaviorRelay<Bool>(value: false)
 
     // Validators
+    private var firstnameValidator: ValidatorProtocol = TextValidator()
+    private var lastnameValidator: ValidatorProtocol = TextValidator()
     private var emailValidator: ValidatorProtocol = EmailValidator()
-    private var passwordValidator: ValidatorProtocol = PasswordValidator()
-    private var fullNameValidator: ValidatorProtocol = FullnameValidator()
     private var phoneNumberValidator: ValidatorProtocol = PhoneNumberValidator()
+    private var passwordValidator: ValidatorProtocol = PasswordValidator()
 
     // From View
+    public var firstnameText = BehaviorRelay<String>(value: "")
+    public var lastnameText = BehaviorRelay<String>(value: "")
     public var emailText = BehaviorRelay<String>(value: "")
-    public var passwordText = BehaviorRelay<String>(value: "")
-    public var confirmPasswordText = BehaviorRelay<String>(value: "")
-    public var nameText = BehaviorRelay<String>(value: "")
     public var phoneNumberText = BehaviorRelay<String>(value: "")
-    public var isReceiveNews = BehaviorRelay<Bool>(value: false)
+    public var passwordText = BehaviorRelay<String>(value: "")
 
     // Observables
     public lazy var isSuccessRegisterObservable = isSuccessRegister.asObservable()
 
+    public var firstnameValidationResult: Observable<ValidationResult> {
+        return firstnameText.asObservable().map({ [unowned self] (name) -> ValidationResult in
+            return self.firstnameValidator.validate(name)
+        })
+    }
+
+    public var lastnameValidationResult: Observable<ValidationResult> {
+        return lastnameText.asObservable().map({ [unowned self] (name) -> ValidationResult in
+            return self.lastnameValidator.validate(name)
+        })
+    }
+
     public var emailValidationResult: Observable<ValidationResult> {
         return emailText.asObservable().map({ (email) -> ValidationResult in
             return self.emailValidator.validate(email)
-        })
-    }
-
-    public var passwordValidationResult: Observable<ValidationResult> {
-        return passwordText.asObservable().map({ (password) -> ValidationResult in
-            return self.passwordValidator.validate(password)
-        })
-    }
-
-    public var confirmPasswordValidationResult: Observable<ValidationResult> {
-        return Observable.combineLatest(confirmPasswordText.asObservable(), passwordValidationResult) { [unowned self] (value, passwordValidationResult) ->  ValidationResult in
-            return value.isEmpty
-                ? .noResult
-                : (value == self.passwordText.value
-                    ? .success
-                    : .error("Passwords do not match"))
-        }
-    }
-
-    public var nameValidationResult: Observable<ValidationResult> {
-        return nameText.asObservable().map({ [unowned self] (name) -> ValidationResult in
-            return self.fullNameValidator.validate(name)
         })
     }
 
@@ -98,9 +87,25 @@ public final class RegisterViewModel: LoginUsingSocialNetwork, RegisterViewModel
         })
     }
 
+    public var passwordValidationResult: Observable<ValidationResult> {
+        return passwordText.asObservable().map({ (password) -> ValidationResult in
+            return self.passwordValidator.validate(password)
+        })
+    }
+
     public var isValid: Observable<Bool> {
-        return Observable.combineLatest(emailValidationResult, passwordValidationResult, confirmPasswordValidationResult, nameValidationResult, phoneNumberValidationResult) { email, password, confirmPassword, name, phone in
-            return email.isValid && password.isValid && confirmPassword.isValid && name.isValid
+        return Observable.combineLatest(
+            firstnameValidationResult,
+            lastnameValidationResult,
+            emailValidationResult,
+            phoneNumberValidationResult,
+            passwordValidationResult
+        ) { firstname, lastname, email, phone, password in
+            return firstname.isValid
+                && lastname.isValid
+                && email.isValid
+                && phone.isValid
+                && password.isValid
         }
     }
 
@@ -113,8 +118,11 @@ public final class RegisterViewModel: LoginUsingSocialNetwork, RegisterViewModel
 // MARK: - RestApiable
 extension RegisterViewModel {
     public func registerAction() {
-        let parameters = SignupParameters(email: emailText.value,
-                                          password: passwordText.value/*,fullName: nameText.value*/)
+        let parameters = SignupParameters(firstname: firstnameText.value,
+                                          lastname: lastnameText.value,
+                                          email: emailText.value,
+                                          phoneNumber: phoneNumberText.value,
+                                          password: passwordText.value)
         let method = AuthRestApiMethods.signup(parameters)
 
         ActivityIndicatorHelper.shared.show()

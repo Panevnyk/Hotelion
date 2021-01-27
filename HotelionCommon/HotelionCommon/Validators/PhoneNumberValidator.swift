@@ -13,7 +13,7 @@ public struct PhoneNumberValidator: ValidatorProtocol {
     
     public func validate(_ object: String?) -> ValidationResult {
         guard let string = object, !string.isEmpty else {
-            return .success
+            return .noResult
         }
         
         let emailRegex = "[0-9+]{6,}"

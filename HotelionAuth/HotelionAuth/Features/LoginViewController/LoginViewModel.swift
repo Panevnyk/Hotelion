@@ -109,10 +109,3 @@ extension LoginViewModel {
         }
     }
 }
-
-extension RestApiError {
-    /// Hardcode account not confirm error
-    public var isAccountNotConfirm: Bool {
-        return code == 1000001
-    }
-}

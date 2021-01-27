@@ -28,7 +28,7 @@ public protocol LoginViewControllerCoordinatorDelegate: BaseAuthCoordinatorDeleg
 public final class LoginViewController: BaseScrollViewController {
     // MARK: - Properties
     // UI
-    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var headerView: HeaderView!
 
     @IBOutlet private var emailTextField: SUTextField!
     @IBOutlet private var passwordTextField: SUPasswordTextField!
@@ -65,28 +65,6 @@ public final class LoginViewController: BaseScrollViewController {
         if let defaultEmail = viewModel.getDefaultEmail() {
             emailTextField.text = defaultEmail
         }
-
-        // setup popGestureRecognizer behavior
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
-    }
-
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
-    // Change status bar
-    public override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-}
-
-// MARK: - UIGestureRecognizerDelegate
-extension LoginViewController: UIGestureRecognizerDelegate {
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
-                                  shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return false
     }
 }
 
@@ -154,7 +132,8 @@ private extension LoginViewController {
 
         emailTextField.placeholder = "Email"
         passwordTextField.placeholder = "Password"
-        loginButton.setTitle("Login", for: .normal)
+
+        loginButton.setTitle("Sign in", for: .normal)
         loginButton.isEnabled = true
 
         emailTextField.config = .email
@@ -167,29 +146,27 @@ private extension LoginViewController {
         googleButton.setTitle(nil, for: .normal)
 
         facebookButton.layer.cornerRadius = 6
-        facebookButton.backgroundColor = UIColor.blue
+        facebookButton.backgroundColor = UIColor.kFacebook
         let facebookImg = UIImage(named: "icFacebook", in: Bundle.auth, compatibleWith: nil)
         facebookButton.setImage(facebookImg, for: .normal)
         facebookButton.setTitle(nil, for: .normal)
 
-        titleLabel.text = "Login"
-        titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        titleLabel.textColor = .white
+        headerView.setTitle("Login")
 
         separatorOneView.backgroundColor = UIColor.kSeparatorGray
         separatorSecondView.backgroundColor = UIColor.kSeparatorGray
 
         orLabel.text = "or"
         orLabel.textColor = UIColor.kTextDarkGray
-        orLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        orLabel.font = UIFont.kTitleText
 
         privacyPolicyLabel.text = "By sign in you agree to"
         privacyPolicyLabel.textColor = UIColor.kTextMiddleGray
-        privacyPolicyLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        privacyPolicyLabel.font = UIFont.kPlainText
 
         dontHaveAccountLabel.text = "I dont have an account"
         dontHaveAccountLabel.textColor = UIColor.kTextMiddleGray
-        dontHaveAccountLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        dontHaveAccountLabel.font = UIFont.kPlainText
 
         forgotPasswordButton.setTitle("Forgot password", for: .normal)
         forgotPasswordButton.setTitleColor(UIColor.kViolet, for: .normal)

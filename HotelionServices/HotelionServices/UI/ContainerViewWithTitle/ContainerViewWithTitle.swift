@@ -16,6 +16,8 @@ open class ContainerViewWithTitle: BaseCustomView {
     // MARK: - initialize
     open override func initialize() {
         addSelfNibUsingConstraints(nibName: "ContainerViewWithTitle", bundle: Bundle.common)
+
+        titleLabel.font = UIFont.kSectionHeaderText
     }
 
     // MARK: - Public methods
