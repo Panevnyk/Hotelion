@@ -10,6 +10,10 @@
 		7AB21872B0CE0F92E57EB5AE /* Pods_HotelionMain_HotelionCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FEA73F7C9E30EAE3C53311 /* Pods_HotelionMain_HotelionCommon.framework */; };
 		9104340D256E87E30035A9BF /* UIFont+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9104340C256E87E30035A9BF /* UIFont+Style.swift */; };
 		91043446256E92910035A9BF /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91043445256E92910035A9BF /* MainTab.swift */; };
+		9118FAAD25C4219E0033BEF4 /* UIAlertController+CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9118FAAC25C4219E0033BEF4 /* UIAlertController+CustomView.swift */; };
+		911DBC5F25C2F0C300AEC184 /* OrderRestApiMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911DBC5E25C2F0C300AEC184 /* OrderRestApiMethods.swift */; };
+		911DBC6325C2F0D200AEC184 /* OrderParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911DBC6225C2F0D200AEC184 /* OrderParameters.swift */; };
+		911DBC6A25C2F43A00AEC184 /* OrdersLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911DBC6925C2F43A00AEC184 /* OrdersLoader.swift */; };
 		911FDC3C25B723DF005A3057 /* HotelRestApiMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911FDC3B25B723DF005A3057 /* HotelRestApiMethods.swift */; };
 		911FDC4225B7240C005A3057 /* HotelParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911FDC4125B7240C005A3057 /* HotelParameters.swift */; };
 		911FDC4625B72512005A3057 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911FDC4525B72512005A3057 /* Hotel.swift */; };
@@ -106,6 +110,10 @@
 		0B08CF2E7479573722B2874B /* Pods-HotelionMain-HotelionCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelionMain-HotelionCommon.debug.xcconfig"; path = "Target Support Files/Pods-HotelionMain-HotelionCommon/Pods-HotelionMain-HotelionCommon.debug.xcconfig"; sourceTree = "<group>"; };
 		9104340C256E87E30035A9BF /* UIFont+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Style.swift"; sourceTree = "<group>"; };
 		91043445256E92910035A9BF /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
+		9118FAAC25C4219E0033BEF4 /* UIAlertController+CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+CustomView.swift"; sourceTree = "<group>"; };
+		911DBC5E25C2F0C300AEC184 /* OrderRestApiMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRestApiMethods.swift; sourceTree = "<group>"; };
+		911DBC6225C2F0D200AEC184 /* OrderParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderParameters.swift; sourceTree = "<group>"; };
+		911DBC6925C2F43A00AEC184 /* OrdersLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersLoader.swift; sourceTree = "<group>"; };
 		911FDC3B25B723DF005A3057 /* HotelRestApiMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelRestApiMethods.swift; sourceTree = "<group>"; };
 		911FDC4125B7240C005A3057 /* HotelParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelParameters.swift; sourceTree = "<group>"; };
 		911FDC4525B72512005A3057 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
@@ -221,6 +229,14 @@
 			path = TabBarItem;
 			sourceTree = "<group>";
 		};
+		911DBC6825C2F41800AEC184 /* OrdersLoader */ = {
+			isa = PBXGroup;
+			children = (
+				911DBC6925C2F43A00AEC184 /* OrdersLoader.swift */,
+			);
+			path = OrdersLoader;
+			sourceTree = "<group>";
+		};
 		911FDC4925B72515005A3057 /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +274,7 @@
 				91F0F58325628610001A546E /* ServiceGroupRestApiMethods.swift */,
 				9195BED02574DE2C003A462D /* ServiceRestApiMethods.swift */,
 				913661E8256FB24200089355 /* BookingRestApiMethods.swift */,
+				911DBC5E25C2F0C300AEC184 /* OrderRestApiMethods.swift */,
 			);
 			path = RestApiMethods;
 			sourceTree = "<group>";
@@ -277,6 +294,7 @@
 				911FDC4125B7240C005A3057 /* HotelParameters.swift */,
 				913E56AC25B731540015899B /* UserParameters.swift */,
 				91FAED1C2579131F00620608 /* BookingParameters.swift */,
+				911DBC6225C2F0D200AEC184 /* OrderParameters.swift */,
 				9167ADEC25B821A400A5DCB2 /* BookingRequestParameters.swift */,
 				9195BECC2574DDE6003A462D /* ServiceParameters.swift */,
 			);
@@ -314,6 +332,7 @@
 				91FAED152578D58600620608 /* ServicesLoader */,
 				91A56A11257A62DD00DB0C3B /* BookingsLoader */,
 				9167AE3F25B8927800A5DCB2 /* BookingRequestsLoader */,
+				911DBC6825C2F41800AEC184 /* OrdersLoader */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -372,6 +391,7 @@
 				91584AE7255BEADC00AF07C7 /* Bundle+Modules.swift */,
 				91C12D9D25666D0F00F0533D /* UIView+Shadow.swift */,
 				91C6780A25C168E0003BDF19 /* Date+Extensions.swift */,
+				9118FAAC25C4219E0033BEF4 /* UIAlertController+CustomView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -808,6 +828,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911DBC6325C2F0D200AEC184 /* OrderParameters.swift in Sources */,
 				91584AA9255BE57500AF07C7 /* UIColor+Style.swift in Sources */,
 				91584A76255BE20E00AF07C7 /* NLettersPercentFormatter.swift in Sources */,
 				91FAED122578D58300620608 /* ServicesLoader.swift in Sources */,
@@ -857,11 +878,14 @@
 				91241E49255D1FA400643663 /* RestApiConstants.swift in Sources */,
 				91C12D9E25666D0F00F0533D /* UIView+Shadow.swift in Sources */,
 				9167ADED25B821A400A5DCB2 /* BookingRequestParameters.swift in Sources */,
+				9118FAAD25C4219E0033BEF4 /* UIAlertController+CustomView.swift in Sources */,
+				911DBC6A25C2F43A00AEC184 /* OrdersLoader.swift in Sources */,
 				9195BF1D257783D6003A462D /* BaseSelectableView.swift in Sources */,
 				91FAED0C2578D56600620608 /* ServicesGroup.swift in Sources */,
 				9167ADF225B8233400A5DCB2 /* BookingRequest.swift in Sources */,
 				91241E73255D28EC00643663 /* NotificationBannerHelper.swift in Sources */,
 				91584A7C255BE20E00AF07C7 /* TextValidator.swift in Sources */,
+				911DBC5F25C2F0C300AEC184 /* OrderRestApiMethods.swift in Sources */,
 				911FDC4225B7240C005A3057 /* HotelParameters.swift in Sources */,
 				91241E7E255D2D6C00643663 /* User.swift in Sources */,
 				91A569D7257A575000DB0C3B /* BookingsLoader.swift in Sources */,

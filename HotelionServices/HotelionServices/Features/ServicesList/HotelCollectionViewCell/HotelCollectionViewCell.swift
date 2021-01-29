@@ -31,8 +31,10 @@ final class HotelCollectionViewCell: UICollectionViewCell {
 
         hotelTitle.textColor = .white
         hotelTitle.font = UIFont.kTitleText
-        hotelTitle.text = "Room number: 113"
-        
+    }
+
+    func fill(viewModel: HotelCollectionViewModel) {
+        hotelTitle.text = viewModel.title
         hotelImageView.image = UIImage(named: "icSPAResort", in: Bundle.services, compatibleWith: nil)
     }
 

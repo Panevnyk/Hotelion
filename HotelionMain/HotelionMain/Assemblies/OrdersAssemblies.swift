@@ -19,7 +19,7 @@ final class OrdersAssembly {
             restApiManager: serviceFactory.makeRestApiManager(),
             servicesLoader: serviceFactory.makeServicesLoader(
                 hotelId: currentBooking.hotelId),
-            bookingsLoader: serviceFactory.makeBookingsLoader(),
+            ordersLoader: serviceFactory.makeOrdersLoader(),
             currentBooking: currentBooking
         )
         let storyboard = UIStoryboard(name: "Orders", bundle: Bundle.orders)

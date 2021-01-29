@@ -34,8 +34,8 @@ final class AppCoordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
-//        startAuthCoordinator()
-        startMainTabBarCoordinator()
+        startAuthCoordinator()
+//        startMainTabBarCoordinator()
     }
 
     func startAuthCoordinator() {

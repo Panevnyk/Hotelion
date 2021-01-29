@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderTableViewCell" rowHeight="179" id="KGk-i7-Jjw" customClass="OrderTableViewCell" customModule="HotelionOrders" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="469" height="181.5"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderTableViewCell" rowHeight="261.5" id="KGk-i7-Jjw" customClass="OrderTableViewCell" customModule="HotelionOrders" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="469" height="264"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="469" height="181.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="469" height="264"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjE-hw-5gH">
-                        <rect key="frame" x="16" y="0.0" width="437" height="165.5"/>
+                        <rect key="frame" x="16" y="0.0" width="437" height="248"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DkN-sk-gbQ">
                                 <rect key="frame" x="12" y="12" width="56" height="56"/>
@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="height" constant="49" id="1Rd-p0-RGO"/>
                                     <constraint firstAttribute="width" constant="44" id="bhz-Zo-Ep4"/>
                                 </constraints>
-                                <state key="normal" image="icTrash"/>
+                                <state key="normal" image="icTrashRed"/>
                                 <connections>
                                     <action selector="deleteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tKk-aG-n28"/>
                                 </connections>
@@ -52,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27p-Ac-vee" customClass="VioletButton" customModule="HotelionCommon">
-                                <rect key="frame" x="368" y="121.5" width="57" height="32"/>
+                                <rect key="frame" x="368" y="204" width="57" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="3dj-fJ-Pg9"/>
                                 </constraints>
@@ -62,19 +62,22 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHs-NV-Cji">
-                                <rect key="frame" x="12" y="105.5" width="42" height="21"/>
+                                <rect key="frame" x="12" y="108" width="42" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="k5L-G9-FgM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNY-Er-a7B">
-                                <rect key="frame" x="12" y="132.5" width="41.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNY-Er-a7B">
+                                <rect key="frame" x="12" y="136" width="41.5" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrZ-b5-Tew" customClass="OrderStatusView" customModule="HotelionOrders" customModuleProvider="target">
-                                <rect key="frame" x="12" y="73.5" width="100" height="24"/>
+                                <rect key="frame" x="12" y="76" width="100" height="24"/>
                                 <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="100" placeholder="YES" id="FaY-rI-GlV"/>
@@ -84,7 +87,6 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FrZ-b5-Tew" firstAttribute="top" secondItem="TNR-hs-wzO" secondAttribute="bottom" constant="8" id="3xa-ax-A2c"/>
                             <constraint firstAttribute="trailing" secondItem="yUY-uB-8Br" secondAttribute="trailing" id="57h-MK-1Yg"/>
                             <constraint firstItem="D8b-8E-Y8x" firstAttribute="top" secondItem="TjE-hw-5gH" secondAttribute="top" constant="16" id="7ZN-Zu-5SB"/>
                             <constraint firstItem="DHs-NV-Cji" firstAttribute="leading" secondItem="DkN-sk-gbQ" secondAttribute="leading" id="BOs-zh-X5k"/>
@@ -97,6 +99,7 @@
                             <constraint firstAttribute="bottom" secondItem="NNY-Er-a7B" secondAttribute="bottom" constant="12" id="XLw-Jn-28u"/>
                             <constraint firstItem="yUY-uB-8Br" firstAttribute="top" secondItem="TjE-hw-5gH" secondAttribute="top" id="bOf-Bd-dhp"/>
                             <constraint firstItem="NNY-Er-a7B" firstAttribute="top" secondItem="DHs-NV-Cji" secondAttribute="bottom" constant="6" id="byW-Y7-FHg"/>
+                            <constraint firstItem="FrZ-b5-Tew" firstAttribute="top" secondItem="DkN-sk-gbQ" secondAttribute="bottom" constant="8" id="n0s-CU-fvr"/>
                             <constraint firstAttribute="bottom" secondItem="27p-Ac-vee" secondAttribute="bottom" constant="12" id="qAf-8O-USZ"/>
                             <constraint firstItem="NNY-Er-a7B" firstAttribute="leading" secondItem="DkN-sk-gbQ" secondAttribute="leading" id="qWk-fh-BxH"/>
                             <constraint firstItem="TNR-hs-wzO" firstAttribute="leading" secondItem="D8b-8E-Y8x" secondAttribute="leading" id="qXj-rS-3s2"/>
@@ -128,11 +131,11 @@
                 <outlet property="payNowButton" destination="27p-Ac-vee" id="1u3-vM-9ij"/>
                 <outlet property="priceLabel" destination="TNR-hs-wzO" id="RVO-XE-yaX"/>
             </connections>
-            <point key="canvasLocation" x="245.6521739130435" y="152.34375"/>
+            <point key="canvasLocation" x="245.6521739130435" y="112.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icTrash" width="21" height="25"/>
+        <image name="icTrashRed" width="18" height="22.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

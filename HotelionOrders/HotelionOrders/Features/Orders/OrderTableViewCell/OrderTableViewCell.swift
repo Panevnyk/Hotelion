@@ -8,6 +8,10 @@
 import UIKit
 import HotelionCommon
 
+protocol OrderTableViewCellDelegate: class {
+    func didDeleteItem(cell: OrderTableViewCell)
+}
+
 final class OrderTableViewCell: UITableViewCell {
     // MARK: - Properties
     @IBOutlet private var containerView: UIView!
@@ -19,6 +23,8 @@ final class OrderTableViewCell: UITableViewCell {
     @IBOutlet private var payNowButton: VioletButton!
     @IBOutlet private var deliveryStatusLabel: UILabel!
     @IBOutlet private var deliveryDateLabel: UILabel!
+
+    weak var delegate: OrderTableViewCellDelegate?
 
     // MARK: - awakeFromNib
     override func awakeFromNib() {
@@ -55,7 +61,8 @@ final class OrderTableViewCell: UITableViewCell {
         orderImageView.image = UIImage(named: "icHotelPlaceholderSmall", in: Bundle.orders, compatibleWith: nil)
         deliveryStatusLabel.text = viewModel.deliveryDescription
         deliveryDateLabel.text = viewModel.deliveryDate
-        orderStatusView.fill(bookingStatus: viewModel.bookingStatus)
+        orderStatusView.fill(orderStatus: viewModel.orderStatus)
+        deleteButton.isHidden = !viewModel.orderStatus.isRemovable
     }
 
     private func makePriceAttributedText(from viewModel: OrderViewModelProtocol) -> NSAttributedString {
@@ -80,5 +87,6 @@ private extension OrderTableViewCell {
     }
 
     @IBAction func deleteAction(_ sender: Any) {
+        delegate?.didDeleteItem(cell: self)
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,8 +31,8 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icAuthHeader" translatesAutoresizingMaskIntoConstraints="NO" id="Nu2-mK-4Fa">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
                         </imageView>
-                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZVb-IX-5cA">
-                            <rect key="frame" x="16" y="72" width="283.5" height="32"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZVb-IX-5cA">
+                            <rect key="frame" x="16" y="76" width="283.5" height="32"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOs-HK-RSO">
                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -47,7 +47,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFL-yj-dDC">
-                                    <rect key="frame" x="48" y="5.5" width="235.5" height="26.5"/>
+                                    <rect key="frame" x="48" y="3" width="235.5" height="26.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                         <constraint firstItem="Nu2-mK-4Fa" firstAttribute="leading" secondItem="8j2-f6-J8y" secondAttribute="leading" id="3YT-2x-0jv"/>
                         <constraint firstItem="ZVb-IX-5cA" firstAttribute="leading" secondItem="8j2-f6-J8y" secondAttribute="leading" constant="16" id="En0-6M-ajI"/>
                         <constraint firstAttribute="trailing" secondItem="m0j-0W-gwH" secondAttribute="trailing" constant="16" id="F4y-Ht-5eB"/>
-                        <constraint firstAttribute="bottom" secondItem="ZVb-IX-5cA" secondAttribute="bottom" constant="20" id="J5D-Qf-u9d"/>
+                        <constraint firstAttribute="bottom" secondItem="ZVb-IX-5cA" secondAttribute="bottom" constant="16" id="J5D-Qf-u9d"/>
                         <constraint firstItem="m0j-0W-gwH" firstAttribute="leading" secondItem="ZVb-IX-5cA" secondAttribute="trailing" constant="16" id="POV-EL-L47"/>
                         <constraint firstAttribute="bottom" secondItem="m0j-0W-gwH" secondAttribute="bottom" constant="-46" id="aO8-ke-t7h"/>
                         <constraint firstItem="m0j-0W-gwH" firstAttribute="width" secondItem="m0j-0W-gwH" secondAttribute="height" multiplier="219:329" id="crz-7R-ZDG"/>

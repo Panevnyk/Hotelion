@@ -60,17 +60,24 @@ private extension ServiceItemViewController {
     }
 
     func bindViewModel() {
-        expandableDescriptionView.bind(textObservable: viewModel.descriptionTextObservable)
-        priceView.bind(priceObservable: viewModel.totalPriceObservable)
+        expandableDescriptionView
+            .bind(textObservable: viewModel.descriptionTextObservable)
 
-        commentTextField.textField.rx.text
-            .bind(to: viewModel.commentText)
+        priceView
+            .bind(priceObservable: viewModel.totalPriceObservable)
+
+        viewModel.isDescriptionBlockHiddenObservable
+            .bind(to: expandableDescriptionWithContainer.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        viewModel.deliveryTime
+            .bind { self.deliveryOptionsWithContainer.setText("Delivery", description: $0) }
             .disposed(by: disposeBag)
     }
 
     func bindUI() {
-        viewModel.isDescriptionBlockHiddenObservable
-            .bind(to: expandableDescriptionWithContainer.rx.isHidden)
+        commentTextField.textField.rx.text
+            .bind(to: viewModel.commentText)
             .disposed(by: disposeBag)
     }
 }
@@ -122,10 +129,82 @@ extension ServiceItemViewController: OptionsViewDelegate, ExpandableDescriptionV
         case serviceOptionsView:
             viewModel.didSelectServiceOption(by: item)
         case deliveryOptionsView:
-            viewModel.didSelectDeliveryOption(by: item)
+            let serviceDelivery = viewModel.getServiceDelivery(by: item)
+            switch serviceDelivery {
+            case .bringItNow:
+                didSelectBringItNow()
+            case .arrangeTime:
+                didSelectArrangeTime()
+            case .arrangeTimeRange:
+                didSelectArrangeTimeRange()
+            }
         default:
             break
         }
+    }
+
+    func didSelectBringItNow() {
+        viewModel.didSelectBringItNowDeliveryOption()
+    }
+
+    func didSelectArrangeTime() {
+        presentArrangeTimeAlert(date: viewModel.startDeliveryDate.value)
+        { [weak self] (date) in
+            guard let self = self else { return }
+            self.viewModel.didSelectArrangeTimeDeliveryOption(
+                startDeliveryDate: date)
+        }
+    }
+
+    func didSelectArrangeTimeRange() {
+        presentArrangeTimeAlert(title: "Set from time",
+                                doneActionTitle: "Next",
+                                date: viewModel.startDeliveryDate.value)
+        { [weak self] (startDate) in
+            guard let self = self else { return }
+
+            let endDate = self.viewModel.endDeliveryDate.value
+                ?? self.viewModel.startDeliveryDate.value
+            self.presentArrangeTimeAlert(title: "Set to time",
+                                         date: endDate)
+            { [weak self] (endDate) in
+                guard let self = self else { return }
+
+                self.viewModel.didSelectArrangeTimeRangeDeliveryOption(
+                    startDeliveryDate: startDate,
+                    endDeliveryDate: endDate)
+            }
+        }
+    }
+
+    func presentArrangeTimeAlert(
+        title: String? = nil,
+        doneActionTitle: String? = nil,
+        date: Date,
+        completion: ((_ date: Date) -> Void)?) {
+
+        let datePicker = UIDatePicker()
+        datePicker.date = date
+        datePicker.minimumDate = Date()
+        datePicker.datePickerMode = .dateAndTime
+        if #available(iOS 14.0, *) {
+            datePicker.preferredDatePickerStyle = .inline
+        }
+
+        let doneAction = UIAlertAction(
+            title: doneActionTitle ?? "Done",
+            style: .default,
+            handler: { _ in completion?(datePicker.date) })
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: .cancel)
+
+        let alert = UIAlertController(
+            title: title,
+            customView: datePicker,
+            preferredStyle: .alert,
+            alertActions: [cancelAction, doneAction])
+        present(alert, animated: true, completion: nil)
     }
 
     func getScreenRootView() -> UIView {
@@ -137,7 +216,8 @@ extension ServiceItemViewController: OptionsViewDelegate, ExpandableDescriptionV
 extension ServiceItemViewController: PriceViewDelegate {
     func didTapOrder(in view: PriceView) {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let orderAction = UIAlertAction(title: "Order", style: .default) { [weak self] _ in
+        let orderAction = UIAlertAction(title: "Order", style: .default)
+        { [weak self] _ in
             self?.viewModel.didTapOrder()
         }
         AlertHelper.show(title: "Order confirmation",

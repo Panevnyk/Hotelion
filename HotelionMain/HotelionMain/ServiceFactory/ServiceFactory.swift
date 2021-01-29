@@ -17,6 +17,7 @@ protocol ServiceFactoryProtocol {
     func makeServicesLoader(hotelId: String) -> ServicesLoaderProtocol
     func makeBookingsLoader() -> BookingsLoaderProtocol
     func makeBookingRequestsLoader() -> BookingRequestsLoaderProtocol
+    func makeOrdersLoader() -> OrdersLoaderProtocol
 }
 
 final class ServiceFactory: NSObject, ServiceFactoryProtocol {
@@ -25,6 +26,7 @@ final class ServiceFactory: NSObject, ServiceFactoryProtocol {
     var serviceLoader: ServicesLoaderProtocol!
     var bookingsLoader: BookingsLoaderProtocol!
     var bookingRequestsLoader: BookingRequestsLoaderProtocol!
+    var ordersLoader: OrdersLoaderProtocol!
 
     override init() {
         super.init()
@@ -98,6 +100,14 @@ extension ServiceFactory {
             bookingRequestsLoader = BookingRequestsLoader(restApiManager: restApiManager)
         }
         return bookingRequestsLoader
+    }
+
+    func makeOrdersLoader() -> OrdersLoaderProtocol {
+        if ordersLoader == nil {
+            ordersLoader = OrdersLoader(restApiManager: restApiManager)
+        }
+
+        return ordersLoader
     }
 }
 

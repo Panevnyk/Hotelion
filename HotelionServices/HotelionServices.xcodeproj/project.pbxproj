@@ -10,6 +10,7 @@
 		6CC70D7FB02FB24E450C4EDE /* Pods_HotelionMain_HotelionServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B8B23D69D4DB9D98B495E7 /* Pods_HotelionMain_HotelionServices.framework */; };
 		91043408256E85120035A9BF /* ServicesCustomImageListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91043406256E85120035A9BF /* ServicesCustomImageListCollectionViewCell.swift */; };
 		91043409256E85120035A9BF /* ServicesCustomImageListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91043407256E85120035A9BF /* ServicesCustomImageListCollectionViewCell.xib */; };
+		911DBC4325C2DB9B00AEC184 /* HotelCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911DBC4225C2DB9B00AEC184 /* HotelCollectionViewModel.swift */; };
 		91614C49255EBB320021417D /* HotelionServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91614C3F255EBB320021417D /* HotelionServices.framework */; };
 		91614C4E255EBB320021417D /* HotelionServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91614C4D255EBB320021417D /* HotelionServicesTests.swift */; };
 		91614C50255EBB320021417D /* HotelionServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 91614C42255EBB320021417D /* HotelionServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,9 +19,6 @@
 		91614C92255EBD280021417D /* Services.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91614C91255EBD280021417D /* Services.storyboard */; };
 		91614C9E255EBF010021417D /* ServicesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91614C9C255EBF010021417D /* ServicesListCollectionViewCell.swift */; };
 		91614C9F255EBF010021417D /* ServicesListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91614C9D255EBF010021417D /* ServicesListCollectionViewCell.xib */; };
-		9195BED62574E505003A462D /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195BED52574E505003A462D /* ProfileCollectionViewCell.swift */; };
-		9195BEDA2574E530003A462D /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9195BED92574E530003A462D /* ProfileCollectionViewCell.xib */; };
-		9195BEE42574E858003A462D /* ProfileCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195BEE32574E858003A462D /* ProfileCollectionViewModel.swift */; };
 		9195BEF82576305C003A462D /* SUTextFieldWithContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195BEF72576305C003A462D /* SUTextFieldWithContainer.swift */; };
 		9195BF2425778B33003A462D /* MultipleServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195BF2225778B33003A462D /* MultipleServicesCollectionViewCell.swift */; };
 		9195BF2525778B33003A462D /* MultipleServicesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9195BF2325778B33003A462D /* MultipleServicesCollectionViewCell.xib */; };
@@ -82,6 +80,7 @@
 		2CEA893684404258CCFDCC38 /* Pods-HotelionMain-HotelionServices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelionMain-HotelionServices.release.xcconfig"; path = "Target Support Files/Pods-HotelionMain-HotelionServices/Pods-HotelionMain-HotelionServices.release.xcconfig"; sourceTree = "<group>"; };
 		91043406256E85120035A9BF /* ServicesCustomImageListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCustomImageListCollectionViewCell.swift; sourceTree = "<group>"; };
 		91043407256E85120035A9BF /* ServicesCustomImageListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicesCustomImageListCollectionViewCell.xib; sourceTree = "<group>"; };
+		911DBC4225C2DB9B00AEC184 /* HotelCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCollectionViewModel.swift; sourceTree = "<group>"; };
 		91614C3F255EBB320021417D /* HotelionServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HotelionServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91614C42255EBB320021417D /* HotelionServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelionServices.h; sourceTree = "<group>"; };
 		91614C43255EBB320021417D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,9 +92,6 @@
 		91614C91255EBD280021417D /* Services.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Services.storyboard; sourceTree = "<group>"; };
 		91614C9C255EBF010021417D /* ServicesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesListCollectionViewCell.swift; sourceTree = "<group>"; };
 		91614C9D255EBF010021417D /* ServicesListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicesListCollectionViewCell.xib; sourceTree = "<group>"; };
-		9195BED52574E505003A462D /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
-		9195BED92574E530003A462D /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
-		9195BEE32574E858003A462D /* ProfileCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewModel.swift; sourceTree = "<group>"; };
 		9195BEF72576305C003A462D /* SUTextFieldWithContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUTextFieldWithContainer.swift; sourceTree = "<group>"; };
 		9195BF2225778B33003A462D /* MultipleServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleServicesCollectionViewCell.swift; sourceTree = "<group>"; };
 		9195BF2325778B33003A462D /* MultipleServicesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultipleServicesCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -204,9 +200,8 @@
 			children = (
 				91614C74255EBC540021417D /* ServicesListViewController.swift */,
 				91614C78255EBC640021417D /* ServicesListViewModel.swift */,
-				91F0F5B92562D542001A546E /* ServicesListHeaderReusableView */,
-				9195BED42574E4EC003A462D /* ProfileCollectionViewCell */,
 				91F0F591256290C7001A546E /* HotelCollectionViewCell */,
+				91F0F5B92562D542001A546E /* ServicesListHeaderReusableView */,
 				91614C9A255EBED50021417D /* ServicesListCollectionViewCell */,
 				9195BF2125778B0E003A462D /* MultipleServicesCollectionViewCell */,
 			);
@@ -252,16 +247,6 @@
 				91F0F58B25628BAD001A546E /* ServicesGroupItemViewModel.swift */,
 			);
 			path = ServicesListCollectionViewCell;
-			sourceTree = "<group>";
-		};
-		9195BED42574E4EC003A462D /* ProfileCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				9195BED52574E505003A462D /* ProfileCollectionViewCell.swift */,
-				9195BED92574E530003A462D /* ProfileCollectionViewCell.xib */,
-				9195BEE32574E858003A462D /* ProfileCollectionViewModel.swift */,
-			);
-			path = ProfileCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		9195BEF625763035003A462D /* SUTextFieldWithContainer */ = {
@@ -368,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				91F0F592256290EB001A546E /* HotelCollectionViewCell.swift */,
+				911DBC4225C2DB9B00AEC184 /* HotelCollectionViewModel.swift */,
 				91F0F593256290EB001A546E /* HotelCollectionViewCell.xib */,
 			);
 			path = HotelCollectionViewCell;
@@ -499,7 +485,6 @@
 				91D3DFD92563DCCA001FB17D /* DetailsHeaderView.xib in Resources */,
 				9195BF2525778B33003A462D /* MultipleServicesCollectionViewCell.xib in Resources */,
 				91F0F5C32562D699001A546E /* ServicesListHeaderReusableView.xib in Resources */,
-				9195BEDA2574E530003A462D /* ProfileCollectionViewCell.xib in Resources */,
 				91614C92255EBD280021417D /* Services.storyboard in Resources */,
 				91F0F5B62562CF28001A546E /* Assets.xcassets in Resources */,
 				91043409256E85120035A9BF /* ServicesCustomImageListCollectionViewCell.xib in Resources */,
@@ -553,10 +538,10 @@
 				91614C79255EBC640021417D /* ServicesListViewModel.swift in Sources */,
 				91F0F58C25628BAD001A546E /* ServicesGroupItemViewModel.swift in Sources */,
 				91D3E0402565689F001FB17D /* OptionsView.swift in Sources */,
-				9195BEE42574E858003A462D /* ProfileCollectionViewModel.swift in Sources */,
 				91D3E0242563E1C4001FB17D /* String+Size.swift in Sources */,
 				91D3DF662563CB94001FB17D /* ServiceItemsListViewModel.swift in Sources */,
 				91F0F5BB2562D57D001A546E /* ServicesListHeaderReusableView.swift in Sources */,
+				911DBC4325C2DB9B00AEC184 /* HotelCollectionViewModel.swift in Sources */,
 				91D3E07A2565AD97001FB17D /* PriceView.swift in Sources */,
 				91D3DFA62563DAF0001FB17D /* ServiceItemViewController.swift in Sources */,
 				91D3DFAA2563DAFC001FB17D /* ServiceItemViewModel.swift in Sources */,
@@ -568,7 +553,6 @@
 				9195BEF82576305C003A462D /* SUTextFieldWithContainer.swift in Sources */,
 				91D3DF602563CA13001FB17D /* ServiceItemsListViewController.swift in Sources */,
 				91D3E045256568ED001FB17D /* AlignedCollectionViewFlowLayout.swift in Sources */,
-				9195BED62574E505003A462D /* ProfileCollectionViewCell.swift in Sources */,
 				9195BF2425778B33003A462D /* MultipleServicesCollectionViewCell.swift in Sources */,
 				91D3DFD82563DCCA001FB17D /* DetailsHeaderView.swift in Sources */,
 				91F0F594256290EB001A546E /* HotelCollectionViewCell.swift in Sources */,

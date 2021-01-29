@@ -15,12 +15,8 @@ public protocol ServiceItemsListCoordinatorDelegate: BaseCoordinatorDelegate {
 public final class ServiceItemsListViewController: UIViewController {
     // MARK: - Properties
     // UI
+    @IBOutlet private var headerView: HeaderView!
     @IBOutlet private var collectionView: UICollectionView!
-
-    @IBOutlet private var navigationView: UIView!
-    @IBOutlet private var backButton: UIButton!
-    @IBOutlet private var navigationSeparator: UIView!
-    @IBOutlet private var navigationTitle: UILabel!
 
     // ViewModel
     public var viewModel: ServiceItemsListViewModelProtocol!
@@ -43,16 +39,9 @@ private extension ServiceItemsListViewController {
         collectionView.register(cell: ServicesCustomImageListCollectionViewCell.self, bundle: Bundle.services)
         collectionView.backgroundColor = .kBackground
 
-        navigationTitle.textColor = .black
-        navigationTitle.font = UIFont.systemFont(ofSize: 17)
-        navigationTitle.text = viewModel.getServiceGroupName()
-
-        let backImage = UIImage(named: "icArrowLeftWhite", in: Bundle.services, compatibleWith: nil)?
-            .withRenderingMode(.alwaysTemplate)
-        backButton.setImage(backImage, for: .normal)
-        backButton.tintColor = .black
-
-        navigationSeparator.backgroundColor = .kSeparatorGray
+        headerView.setTitle(viewModel.getServiceGroupName())
+        headerView.isBackButtonHidden = false
+        headerView.delegate = self
     }
 }
 
@@ -143,9 +132,9 @@ extension ServiceItemsListViewController: ServiceItemsViewModelDelegate {
     }
 }
 
-// MARK: - Actions
-private extension ServiceItemsListViewController {
-    @IBAction func backAction(_ sender: Any) {
+// MARK: - HeaderViewDelegate
+extension ServiceItemsListViewController: HeaderViewDelegate {
+    public func backAction(from view: HeaderView) {
         coordinatorDelegate?.didSelectBackAction()
     }
 }

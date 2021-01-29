@@ -28,6 +28,13 @@ public final class DateHelper {
         return dateFormatter
     }
 
+    public var dateAndTimeStyleFormatter: DateFormatter {
+        let dateFormatter = self.dateFormatter
+        dateFormatter.dateFormat = "MMM dd, yyyy h:mm a"
+        dateFormatter.timeZone = utcTimeZone
+        return dateFormatter
+    }
+
     // MARK: - Init
     init() {
         utcCalendar.timeZone = utcTimeZone

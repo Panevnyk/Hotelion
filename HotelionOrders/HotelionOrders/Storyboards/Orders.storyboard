@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,8 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaY-tP-x6Z" customClass="HeaderView" customModule="HotelionCommon">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
+                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="sND-5a-imS"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hfb-9R-gDU">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="nl0-BU-pQF" id="gRG-E4-c4E"/>
@@ -29,13 +36,17 @@
                         <viewLayoutGuide key="safeArea" id="ako-Rd-TzZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Hfb-9R-gDU" firstAttribute="top" secondItem="ako-Rd-TzZ" secondAttribute="top" id="JCd-vA-cD8"/>
+                            <constraint firstItem="gaY-tP-x6Z" firstAttribute="leading" secondItem="ako-Rd-TzZ" secondAttribute="leading" id="3wh-Ts-chD"/>
+                            <constraint firstItem="gaY-tP-x6Z" firstAttribute="top" secondItem="EiO-yj-UOU" secondAttribute="top" id="5El-zT-dnV"/>
+                            <constraint firstItem="Hfb-9R-gDU" firstAttribute="top" secondItem="gaY-tP-x6Z" secondAttribute="bottom" id="Swo-iz-1UE"/>
+                            <constraint firstItem="ako-Rd-TzZ" firstAttribute="trailing" secondItem="gaY-tP-x6Z" secondAttribute="trailing" id="Yna-16-Rdj"/>
                             <constraint firstItem="Hfb-9R-gDU" firstAttribute="leading" secondItem="ako-Rd-TzZ" secondAttribute="leading" id="c3u-3I-gGf"/>
                             <constraint firstItem="ako-Rd-TzZ" firstAttribute="trailing" secondItem="Hfb-9R-gDU" secondAttribute="trailing" id="cWs-Jp-4Qw"/>
                             <constraint firstItem="ako-Rd-TzZ" firstAttribute="bottom" secondItem="Hfb-9R-gDU" secondAttribute="bottom" id="knR-a6-wwK"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerView" destination="gaY-tP-x6Z" id="PkW-MU-rlr"/>
                         <outlet property="tableView" destination="Hfb-9R-gDU" id="sxk-O0-keg"/>
                     </connections>
                 </viewController>

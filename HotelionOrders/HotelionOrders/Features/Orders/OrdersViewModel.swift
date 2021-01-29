@@ -13,9 +13,11 @@ import HotelionCommon
 public protocol OrdersViewModelProtocol {
     var badgeValueObservable: Observable<String?> { get set }
 
-    func reloadList(completion: @escaping () -> Void)
+    func reloadList(completion: (() -> Void)?)
     func itemsCount(in section: Int) -> Int
     func orderViewModel(for item: Int) -> OrderViewModelProtocol
+
+    func removeOrder(for item: Int)
 }
 
 public protocol OrdersViewModelDelegate: class {
@@ -27,21 +29,24 @@ public class OrdersViewModel: OrdersViewModelProtocol {
     // Boundaries
     private let restApiManager: RestApiManager
     private let servicesLoader: ServicesLoaderProtocol
-    private let bookingsLoader: BookingsLoaderProtocol
+    private let ordersLoader: OrdersLoaderProtocol
     private let currentBooking: Booking
+
+    // Formatters
+    private let dateAndTimeFormatter = DateHelper.shared.dateAndTimeStyleFormatter
 
     // Rx
     private let badgeValue = BehaviorRelay<String?>(value: nil)
     lazy public var badgeValueObservable = badgeValue.asObservable()
 
     // Models
-    private var bookings: [Booking] = [] {
+    private var orders: [Order] = [] {
         didSet { makeOrders() }
     }
     private var services: [Service] = [] {
         didSet { makeOrders() }
     }
-    private var orders: [OrderViewModel] = []
+    private var orderViewModels: [OrderViewModel] = []
 
     // DisposeBag
     private let disposeBag = DisposeBag()
@@ -52,38 +57,37 @@ public class OrdersViewModel: OrdersViewModelProtocol {
     // MARK: - Inits
     public init(restApiManager: RestApiManager,
                 servicesLoader: ServicesLoaderProtocol,
-                bookingsLoader: BookingsLoaderProtocol,
+                ordersLoader: OrdersLoaderProtocol,
                 currentBooking: Booking) {
         self.restApiManager = restApiManager
         self.servicesLoader = servicesLoader
-        self.bookingsLoader = bookingsLoader
+        self.ordersLoader = ordersLoader
         self.currentBooking = currentBooking
 
         bindData()
+        reloadList(completion: nil)
     }
 }
 
 // MARK: - Make order view model
 private extension OrdersViewModel {
     func makeOrders() {
-        guard services.count > 0 else { return }
-        guard bookings.count > 0 else { return }
-
-        orders = bookings
-            .compactMap({ booking in
-                guard let service = services.first(where: { $0.id == booking.roomId }),
-                      let selectedOption = service.serviceOptions.first(where: { $0.id == booking.roomId })
+        orderViewModels = orders
+            .compactMap({ order in
+                guard let service = services.first(where: { $0.id == order.serviceId }),
+                      let selectedOption = service.serviceOptions.first(where: { $0.id == order.optionId })
                         else { return nil }
 
                 return OrderViewModel(
+                    orderId: order.id,
                     img: service.img,
                     name: service.name,
                     price: String(selectedOption.price),
                     currency: "грн",
-                    status: .confirmed,
+                    status: order.orderStatus,
                     deliveryDescription: "Without delivery",
-                    deliveryDate: "Today at 9:00 PM",
-                    creationDate: booking.creationDate
+                    deliveryDate: makeDeliveryDate(from: order),
+                    creationDate: order.creationDate
                 )
             })
             .sorted(by: { $0.creationDate > $1.creationDate })
@@ -91,6 +95,23 @@ private extension OrdersViewModel {
         delegate?.reloadData()
 
         badgeValue.accept(orders.count > 0 ? String(orders.count) : nil)
+    }
+
+    func makeDeliveryDate(from order: Order) -> String {
+        let startDate = Date(timeIntervalSince1970MiliSec: order.startDate)
+        let startFormattedDate = dateAndTimeFormatter.string(from: startDate)
+
+        let time: String
+        if let orderEndDate = order.endDate {
+            let endDate = Date(timeIntervalSince1970MiliSec: orderEndDate)
+            let endFormattedDate = dateAndTimeFormatter.string(from: endDate)
+
+            time = startFormattedDate + " - " + endFormattedDate
+        } else {
+            time = startFormattedDate
+        }
+
+        return time
     }
 }
 
@@ -101,11 +122,27 @@ extension OrdersViewModel {
     }
 
     public func orderViewModel(for item: Int) -> OrderViewModelProtocol {
-        return orders[item]
+        return orderViewModels[item]
     }
 
-    public func reloadList(completion: @escaping () -> Void) {
-        bookingsLoader.loadBookings { _ in completion() }
+    public func reloadList(completion: (() -> Void)?) {
+        ordersLoader.loadOrders { _ in completion?() }
+    }
+
+    public func removeOrder(for item: Int) {
+        ActivityIndicatorHelper.shared.show()
+
+        let orderId = orderViewModel(for: item).orderId
+        ordersLoader.removeOrder(orderId: orderId) { (result) in
+            ActivityIndicatorHelper.shared.hide()
+
+            switch result {
+            case .success:
+                break
+            case .failure(let error):
+                NotificationBannerHelper.showBanner(error)
+            }
+        }
     }
 }
 
@@ -121,10 +158,10 @@ extension OrdersViewModel {
             }
         }.disposed(by: disposeBag)
 
-        bookingsLoader.resultPublisher.bind { [weak self] (result) in
+        ordersLoader.resultPublisher.bind { [weak self] (result) in
             switch result {
-            case .success(let bookings):
-                self?.bookings = bookings
+            case .success(let orders):
+                self?.orders = orders
             case .failure(let error):
                 NotificationBannerHelper.showBanner(error)
             }

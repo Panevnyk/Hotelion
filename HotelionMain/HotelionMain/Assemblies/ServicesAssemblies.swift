@@ -59,7 +59,7 @@ final class ServiceItemAssembly {
         let viewModel = ServiceItemViewModel(
             service: service,
             restApiManager: serviceFactory.makeRestApiManager(),
-            bookingsLoader: serviceFactory.makeBookingsLoader(),
+            ordersLoader: serviceFactory.makeOrdersLoader(),
             currentBooking: currentBooking
         )
         let storyboard = UIStoryboard(name: "Services", bundle: Bundle.services)

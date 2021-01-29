@@ -29,8 +29,8 @@ final class OrderStatusView: BaseCustomView {
     }
 
     // MARK: - Public methods
-    func fill(bookingStatus: BookingStatus) {
-        statusLabel.text = bookingStatus.title
-        xibView.backgroundColor = bookingStatus.color
+    func fill(orderStatus: OrderStatus) {
+        statusLabel.text = orderStatus.title
+        xibView.backgroundColor = orderStatus.color
     }
 }

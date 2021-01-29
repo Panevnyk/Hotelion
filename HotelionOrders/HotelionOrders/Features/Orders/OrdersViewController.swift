@@ -13,6 +13,7 @@ import HotelionCommon
 public class OrdersViewController: UIViewController {
     // MARK: - Properties
     // UI
+    @IBOutlet private var headerView: HeaderView!
     @IBOutlet private var tableView: UITableView!
     private var refreshControl = UIRefreshControl()
 
@@ -44,10 +45,14 @@ private extension OrdersViewController {
     func setupUI() {
         view.backgroundColor = .kBackground
 
+        headerView.setTitle("Orders")
+
         refreshControl.tintColor = .black
         refreshControl.addTarget(self, action: #selector(updateList), for: .valueChanged)
         
         tableView.backgroundColor = .kBackground
+        tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+        tableView.scrollIndicatorInsets = tableView.contentInset
         tableView.refreshControl = refreshControl
         tableView.register(cell: OrderTableViewCell.self, bundle: Bundle.orders)
     }
@@ -71,6 +76,7 @@ extension OrdersViewController: UITableViewDataSource {
         let cell: OrderTableViewCell = tableView.dequeueReusableCellWithIndexPath(indexPath)
         let itemViewModel = viewModel.orderViewModel(for: indexPath.row)
         cell.fill(viewModel: itemViewModel)
+        cell.delegate = self
 
         return cell
     }
@@ -78,9 +84,7 @@ extension OrdersViewController: UITableViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension OrdersViewController: UITableViewDelegate {
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
 
     public func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
@@ -94,6 +98,26 @@ extension OrdersViewController: UITableViewDelegate {
         UIView.animate(withDuration: 0.2) {
             cell?.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
+    }
+}
+
+// MARK: - OrderTableViewCellDelegate
+extension OrdersViewController: OrderTableViewCellDelegate {
+    func didDeleteItem(cell: OrderTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+
+        removeOrderAlert { [weak self] in
+            self?.viewModel.removeOrder(for: indexPath.row)
+        }
+    }
+
+    private func removeOrderAlert(removeCompletion: (() -> Void)?) {
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let removeAction = UIAlertAction(title: "Remove", style: .default)
+            {  _ in removeCompletion?() }
+        AlertHelper.show(title: "Do you realy want to remove order",
+                         message: nil,
+                         alertActions: [cancelAction, removeAction])
     }
 }
 

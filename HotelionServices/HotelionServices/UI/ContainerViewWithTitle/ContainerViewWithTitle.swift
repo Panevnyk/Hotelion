@@ -25,7 +25,27 @@ open class ContainerViewWithTitle: BaseCustomView {
         titleLabel.text = text
     }
 
+    public func setText(_ text: String, description: String) {
+        titleLabel.attributedText = makeAttributedText(text: text, description: description)
+    }
+
     public func addViewToStack(_ view: UIView) {
         stackView.addArrangedSubview(view)
+    }
+
+    // MARK: - Helpers
+    private func makeAttributedText(text: String, description: String) -> NSAttributedString {
+        let sentence = text + " " + description
+        let textAttributes = [NSAttributedString.Key.font: UIFont.kSectionHeaderText,
+                               NSAttributedString.Key.foregroundColor: UIColor.black]
+        let descriptionAttributes = [NSAttributedString.Key.font: UIFont.kPlainText,
+                                  NSAttributedString.Key.foregroundColor: UIColor.black]
+        let attributedSentence = NSMutableAttributedString(string: sentence, attributes: textAttributes)
+
+        let range = NSRange(location: text.count + 1,
+                            length: description.count)
+        attributedSentence.setAttributes(descriptionAttributes, range: range)
+
+        return attributedSentence
     }
 }

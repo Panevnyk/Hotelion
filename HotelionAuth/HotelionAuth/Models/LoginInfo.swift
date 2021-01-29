@@ -8,18 +8,6 @@
 
 import Foundation
 
-struct SuccessResponse: Decodable {
-    let timestamp: Double
-    
-    enum CodingKeys: String, CodingKey {
-        case timestamp
-    }
-    
-    var time: Date {
-        return Date(timeIntervalSince1970: timestamp)
-    }
-}
-
 final class LoginInfo: Decodable {
     var token = ""
     var userId = 0

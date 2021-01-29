@@ -15,6 +15,7 @@ public protocol ServicesListCoordinatorDelegate: class {
 public final class ServicesListViewController: UIViewController {
     // MARK: - Properties
     // UI
+    @IBOutlet private var headerView: HeaderView!
     @IBOutlet private var collectionView: UICollectionView!
 
     // ViewModel
@@ -41,14 +42,22 @@ private extension ServicesListViewController {
     func setupUI() {
         view.backgroundColor = .kBackground
 
+        setHeaderTitle(hotelName: "")
+
         collectionView.register(cell: MultipleServicesCollectionViewCell.self, bundle: Bundle.services)
-        collectionView.register(cell: ProfileCollectionViewCell.self, bundle: Bundle.services)
         collectionView.register(cell: HotelCollectionViewCell.self, bundle: Bundle.services)
         collectionView.register(cell: ServicesListCollectionViewCell.self, bundle: Bundle.services)
         collectionView.register(cell: ServicesListHeaderReusableView.self, kind: UICollectionView.elementKindSectionHeader, bundle: Bundle.services)
         collectionView.backgroundColor = .kBackground
         collectionView.dataSource = self
         collectionView.delegate = self
+    }
+
+    func setHeaderTitle(hotelName: String) {
+        let title = hotelName.isEmpty
+            ? "Wellcome!"
+            : "Wellcome to \(hotelName)"
+        headerView.setTitle(title)
     }
 }
 
@@ -70,14 +79,11 @@ extension ServicesListViewController: UICollectionViewDataSource {
         }
 
         switch servicesCollectionType {
-        case .profile:
-            let cell: ProfileCollectionViewCell = collectionView.dequeueReusableCellWithIndexPath(indexPath)
-            cell.fill(viewModel: viewModel.profileCollectionViewModel(for: indexPath.item))
-            return cell
-
         case .hotel:
             let cell: HotelCollectionViewCell = collectionView.dequeueReusableCellWithIndexPath(indexPath)
             cell.setImageFrame(frame: CGRect(origin: .zero, size: hotelSectionItemSize()))
+            let hotelViewModel = viewModel.hotelViewModel()
+            cell.fill(viewModel: hotelViewModel)
 
             return cell
 
@@ -105,7 +111,7 @@ extension ServicesListViewController: UICollectionViewDataSource {
         }
 
         switch servicesCollectionType {
-        case .profile, .hotel:
+        case .hotel:
             return UICollectionReusableView()
         case .services:
             let view: ServicesListHeaderReusableView = collectionView.dequeueReusableSupplementaryViewWithIndexPath(indexPath, kind: kind)
@@ -121,7 +127,7 @@ extension ServicesListViewController: UICollectionViewDataSource {
         }
 
         switch servicesCollectionType {
-        case .profile, .hotel:
+        case .hotel:
             return .zero
         case .services:
             return CGSize(width: view.frame.width, height: 32)
@@ -138,10 +144,15 @@ extension ServicesListViewController: UICollectionViewDelegate {
         }
 
         switch servicesCollectionType {
-        case .profile, .hotel:
+        case .hotel:
             break
         case .services:
-            coordinatorDelegate?.didSelectServiceGroup(in: self, by: indexPath.item)
+            let serviceType = viewModel.serviceType(by: indexPath.item)
+            switch serviceType {
+            case .multiple: break
+            case .single:
+                coordinatorDelegate?.didSelectServiceGroup(in: self, by: indexPath.item)
+            }
         }
     }
 
@@ -176,8 +187,6 @@ extension ServicesListViewController: UICollectionViewDelegateFlowLayout {
         }
 
         switch servicesCollectionType {
-        case .profile:
-            return profileSectionItemSize()
         case .hotel:
             return hotelSectionItemSize()
         case .services:
@@ -193,13 +202,9 @@ extension ServicesListViewController: UICollectionViewDelegateFlowLayout {
         }
 
         switch servicesCollectionType {
-        case .profile:
-            return UIEdgeInsets(top: ServicesListViewController.Constants.sectionTopInset,
-                                left: ServicesListViewController.Constants.sectionSideInset,
-                                bottom: ServicesListViewController.Constants.sectionSideInset,
-                                right: ServicesListViewController.Constants.sectionSideInset)
         case .hotel:
-            return UIEdgeInsets(top: 12,
+            return UIEdgeInsets(top:
+                                    ServicesListViewController.Constants.sectionSideInset,
                                 left: ServicesListViewController.Constants.sectionSideInset,
                                 bottom: ServicesListViewController.Constants.sectionSideInset,
                                 right: ServicesListViewController.Constants.sectionSideInset)
@@ -220,7 +225,7 @@ extension ServicesListViewController: UICollectionViewDelegateFlowLayout {
         }
 
         switch servicesCollectionType {
-        case .profile, .hotel:
+        case  .hotel:
             return 0
         case .services:
             return ServicesListViewController.Constants.interitemSpace
@@ -233,7 +238,7 @@ extension ServicesListViewController: UICollectionViewDelegateFlowLayout {
         }
 
         switch servicesCollectionType {
-        case .profile, .hotel:
+        case .hotel:
             return 0
         case .services:
             return ServicesListViewController.Constants.interitemSpace
@@ -243,13 +248,6 @@ extension ServicesListViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - Section item size
 private extension ServicesListViewController {
-    func profileSectionItemSize() -> CGSize {
-        let sectionSideSpacing = ServicesListViewController.Constants.sectionSideInset * 2
-        let width = view.frame.size.width - sectionSideSpacing
-
-        return CGSize(width: width, height: 49)
-    }
-
     func hotelSectionItemSize() -> CGSize {
         let sectionSideSpacing = ServicesListViewController.Constants.sectionSideInset * 2
         let width = view.frame.size.width - sectionSideSpacing
@@ -273,6 +271,10 @@ private extension ServicesListViewController {
 extension ServicesListViewController: ServicesListViewModelDelegate {
     public func reloadData() {
         collectionView.reloadData()
+    }
+
+    public func hotelTitleDidChanged(_ text: String) {
+        setHeaderTitle(hotelName: text)
     }
 }
 

@@ -56,11 +56,11 @@ final class FastCheckInCoordinator {
 // MARK: - CheckInMainCoordinatorDelegate
 extension FastCheckInCoordinator: CheckInMainCoordinatorDelegate {
     func goToFastCheckInAction(from viewController: CheckInMainViewController) {
-//        if UserData.shared.user.isPersonalInfoFull {
+        if UserData.shared.user.isPersonalInfoFull {
             pushFastCheckIn()
-//        } else {
-//            pushAddPersonalInfo(isStepViewHidden: false)
-//        }
+        } else {
+            pushAddPersonalInfo(isStepViewHidden: false)
+        }
     }
 
     func didLoadBoking(currentBooking: Booking,

@@ -13,6 +13,8 @@ public final class Service: Decodable {
     public var name: String
     public var description: String
     public var img: String
+    public var preparationTime: Double
+    public var durationTime: Double
 
     public var serviceOptions: [ServiceOption]
     public var serviceDeliveries: [ServiceDelivery]
@@ -23,6 +25,8 @@ public final class Service: Decodable {
                 name: String,
                 description: String,
                 img: String,
+                preparationTime: Double,
+                durationTime: Double,
                 serviceOptions: [ServiceOption],
                 serviceDeliveries: [ServiceDelivery]) {
         self.id = id
@@ -31,8 +35,15 @@ public final class Service: Decodable {
         self.name = name
         self.description = description
         self.img = img
+        self.preparationTime = preparationTime
+        self.durationTime = durationTime
         self.serviceOptions = serviceOptions
         self.serviceDeliveries = serviceDeliveries
+    }
+
+    public func makeStartDate() -> Date {
+        let nowMilisec = Date().timeIntervalSince1970MiliSec
+        return Date(timeIntervalSince1970MiliSec: nowMilisec + preparationTime)
     }
 }
 

@@ -11,7 +11,6 @@ import RxCocoa
 import HotelionCommon
 
 public enum SectionCollectionType: Int, CaseIterable {
-    case profile
     case hotel
     case services
 }
@@ -23,6 +22,7 @@ public enum ServiceType: Int {
 
 public protocol ServicesListViewModelDelegate: class {
     func reloadData()
+    func hotelTitleDidChanged(_ text: String)
 }
 
 public protocol ServiceItemsListViewModelFactory {
@@ -34,7 +34,7 @@ public protocol ServicesListViewModelProtocol: ServiceItemsListViewModelFactory 
     func serviceType(by index: Int) -> ServiceType
     func numberOfSection() -> Int
     func itemsCount(in section: Int) -> Int
-    func profileCollectionViewModel(for item: Int) -> ProfileCollectionViewModelProtocol
+    func hotelViewModel() -> HotelCollectionViewModel
     func servicesGroupViewModel(for item: Int) -> ServicesGroupItemViewModelProtocol
     func getServiceGroup(for item: Int) -> ServicesGroup
 }
@@ -51,7 +51,9 @@ public final class ServicesListViewModel: ServicesListViewModelProtocol {
     public weak var delegate: ServicesListViewModelDelegate?
 
     // Models
-    private var hotel: Hotel?
+    private var hotel: Hotel? {
+        didSet { delegate?.hotelTitleDidChanged(hotel?.name ?? "") }
+    }
     private var serviceGroups: [ServicesGroup] = []
     private var services: [Service] = []
 
@@ -93,13 +95,20 @@ extension ServicesListViewModel {
         guard let servicesCollectionType = sectionCollectionType(by: section) else { return 0 }
 
         switch servicesCollectionType {
-        case .profile, .hotel: return 1
+        case .hotel: return 1
         case .services: return serviceGroups.count + 1
         }
     }
 
-    public func profileCollectionViewModel(for item: Int) -> ProfileCollectionViewModelProtocol {
-        return ProfileCollectionViewModel(name: "Elena Smidt", livingDetails: "Room number: 112", avatar: "")
+    public func hotelViewModel() -> HotelCollectionViewModel {
+        var title = ""
+        if let room = currentRoom {
+            title = "Room " + room.name
+        }
+        return HotelCollectionViewModel(
+            title: title,
+            image: ""
+        )
     }
 
     public func servicesGroupViewModel(for item: Int) -> ServicesGroupItemViewModelProtocol {
@@ -113,6 +122,13 @@ extension ServicesListViewModel {
 
     public func getServiceGroup(for item: Int) -> ServicesGroup {
         return serviceGroups[item - 1]
+    }
+}
+
+// MARK: - Helpers
+private extension ServicesListViewModel {
+    var currentRoom: Room? {
+        return hotel?.rooms.first(where: { $0.id == currentBooking.roomId })
     }
 }
 
