@@ -22,10 +22,12 @@ final class MainTabBarCoordinator {
 
     private var homeNavigationController = UINavigationController()
     private var ordersNavigationController = UINavigationController()
+    private var profileNavigationController = UINavigationController()
 
     private var servicesCoordinator: ServicesCoordinator?
     private var fastCheckInCoordinator: FastCheckInCoordinator?
     private var ordersCoordinator: OrdersCoordinator?
+    private var profileCoordinator: ProfileCoordinator?
 
     // MARK: - Inits
     init(navigationController: UINavigationController, serviceFactory: ServiceFactoryProtocol) {
@@ -35,29 +37,31 @@ final class MainTabBarCoordinator {
 
         homeNavigationController.navigationBar.isHidden = true
         ordersNavigationController.navigationBar.isHidden = true
+        profileNavigationController.navigationBar.isHidden = true
     }
 
     // MARK: - Starts
     func start(currentBooking: Booking,
                animationStyle: StartWithBookingAnimationStyle = .afterLogin) {
         let isStartAfterLogin = animationStyle == .afterLogin
-        let isServicesCoordinatorStartAnimated = !isStartAfterLogin
-        let isOrdersCoordinatorStartAnimated = !isStartAfterLogin
+        let isCoordinatorStartAnimated = !isStartAfterLogin
         let isTabBarStartAnimated = isStartAfterLogin
         let isNavigationStartAnimated = isStartAfterLogin
 
         makeServiceTab(currentBooking: currentBooking)
         makeOrdersTab(currentBooking: currentBooking)
+        makeProfileTab()
 
         servicesCoordinator?.start(
-            animated: isServicesCoordinatorStartAnimated,
+            animated: isCoordinatorStartAnimated,
             currentBooking: currentBooking)
         ordersCoordinator?.start(
-            animated: isOrdersCoordinatorStartAnimated,
+            animated: isCoordinatorStartAnimated,
             currentBooking: currentBooking)
+        profileCoordinator?.start(animated: isCoordinatorStartAnimated)
 
         tabBarController.setViewControllers(
-            [homeNavigationController, ordersNavigationController],
+            [homeNavigationController, ordersNavigationController, profileNavigationController],
             animated: isTabBarStartAnimated)
         tabBarController.selectedIndex = 0
 
@@ -70,12 +74,15 @@ final class MainTabBarCoordinator {
 
     func start() {
         makeFastCheckTab()
+        makeProfileTab()
 
         fastCheckInCoordinator?.start(animated: false)
         fastCheckInCoordinator?.delegate = self
 
+        profileCoordinator?.start(animated: false)
+
         tabBarController.setViewControllers(
-            [homeNavigationController],
+            [homeNavigationController, profileNavigationController],
             animated: true)
         tabBarController.selectedIndex = 0
         navigationController.setViewControllers([tabBarController], animated: true)
@@ -109,6 +116,14 @@ private extension MainTabBarCoordinator {
             serviceFactory: serviceFactory)
 
         self.ordersCoordinator = ordersCoordinator
+    }
+
+    func makeProfileTab() {
+        let profileCoordinator = ProfileCoordinator(
+            navigationController: profileNavigationController,
+            serviceFactory: serviceFactory)
+
+        self.profileCoordinator = profileCoordinator
     }
 }
 

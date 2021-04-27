@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="oC4-uS-4nx">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" automaticallyAdjustsScrollViewInsets="NO" id="bs2-MO-k79" customClass="ProfileViewController" customModule="HotelionProfile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GeT-5i-Tg8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fz0-DX-A04" customClass="HeaderView" customModule="HotelionCommon">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
+                                <color key="backgroundColor" red="0.59223808929999999" green="0.68085944890000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="3Kk-9H-gvD"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cyp-pv-Hwn">
+                                <rect key="frame" x="0.0" y="124" width="414" height="772"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eX7-dd-ToO">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="772"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eX7-dd-ToO" secondAttribute="trailing" id="55I-Zb-aLF"/>
+                                    <constraint firstItem="eX7-dd-ToO" firstAttribute="top" secondItem="Cyp-pv-Hwn" secondAttribute="top" id="EV4-Uz-ng5"/>
+                                    <constraint firstItem="eX7-dd-ToO" firstAttribute="leading" secondItem="Cyp-pv-Hwn" secondAttribute="leading" id="GLw-i4-bHH"/>
+                                    <constraint firstAttribute="bottom" secondItem="eX7-dd-ToO" secondAttribute="bottom" id="Zhw-38-oXI"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g6T-Pm-lp9"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fz0-DX-A04" firstAttribute="leading" secondItem="g6T-Pm-lp9" secondAttribute="leading" id="8ui-2c-GSX"/>
+                            <constraint firstItem="g6T-Pm-lp9" firstAttribute="trailing" secondItem="Cyp-pv-Hwn" secondAttribute="trailing" id="B82-3p-aV9"/>
+                            <constraint firstItem="Cyp-pv-Hwn" firstAttribute="leading" secondItem="g6T-Pm-lp9" secondAttribute="leading" id="RYV-5f-Q5R"/>
+                            <constraint firstItem="eX7-dd-ToO" firstAttribute="width" secondItem="GeT-5i-Tg8" secondAttribute="width" id="TCg-TU-bGA"/>
+                            <constraint firstItem="Fz0-DX-A04" firstAttribute="top" secondItem="GeT-5i-Tg8" secondAttribute="top" id="Vur-kU-XNy"/>
+                            <constraint firstAttribute="bottom" secondItem="Cyp-pv-Hwn" secondAttribute="bottom" id="WGO-6e-rye"/>
+                            <constraint firstItem="eX7-dd-ToO" firstAttribute="height" secondItem="GeT-5i-Tg8" secondAttribute="height" priority="750" constant="-124" id="ivk-o9-0S1"/>
+                            <constraint firstItem="g6T-Pm-lp9" firstAttribute="trailing" secondItem="Fz0-DX-A04" secondAttribute="trailing" id="vNV-8w-VAd"/>
+                            <constraint firstItem="Cyp-pv-Hwn" firstAttribute="top" secondItem="Fz0-DX-A04" secondAttribute="bottom" id="vjs-vL-47X"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mGw-bm-w44"/>
+                    <connections>
+                        <outlet property="headerView" destination="Fz0-DX-A04" id="Iet-jm-FpC"/>
+                        <outlet property="scrollView" destination="Cyp-pv-Hwn" id="8xa-KN-GBg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5my-I3-Bpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-566" y="-233"/>
+        </scene>
+    </scenes>
+</document>

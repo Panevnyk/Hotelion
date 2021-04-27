@@ -10,6 +10,7 @@ import UIKit
 public enum MainTab: Int {
     case home
     case orders
+    case profile
 
     public var image: UIImage? {
         switch self {
@@ -17,6 +18,8 @@ public enum MainTab: Int {
             return UIImage(named: "icHome", in: Bundle.common, compatibleWith: nil)
         case .orders:
             return UIImage(named: "icOrders", in: Bundle.common, compatibleWith: nil)
+        case .profile:
+            return UIImage(named: "icProfile", in: Bundle.common, compatibleWith: nil)
         }
     }
 
@@ -26,6 +29,8 @@ public enum MainTab: Int {
             return UIImage(named: "icHomeSelected", in: Bundle.common, compatibleWith: nil)
         case .orders:
             return UIImage(named: "icOrdersSelected", in: Bundle.common, compatibleWith: nil)
+        case .profile:
+            return UIImage(named: "icProfileSelected", in: Bundle.common, compatibleWith: nil)
         }
     }
 }

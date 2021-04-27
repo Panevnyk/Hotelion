@@ -28,6 +28,10 @@
 		9177A687255EC2F100E36866 /* HotelionServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9177A686255EC2F100E36866 /* HotelionServices.framework */; };
 		9177A688255EC2F100E36866 /* HotelionServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9177A686255EC2F100E36866 /* HotelionServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		917867AC23FEC150009E53CB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917867AB23FEC150009E53CB /* AppCoordinator.swift */; };
+		9181AFF025CD70E20012901B /* HotelionProfile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9181AFEF25CD70E20012901B /* HotelionProfile.framework */; };
+		9181AFF125CD70E20012901B /* HotelionProfile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9181AFEF25CD70E20012901B /* HotelionProfile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9181B01E25CD7B0B0012901B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181B01D25CD7B0B0012901B /* ProfileCoordinator.swift */; };
+		9181B02225CD7B1E0012901B /* ProfileAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181B02125CD7B1E0012901B /* ProfileAssemblies.swift */; };
 		918D8D4C239FFD0C0064AC83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918D8D4B239FFD0C0064AC83 /* AppDelegate.swift */; };
 		918D8D4E239FFD0C0064AC83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918D8D4D239FFD0C0064AC83 /* SceneDelegate.swift */; };
 		918D8D52239FFD0D0064AC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918D8D51239FFD0D0064AC83 /* Assets.xcassets */; };
@@ -64,6 +68,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9181AFF125CD70E20012901B /* HotelionProfile.framework in Embed Frameworks */,
 				91481F9E25B072F600BB0872 /* HotelionFastCheckIn.framework in Embed Frameworks */,
 				9177A688255EC2F100E36866 /* HotelionServices.framework in Embed Frameworks */,
 				91043489256E948C0035A9BF /* HotelionOrders.framework in Embed Frameworks */,
@@ -99,6 +104,9 @@
 		9177A682255EC23F00E36866 /* ServicesAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssemblies.swift; sourceTree = "<group>"; };
 		9177A686255EC2F100E36866 /* HotelionServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HotelionServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		917867AB23FEC150009E53CB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		9181AFEF25CD70E20012901B /* HotelionProfile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HotelionProfile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9181B01D25CD7B0B0012901B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		9181B02125CD7B1E0012901B /* ProfileAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssemblies.swift; sourceTree = "<group>"; };
 		9185BE5D23F402C9001EFEB0 /* HotelionMain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HotelionMain.entitlements; sourceTree = "<group>"; };
 		918D8D48239FFD0C0064AC83 /* Hotelion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hotelion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		918D8D4B239FFD0C0064AC83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9181AFF025CD70E20012901B /* HotelionProfile.framework in Frameworks */,
 				913661D4256FA17E00089355 /* HotelionCommon.framework in Frameworks */,
 				9177A687255EC2F100E36866 /* HotelionServices.framework in Frameworks */,
 				91481F9D25B072F600BB0872 /* HotelionFastCheckIn.framework in Frameworks */,
@@ -172,6 +181,7 @@
 		91127C2023A397920098CAFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9181AFEF25CD70E20012901B /* HotelionProfile.framework */,
 				91481F9C25B072F600BB0872 /* HotelionFastCheckIn.framework */,
 				91481F9625B0725E00BB0872 /* HotelionFastCheckIn.framework */,
 				91F008D225AF1D0F001C9295 /* HotelionFastCheckIn.framework */,
@@ -197,6 +207,7 @@
 				91043430256E8FCE0035A9BF /* OrdersAssemblies.swift */,
 				9177A682255EC23F00E36866 /* ServicesAssemblies.swift */,
 				91F008B725AF1BB5001C9295 /* FastCheckInAssemblies.swift */,
+				9181B02125CD7B1E0012901B /* ProfileAssemblies.swift */,
 			);
 			path = Assemblies;
 			sourceTree = "<group>";
@@ -218,6 +229,7 @@
 				91F008D725AF1E51001C9295 /* FastCheckInCoordinator.swift */,
 				9177A67E255EC23000E36866 /* ServicesCoordinator.swift */,
 				91043434256E90050035A9BF /* OrdersCoordinator.swift */,
+				9181B01D25CD7B0B0012901B /* ProfileCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -537,7 +549,9 @@
 				9177A67F255EC23000E36866 /* ServicesCoordinator.swift in Sources */,
 				918D8D4C239FFD0C0064AC83 /* AppDelegate.swift in Sources */,
 				918D8D4E239FFD0C0064AC83 /* SceneDelegate.swift in Sources */,
+				9181B01E25CD7B0B0012901B /* ProfileCoordinator.swift in Sources */,
 				91584A5C255BE12500AF07C7 /* AuthAssemblies.swift in Sources */,
+				9181B02225CD7B1E0012901B /* ProfileAssemblies.swift in Sources */,
 				91F008D825AF1E51001C9295 /* FastCheckInCoordinator.swift in Sources */,
 				91043435256E90050035A9BF /* OrdersCoordinator.swift in Sources */,
 				9104342B256E8C5A0035A9BF /* MainTabBarCoordinator.swift in Sources */,

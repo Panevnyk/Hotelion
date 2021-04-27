@@ -75,6 +75,20 @@ target 'HotelionMain' do
     pod 'SwiftSignatureView'
   end
 
+  # ---- HotelionFastCheckIn
+  target 'HotelionProfile' do
+    project '../HotelionProfile/HotelionProfile.xcodeproj'
+    workspace '../Hotelion.xcworkspace'
+
+    # Rx
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    # Rest
+    pod 'RestApiManager'
+    # UI
+    pod 'NotificationBannerSwift'
+  end
+
   # ---- HotelionCommon
   target 'HotelionCommon' do
     project '../HotelionCommon/HotelionCommon.xcodeproj'

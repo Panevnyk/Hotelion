@@ -34,6 +34,90 @@
                ReferencedContainer = "container:../HotelionFastCheckIn/HotelionFastCheckIn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "918D8D5D239FFD0D0064AC83"
+               BuildableName = "HotelionMainTests.xctest"
+               BlueprintName = "HotelionMainTests"
+               ReferencedContainer = "container:HotelionMain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "91DBCAF7255AA12D00B59668"
+               BuildableName = "HotelionAuthTests.xctest"
+               BlueprintName = "HotelionAuthTests"
+               ReferencedContainer = "container:../HotelionAuth/HotelionAuth.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "91DBCB69255AA1FD00B59668"
+               BuildableName = "HotelionCommonTests.xctest"
+               BlueprintName = "HotelionCommonTests"
+               ReferencedContainer = "container:../HotelionCommon/HotelionCommon.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "91043466256E943B0035A9BF"
+               BuildableName = "HotelionOrdersTests.xctest"
+               BlueprintName = "HotelionOrdersTests"
+               ReferencedContainer = "container:../HotelionOrders/HotelionOrders.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "91614C47255EBB320021417D"
+               BuildableName = "HotelionServicesTests.xctest"
+               BlueprintName = "HotelionServicesTests"
+               ReferencedContainer = "container:../HotelionServices/HotelionServices.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9181AFD925CD70B50012901B"
+               BuildableName = "HotelionProfileTests.xctest"
+               BlueprintName = "HotelionProfileTests"
+               ReferencedContainer = "container:../HotelionProfile/HotelionProfile.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

@@ -42,4 +42,11 @@ public extension Bundle {
         }
         return bundle
     }
+
+    static var profile: Bundle {
+        guard let bundle = Bundle(identifier: "vp.HotelionProfile") else {
+            fatalError("!!! Problem with Bundle.orders identifier !!!")
+        }
+        return bundle
+    }
 }
